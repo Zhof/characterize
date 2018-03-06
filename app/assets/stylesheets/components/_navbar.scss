@@ -1,7 +1,8 @@
 /* Main navbar */
 .navbar-wagon {
+  position: relative;
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
-  background: white;
+  background: rgba(0, 0, 0, 0.9);
   transition: all 0.3s ease;
   height: 70px;
   padding: 0px 30px;
@@ -75,3 +76,30 @@
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
 }
+
+.icons img {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+}
+
+.helmet img {
+  left: 1250px;
+  top: 10px;
+}
+
+.quill img {
+  left: 1170px;
+  top: 10px;
+}
+
+.dice img {
+  left: 1090px;
+  top: 10px;
+}
+
+.book img {
+  left: 1010px;
+  top: 10px;
+}
+

@@ -1,11 +1,15 @@
 <div class="navbar-wagon">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "logo.png", height: 50 %>
+    <%= image_tag "snake.png", height: 50 %>
   <% end %>
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
+    <%= link_to image_tag('dark_knight_helmet.png'), characters_path, class:"icons helmet"%>
+    <%= link_to image_tag('quill_pen.png'), characters_path, class:"icons quill"%>
+    <%= link_to image_tag('dice.png'), characters_path, class:"icons dice"%>
+    <%= link_to image_tag('book.png'), characters_path, class:"icons book"%>
 
     <% if user_signed_in? %>
 
