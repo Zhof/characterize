@@ -5,7 +5,7 @@ validates :full, inclusion: { in: [true, false] }
 validates :full, exclusion: { in: [nil] }
 validates :name, presence: true
 validates :race, presence: true
-validates :class, presence: true
+validates :job, presence: true
 validates :location, presence: true
 
 validates :trait, presence: true, unless: :full?

@@ -1,3 +1,5 @@
+require 'json'
+
 class CharactersController < ApplicationController
   before_action :set_character, only: [:show, :destroy]
 
@@ -6,14 +8,16 @@ class CharactersController < ApplicationController
   end
 
   def create
-    @character = Character.new(character_params)
+    @sentence = generate
+    @character = Character.new(@character_params)
+    @character.story = @sentence
 
     if current_user
       @character.user = current_user
       if @character.save
-        notice: "Succes, character save"
+        redirect_to @character
       else
-        notice: "Something went wrong, please try again"
+        redirect_to root, notice: "Something went wrong, please try again"
       end
     else
       redirect_to new_user_session
@@ -21,7 +25,6 @@ class CharactersController < ApplicationController
   end
 
   def show
-
   end
 
   def index
@@ -40,7 +43,36 @@ class CharactersController < ApplicationController
     @character = Character.find(params[:id])
   end
 
-  def character_params
-    params.require(:character).permit(:name, :race, :class, :location)
+  def load_attributes(file_name)
+    file = File.read(file_name)
+    text = JSON.parse(file)
+
+    attributes = {
+      templates: text["templates"],
+      names: text["names"],
+      traits: text["traits"],
+      races: text["races"],
+      jobs: text["jobs"],
+      locations: text["locations"],
+      quirks: text["quirks"]
+    }
   end
+
+  def generate
+    path = Rails.root.to_s + "/public/text.json"
+    attributes = load_attributes(path)
+    template = attributes[:templates].sample
+
+    @character_params = {
+      'name' => attributes[:names].sample,
+      'trait' => attributes[:traits].sample,
+      'race' => attributes[:races].sample,
+      'job' => attributes[:jobs].sample,
+      'location' => attributes[:locations].sample,
+      'quirk' => attributes[:quirks].sample
+    }
+
+    template.gsub(/trait|race|job|location|quirk/) { |match| @character_params[match] }
+  end
+
 end
