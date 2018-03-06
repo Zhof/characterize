@@ -1,0 +1,53 @@
+{
+    "templates": [
+      "trait race job from location who quirk"
+    ],
+
+    "names": [
+      "Grig Greyjoy",
+      "Solomon Pffalburg",
+      "Fug Locke",
+      "Shadessa Thistlebark",
+      "Petuza Floweregg"
+    ],
+
+    "traits": [
+      "fussy",
+      "insensitive",
+      "dramatic",
+      "soulless",
+      "gloomy"
+    ],
+
+    "races": [
+      "tiefling",
+      "halfling",
+      "half-elf",
+      "human",
+      "gnome"
+    ],
+
+    "jobs": [
+      "barbarian",
+      "bard",
+      "ranger",
+      "cleric",
+      "wizard"
+    ],
+
+    "locations": [
+      "a war-torn city",
+      "a destitute plantation",
+      "the endless wastes",
+      "thornwood",
+      "a notorious dungeon"
+    ],
+
+    "quirks": [
+      "doesn't know their own strength",
+      "was brought up to be a librarian",
+      "once served as a court jester",
+      "can't sleep indoors",
+      "was a weapons instructor for the city militia"
+    ]
+}
