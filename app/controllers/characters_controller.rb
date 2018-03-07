@@ -5,6 +5,7 @@ class CharactersController < ApplicationController
 
   def new
     @character = Character.new
+    create
   end
 
   def create
@@ -12,16 +13,9 @@ class CharactersController < ApplicationController
     @character = Character.new(@character_params)
     @character.story = @sentence
 
-    if current_user
-      @character.user = current_user
-      if @character.save
-        redirect_to @character
-      else
-        redirect_to root, notice: "Something went wrong, please try again"
-      end
-    else
-      redirect_to new_user_session
-    end
+    @character.user = current_user if current_user
+    @character.save
+    redirect_to character_path(@character)
   end
 
   def show
