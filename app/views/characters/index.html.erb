@@ -1,9 +1,10 @@
 <div class="container">
   <div class="row">
-    <h3 align="center">My Characters</h3>
+    <h2 align="center">MY CHARACTERS</h2>
   </div>
   <div class="row">
     <% @characters.each do |character| %>
+    <%= link_to character_path(character), style: "color:black;" do %>
     <div class="col-md-4">
       <div class="character-card">
         <div class="character-card-image">
@@ -22,6 +23,7 @@
         </div>
       </div>
     </div>
+    <% end %>
     <% end %>
   </div>
 </div>
