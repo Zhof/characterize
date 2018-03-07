@@ -1,1 +1,17 @@
-<%= link_to 'New character', new_character_path %>
+<!-- <html> -->
+  <!-- <div class="container">
+    <div class="row">
+    </div>
+    </div> -->
+<div class="landing-background">
+  <div class="col align-self-center">
+    <h1 class="landing-text">CHARACTERIZE</h1>
+    <p class="landing-text">BUILD A STORY FOR YOUR CHARACTER</p>
+    <div class="banner-buttons">
+      <p class="btn btn-primary"><a href="#">GENERATE STORY</a></p>
+      <p class="btn btn-primary"><a href="#">GENERATE STORY</a></p>
+    </div>
+  </div>
+</div>
+
+<%= link_to 'New character', "characters#create", method: 'post' %>
