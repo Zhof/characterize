@@ -1,1 +1,29 @@
-index.html.erb
+<div class="container">
+  <div class="row">
+    <h2 align="center">MY CHARACTERS</h2>
+  </div>
+  <div class="row">
+    <% @characters.each do |character| %>
+    <%= link_to character_path(character), style: "color:black;" do %>
+    <div class="col-md-4">
+      <div class="character-card">
+        <div class="character-card-image">
+          <%= image_tag 'gothmog.png', :class => "avatar" %>
+        </div>
+        <div class="character-card-content">
+          <div class="content-header">
+            <h4 align="right"><%= character.name %> from <%= character.location %></h4>
+          </div>
+          <div class="content-body">
+            <p><%= character.story %></p>
+          </div>
+          <div class="content-footer">
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+    <% end %>
+  </div>
+</div>
