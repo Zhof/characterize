@@ -5,6 +5,7 @@ class CharactersController < ApplicationController
 
   def new
     @character = Character.new
+    create
   end
 
   def create
