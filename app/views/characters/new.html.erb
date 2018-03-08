@@ -1,2 +1,17 @@
 <p>build a character</p>
 
+<div class="first-part">
+  <%= render "characters/stats" %>
+</div>
+
+<div class="second-part" style="display: none;">
+  <%= render "characters/story" %>
+</div>
+
+<script>
+  const button = document.getElementById(".button");
+  button.addEventListener("click", () => {
+    document.getElementById(".first-part").style.display = "none";
+    document.getElementById(".second-part").style.display = "initial";
+  })
+</script>
