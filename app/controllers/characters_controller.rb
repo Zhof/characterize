@@ -9,13 +9,19 @@ class CharactersController < ApplicationController
   end
 
   def create
-    @sentence = generate
-    @character = Character.new(@character_params)
-    @character.story = @sentence
+    # @sentence = generate
+    @character = Character.new(character_params)
 
-    @character.user = current_user if current_user
-    @character.save
-    redirect_to character_path(@character)
+    if current_user
+      @character.user = current_user
+      if @character.save
+        redirect_to characters_path
+      else
+        redirect_to root, notice: "Something went wrong, please try again"
+      end
+    else
+      redirect_to new_user_session
+    end
   end
 
   def show
@@ -37,36 +43,8 @@ class CharactersController < ApplicationController
     @character = Character.find(params[:id])
   end
 
-  def load_attributes(file_name)
-    file = File.read(file_name)
-    text = JSON.parse(file)
-
-    attributes = {
-      templates: text["templates"],
-      names: text["names"],
-      traits: text["traits"],
-      races: text["races"],
-      jobs: text["jobs"],
-      locations: text["locations"],
-      quirks: text["quirks"]
-    }
-  end
-
-  def generate
-    path = Rails.root.to_s + "/public/text.json"
-    attributes = load_attributes(path)
-    template = attributes[:templates].sample
-
-    @character_params = {
-      'name' => attributes[:names].sample,
-      'trait' => attributes[:traits].sample,
-      'race' => attributes[:races].sample,
-      'job' => attributes[:jobs].sample,
-      'location' => attributes[:locations].sample,
-      'quirk' => attributes[:quirks].sample
-    }
-
-    template.gsub(/trait|race|job|location|quirk/) { |match| @character_params[match] }
+  def character_params
+    params.require(:character).permit(:name, :race, :job, :location, :trait, :quirk, :story)
   end
 
 end

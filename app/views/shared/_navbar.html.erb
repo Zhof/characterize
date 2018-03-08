@@ -6,10 +6,12 @@
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
-    <%= link_to image_tag('dark_knight_helmet.png'), characters_path, class:"icons helmet"%>
-    <%= link_to image_tag('quill_pen.png'), characters_path, class:"icons quill"%>
-    <%= link_to image_tag('dice.png'), characters_path, class:"icons dice"%>
-    <%= link_to image_tag('book.png'), characters_path, class:"icons book"%>
+    <div class="menu-icons">
+      <%= link_to image_tag('book.png'), characters_path, class:"icons book"%>
+      <%= link_to image_tag('dice.png'), characters_path, class:"icons dice"%>
+      <%= link_to image_tag('quill_pen.png'), characters_path, class:"icons quill"%>
+      <%= link_to image_tag('dark_knight_helmet.png'), characters_path, class:"icons helmet"%>
+    </div>
 
     <% if user_signed_in? %>
 

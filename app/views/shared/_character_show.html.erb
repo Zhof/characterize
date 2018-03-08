@@ -1,0 +1,19 @@
+<div class="card character-show-container">
+  <div class="character-show-inner-container">
+    <div>
+      <!-- name and description -->
+      <div id="character_name">
+        <%= @character.name.upcase %>
+      </div>
+      <div>
+        <div class="desc">
+          <%= @character.story %>
+        </div>
+      </div>
+    </div>
+    <div>
+      <!-- image -->
+      <%= image_tag "barbarian.png", class:"image" %>
+    </div>
+  </div>
+</div>
