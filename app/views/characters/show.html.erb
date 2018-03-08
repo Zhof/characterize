@@ -1,2 +1,5 @@
-<p><%= @character.name %>: <%= @character.story %></p>
-<%= link_to 'Another one', :back, method: 'post' %>
+<% if @character.full %>
+  <%= render 'characters/build' %>
+<% else %>
+  <%= render 'characters/random' %>
+<% end %>

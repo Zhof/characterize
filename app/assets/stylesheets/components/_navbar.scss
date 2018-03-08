@@ -78,28 +78,15 @@
 }
 
 .icons img {
-  position: absolute;
+  // position: absolute;
   width: 50px;
   height: 50px;
 }
 
-.helmet img {
-  left: 1550px;
-  top: 10px;
+.menu-icons {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  right: 150px;
+  width: 250px;
 }
-
-.quill img {
-  left: 1470px;
-  top: 10px;
-}
-
-.dice img {
-  left: 1390px;
-  top: 10px;
-}
-
-.book img {
-  left: 1310px;
-  top: 10px;
-}
-
