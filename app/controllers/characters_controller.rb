@@ -3,6 +3,7 @@ class CharactersController < ApplicationController
 
   def new
     @character = Character.new
+    @starting_words = CharacterGenerator.new(2).fetch_possibilities
   end
 
   def create
@@ -11,7 +12,7 @@ class CharactersController < ApplicationController
     if current_user
       @character.user = current_user
       if @character.save
-        redirect_to characters_path
+        redirect_to character_path(@character)
       else
         redirect_to root, notice: "Something went wrong, please try again"
       end

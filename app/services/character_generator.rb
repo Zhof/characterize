@@ -1,38 +1,10 @@
-require 'json'
-require 'pragmatic_tokenizer'
-require 'open-uri'
+class CharacterGenerator
 
-class Ngram
-  attr_accessor :options
-
-  def initialize(target)
-    @target = target
-    @options = options
-    @ngram_frequencies = Hash.new { |word, follow_word| word[follow_word] = Hash.new(0) }
-  end
-
-  def ngrams(n)
-    @target.split(' ').each_cons(n).to_a
-  end
-
-  def compute_nth_gram(n)
-    ngram_frequencies = @ngram_frequencies.clone
-
-    ngrams(n).each do |gram|
-      first_key = (n - 1).times.map { |i| gram[i].downcase }.join(' ')
-      ngram_frequencies[first_key][gram[n - 1].downcase] += 1
-    end
-
-    ngram_frequencies
-  end
-
-end
-
-class Generator
-
-  def initialize(file, depth)
-    @file = file
-    @text = PragmaticTokenizer::Tokenizer.new(clean: true, classic_filter: true, punctuation: :none).tokenize(file).join(" ")
+  def initialize(depth)
+    raise if depth == 1
+    @path = Rails.root.to_s + "/db/DND_text_library.txt"
+    @file = File.read(@path)
+    @text = PragmaticTokenizer::Tokenizer.new(clean: true, classic_filter: true, punctuation: :none).tokenize(@file).join(" ")
     @ngrams = Ngram.new(@text).compute_nth_gram(depth)
   end
 
@@ -43,9 +15,11 @@ class Generator
 
     words = word_options(@ngrams, word, 1)
 
-    if words.length < 5
-      limit = 5 - words.length
-      shuffled_frequent_words[0..limit].each { |w| words << w[0] }
+    if words.length < 10
+      limit = 9 - words.length
+      shuffled_frequent_words[0..(limit / 2)].each { |w| words << w[0] }
+      limit = 9 - words.length
+      @ngrams.keys.sample(limit).each { |w| words << w }
     end
 
     words << "."
@@ -56,7 +30,7 @@ class Generator
   end
 
   def shuffled_frequent_words
-    word_frequencies[0..20].sample(5)
+    word_frequencies[0..24].sample(10)
   end
 
   def generate_sentence(word_count: nil)
@@ -95,8 +69,8 @@ class Generator
     word_chain[word].each do |key, value|
       options << key if value >= threshold
     end
-
-    return options[0..5]
+    options.sort
+    return options[0..4]
   end
 
   def word_frequencies
