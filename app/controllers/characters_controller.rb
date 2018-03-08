@@ -1,15 +1,11 @@
-require 'json'
-
 class CharactersController < ApplicationController
   before_action :set_character, only: [:show, :destroy]
 
   def new
     @character = Character.new
-    # create
   end
 
   def create
-    # @sentence = generate
     @character = Character.new(character_params)
 
     if current_user
@@ -34,7 +30,7 @@ class CharactersController < ApplicationController
 
   def destroy
     @character.destroy
-    redirect_to characters_path(current_user)
+    redirect_to characters_path
   end
 
   private

@@ -4,10 +4,33 @@ class GenerationsController < ApplicationController
     @character = Character.new(@character_params)
   end
 
+  def build
+    #build will be called when user has selected their other character attributes
+    #Should have name, race, alignment, background, job in params
+    # character_params = params etc.
+    @character = Character.new(character_params)
+    #While story is being generated
+    generate_story
+    #When user is done creating story, save story as @character.story
+  end
+
   private
 
+  def generate_story
+    path = Rails.root.to_s + "/db/text.json"
+    generator = Generator.new(path, 2)
+    suggested_words = generator.fetch_possibilities(params[:word])
+
+    response = {
+      word: params[:word]
+      suggestions: suggested_words
+    }
+
+    render json: response
+  end
+
   def generate_attributes
-    path = Rails.root.to_s + "/public/text.json"
+    path = Rails.root.to_s + "/db/text.json"
     attributes = load_attributes(path)
     template = attributes[:templates].sample
 
