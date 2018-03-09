@@ -22,7 +22,7 @@ class CharactersController < ApplicationController
       if @character.save
         redirect_to characters_path
       else
-        redirect_to root, notice: "Something went wrong, please try again"
+        redirect_to root_path, notice: "Something went wrong, please try again"
       end
     else
       redirect_to new_user_session
@@ -52,7 +52,15 @@ class CharactersController < ApplicationController
     if params[:trait]
       params.require(:character).permit(:race, :job, :location, :trait, :quirk, :story)
     else
-      params.require(:character).permit(:race, :job,  :alignment, :background, :story)
+      {
+        :name => "Bob",
+        :race => "dwarf",
+        :job => "wizard",
+        :alignment => "Chaotic good",
+        :background => "Archaeologist",
+        :story => params[:story],
+        :full => true
+      }
     end
   end
 
