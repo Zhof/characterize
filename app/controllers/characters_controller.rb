@@ -3,6 +3,14 @@ class CharactersController < ApplicationController
 
   def new
     @character = Character.new
+    file = File.read(Rails.root.to_s + "/db/text.json")
+    json = JSON.parse(file)
+
+    @races = json["races"]
+    @jobs = json["jobs"]
+    @alignments = json["alignments"]
+    @backgrounds = json["backgrounds"]
+    
     @starting_words = CharacterGenerator.new(2).fetch_possibilities
   end
 
