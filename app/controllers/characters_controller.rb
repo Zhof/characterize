@@ -10,7 +10,7 @@ class CharactersController < ApplicationController
     @jobs = json["jobs"]
     @alignments = json["alignments"]
     @backgrounds = json["backgrounds"]
-    
+
     @starting_words = CharacterGenerator.new(2).fetch_possibilities
   end
 

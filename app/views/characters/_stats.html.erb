@@ -1,6 +1,6 @@
 <div class="character-build">
   <div>
-  <h2>Name</h2>
+    <h2>Name</h2>
     <%= simple_form_for @character do |f| %>
       <%= f.label :race, "Race" %>
       <%= f.input_field :race, as: :select, collection: @races, class:"form-control", id:"race" %>

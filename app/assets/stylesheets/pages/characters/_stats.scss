@@ -14,21 +14,16 @@
 }
 
 .character-sheet-body {
-  background: linear-gradient(180deg, rgba(247, 247, 247, 0) 65%, #F7F7F7 100%), rgba(62, 72, 87, 1);
+  background: linear-gradient(180deg, rgba(62, 72, 87, 1) 50%, rgba(0, 0, 0, 0) 100%);
   height: 550px;
-}
-
-
-.stats {
-
-}
-
-.story {
-
 }
 
 .paper {
   position: relative;
   width: 600px;
   height: auto;
+}
+
+#confirm {
+  margin-top: 10px;
 }
