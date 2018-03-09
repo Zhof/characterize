@@ -1,5 +1,5 @@
 class CharacterGenerator
-
+  attr_accessor :path, :file, :text, :ngrams
   def initialize(depth)
     raise if depth == 1
     @path = Rails.root.to_s + "/db/DND_text_library.txt"
@@ -55,7 +55,7 @@ class CharacterGenerator
       end
     end
 
-    sentence.join(" ") + '.'
+    sentence.join(" ")
   end
 
   private
@@ -69,8 +69,8 @@ class CharacterGenerator
     word_chain[word].each do |key, value|
       options << key if value >= threshold
     end
-    options.sort
-    return options[0..4]
+    options = options[0..8].sample(4)
+    return options.sort[0..4]
   end
 
   def word_frequencies
