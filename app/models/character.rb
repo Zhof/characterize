@@ -6,8 +6,8 @@ validates :full, exclusion: { in: [nil] }
 validates :name, presence: true
 validates :race, presence: true
 validates :job, presence: true
-validates :location, presence: true
 
+validates :location, presence: true, unless: :full?
 validates :trait, presence: true, unless: :full?
 validates :quirk, presence: true, unless: :full?
 
