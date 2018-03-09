@@ -6,19 +6,76 @@
   background-repeat: no-repeat;
   position: absolute;
   width: 100%;
-  height: 500px;
-
+  height: 1000px;
 }
 
 .landing-text {
   opacity: 1;
+  color: $brand-primary !important;
+  text-align: center !important;
+  font-weight: bold !important;
+  font-size: 70px;
+  padding-top: 0px;
+  padding-bottom: 30px;
+  border-top: 0px;
+  margin-top: 5px;
+}
+
+.landing-sub-text {
+  opacity: 1;
   color: white !important;
   text-align: center !important;
+  font-size: 28px;
+  padding-bottom: 0px;
 }
 
 .banner-buttons {
   text-align: center;
-  &:hover {
+  color: white;
+ }
 
-  }
+// .link-to-text-color {
+//   color: white !important;
+// }
+
+.banner-script {
+  color: white !important;
+  font-size: 20px;
 }
+
+// #wrapper {
+//     width: 100%;
+//     overflow: hidden;
+// }
+// #container {
+//     width: 100%;
+//     margin: 0 auto;
+// }
+// .landing-background-img {
+//     width: 100%;
+// }
+
+// // .text-js{
+// //   opacity: 0;
+// // }
+// // .cursor{
+// //   display: block;
+// //   position: absolute;
+// //   height: 100%;
+// //   top: 0;
+// //   right: -5px;
+// //   width: 2px;
+// //   /* Change colour of Cursor Here */
+// //   background-color: white;
+// //   z-index: 1;
+// //   animation: flash 0.5s none infinite alternate;
+// // }
+
+// // @keyframes flash{
+// //   0%{
+// //     opacity: 1;
+// //   }
+// //   100%{
+//     opacity: 0;
+//   }
+// }

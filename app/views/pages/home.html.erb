@@ -1,17 +1,40 @@
-<!-- <html> -->
-  <!-- <div class="container">
-    <div class="row">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+      <!-- Bootstrap -->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="landing-background">
+      <div id="wrapper">
+        <div id="container">
+          <div class="col align-self-center">
+            <br>
+            <br>
+            <h2 class="landing-sub-text">BUILD A STORY FOR YOUR CHARACTER</h2>
+            <h1 class="landing-text">CHARACTERIZE</h1>
+            <div style="text-align: center;">
+              <span class="banner-script"></span>
+            </div>
+            <br>
+            <div class="banner-buttons">
+              <p class="btn btn-primary"><a<%= link_to 'QUICK STORY', "characters#create", method: 'post' %></a></p>
+              &nbsp;
+              &nbsp;
+              <p class="btn btn-primary"><a<%= link_to 'CUSTOM STORY', "characters#create", method: 'post' %></a></p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    </div> -->
-<div class="landing-background">
-  <div class="col align-self-center">
-    <h1 class="landing-text">CHARACTERIZE</h1>
-    <p class="landing-text">BUILD A STORY FOR YOUR CHARACTER</p>
-    <div class="banner-buttons">
-      <p class="btn btn-primary"><a href="#">GENERATE STORY</a></p>
-      <p class="btn btn-primary"><a href="#">GENERATE STORY</a></p>
-    </div>
-  </div>
-</div>
-
-<%= link_to 'New character', "characters#create", method: 'post' %>
+  </body>
+</html>

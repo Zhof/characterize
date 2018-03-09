@@ -1,1 +1,37 @@
-<h1>story generation</h1>
+<%= form_tag({controller: "characters", actions: "create"}, method: "post") do %>
+  <div>
+    <%= text_area_tag 'story', "", size: "100x15" %>
+    <%= submit_tag "Save story", class: "btn" %>
+  </div>
+<% end %>
+
+<% @starting_words.each do |word| %>
+  <a class="btn word-selection" href="#"><%= word.capitalize %></a>
+<% end %>
+
+
+<script>
+  const storyary = []
+  const story = document.getElementById("story")
+  const wordbuttons = document.querySelectorAll("a.word-selection");
+  wordbuttons.forEach(function(wordbutton) {
+    wordbutton.addEventListener("click", (event) => {
+      var word = event.srcElement.innerText;
+      fetch(`<%= generate_story_path %>?word=${word}`, {
+        credentials: "same-origin"
+      })
+      .then(response => {
+        return response.json();
+      })
+      .then((data) => {
+        // grab array of new words
+        data.suggestions.forEach(function(suggestion, index) {
+          wordbuttons[index].innerText = suggestion
+        });
+        // replace all existing word buttons with new words
+        storyary.push(data.word)
+        story.value = storyary.join(' ')
+        });
+      });
+    });
+</script>

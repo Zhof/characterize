@@ -8,7 +8,12 @@
       "Solomon Pffalburg",
       "Fug Locke",
       "Shadessa Thistlebark",
-      "Petuza Floweregg"
+      "Petuza Floweregg",
+      "Snuffy Grumpkin",
+      "Orville Asslicker",
+      "Grace Q.",
+      "The Cageinator",
+      "Chicago West"
     ],
 
     "traits": [
@@ -16,7 +21,13 @@
       "Insensitive",
       "Dramatic",
       "Soulless",
-      "Gloomy"
+      "Gloomy",
+      "Bubbly",
+      "Fluffy",
+      "Psychopathic",
+      "Cheerful",
+      "Charismatic",
+      "Shallow"
     ],
 
     "races": [
@@ -53,7 +64,13 @@
       "a destitute plantation",
       "the endless wasts",
       "thornwood",
-      "a notorious dungeon"
+      "a notorious dungeon",
+      "a hidden temple",
+      "a forgotten city",
+      "the islands of Kokomo",
+      "chez serge",
+      "a five-star hotel",
+      "a hidden temple"
     ],
 
     "quirks": [
@@ -61,7 +78,14 @@
       "was brought up to be a librarian",
       "once served as a court jester",
       "can't sleep indoors",
-      "was a weapons instructor for the city militia"
+      "was a weapons instructor for the city militia",
+      "has no sense of smell",
+      "can't go out without getting wasted",
+      "fights with their tongue",
+      "can charm enemies into submission",
+      "is afraid of dying of laughter",
+      "has only two months to live",
+      "once stepped on grass when then sign clearly told him not to do so"
     ],
 
     "alignments": [
