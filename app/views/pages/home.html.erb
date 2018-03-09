@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> -->
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
       <!-- Bootstrap -->
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -12,8 +12,8 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-  </head>
-  <body>
+  <!-- </head>
+  <body> -->
     <div class="landing-background">
       <div id="wrapper">
         <div id="container">
@@ -21,20 +21,27 @@
             <h1 class="landing-text">CHARACTERIZE</h1>
             <h2 class="landing-sub-text">BUILD YOUR BACKSTORY</h2>
             <br>
+            <br>
+            <br>
             <div style="text-align: center;">
               <span class="banner-script"></span>
             </div>
             <br>
             <br>
             <div class="banner-buttons">
-              <p class="btn btn-primary"><a<%= link_to 'QUICK STORY', "characters#create", method: 'post' %></a></p>
+              <%= link_to new_generation_path do %>
+                <p class="btn btn-primary">QUICK STORY</p>
+              <% end %>
               &nbsp;
               &nbsp;
-              <p class="btn btn-primary"><a<%= link_to 'CUSTOM STORY', "characters#create", method: 'post' %></a></p>
+              <%= link_to new_character_path do %>
+                <p class="btn btn-primary">CUSTOM STORY</p>
+              <% end %>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </body>
+  <!-- </body>
 </html>
+ -->
