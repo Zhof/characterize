@@ -1,14 +1,14 @@
-
-<p id="storybox"></p>
+<%= form_tag({controller: "characters", actions: "create"}, method: "post") do %>
+  <div>
+    <%= text_area_tag 'storybox', "", size: "100x15" %>
+    <%= submit_tag "Save story", class: "btn" %>
+  </div>
+<% end %>
 
 <% @starting_words.each do |word| %>
   <a class="btn word-selection" href="#"><%= word.capitalize %></a>
 <% end %>
-<br>
-<br>
-<div>
-  <%= link_to 'Save story', action: :create, method: :post %>
-</div>
+
 
 <script>
   const story = []
@@ -30,7 +30,7 @@
         });
         // replace all existing word buttons with new words
         story.push(data.word)
-        storybox.innerText = story.join(' ')
+        storybox.value = story.join(' ')
         });
       });
     });
