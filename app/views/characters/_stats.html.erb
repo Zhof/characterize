@@ -1,5 +1,6 @@
 <div class="character-build">
   <div>
+  <h2>Name</h2>
     <%= simple_form_for @character do |f| %>
       <%= f.label :race, "Race" %>
       <%= f.input_field :race, as: :select, collection: @races, class:"form-control", id:"race" %>
@@ -9,6 +10,7 @@
       <%= f.input_field :alignment, as: :select, collection: @alignments, class:"form-control" %>
       <%= f.label :background, "Background" %>
       <%= f.input_field :background, as: :select, collection: @backgrounds, class:"form-control" %>
+      <%= f.button :button, "CONFIRM", id:"confirm" %>
     <% end %>
   </div>
   <div class="character-sheet">
@@ -18,9 +20,6 @@
     <div class="character-sheet-body">
       <div class="stats">
         <p>yo</p>
-      </div>
-      <div  class="story">
-        <p>hey</p>
       </div>
     </div>
   </div>

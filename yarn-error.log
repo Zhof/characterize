@@ -8,7 +8,7 @@ Yarn version:
   1.5.1
 
 Node version: 
-  8.9.4
+  8.10.0
 
 Platform: 
   linux x64
@@ -20,7 +20,9 @@ npm manifest:
     "dependencies": {
       "@rails/webpacker": "^3.3.0",
       "bootstrap": "3",
-      "jquery": "^3.3.1"
+      "jquery": "^3.3.1",
+      "typed.js": "^2.0.6",
+      "webpack": "3"
     },
     "devDependencies": {
       "webpack-cli": "^2.0.10",
@@ -6745,6 +6747,10 @@ Lockfile:
       media-typer "0.3.0"
       mime-types "~2.1.18"
   
+  typed.js@^2.0.6:
+    version "2.0.6"
+    resolved "https://registry.yarnpkg.com/typed.js/-/typed.js-2.0.6.tgz#4e270f6fbc5e5e94a6c38fa29407c404745a7d61"
+  
   typedarray@^0.0.6:
     version "0.0.6"
     resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
@@ -7129,7 +7135,7 @@ Lockfile:
       source-list-map "^2.0.0"
       source-map "~0.6.1"
   
-  webpack@^3.10.0:
+  webpack@3, webpack@^3.10.0:
     version "3.11.0"
     resolved "https://registry.yarnpkg.com/webpack/-/webpack-3.11.0.tgz#77da451b1d7b4b117adaf41a1a93b5742f24d894"
     dependencies:
