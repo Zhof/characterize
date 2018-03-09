@@ -10,7 +10,7 @@ class CharactersController < ApplicationController
     @jobs = json["jobs"]
     @alignments = json["alignments"]
     @backgrounds = json["backgrounds"]
-    
+
     @starting_words = CharacterGenerator.new(2).fetch_possibilities
   end
 
@@ -20,7 +20,7 @@ class CharactersController < ApplicationController
     if current_user
       @character.user = current_user
       if @character.save
-        redirect_to character_path(@character)
+        redirect_to characters_path
       else
         redirect_to root, notice: "Something went wrong, please try again"
       end
@@ -49,7 +49,11 @@ class CharactersController < ApplicationController
   end
 
   def character_params
-    params.require(:character).permit(:name, :race, :job, :location, :trait, :quirk, :story)
+    if params[:trait]
+      params.require(:character).permit(:race, :job, :location, :trait, :quirk, :story)
+    else
+      params.require(:character).permit(:race, :job,  :alignment, :background, :story)
+    end
   end
 
 end
