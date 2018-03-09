@@ -8,6 +8,8 @@ class CharactersController < ApplicationController
 
   def create
     @character = Character.new(character_params)
+    @character.story = params[:storybox]
+
 
     if current_user
       @character.user = current_user
@@ -41,7 +43,7 @@ class CharactersController < ApplicationController
   end
 
   def character_params
-    params.require(:character).permit(:name, :race, :job, :location, :trait, :quirk, :story)
+    params.require(:character).permit(:name, :race, :job, :location, :trait, :quirk)
   end
 
 end
