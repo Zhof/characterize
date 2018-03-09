@@ -4,7 +4,7 @@ const initializeTypedJs = () => {
   const element = document.querySelector(".banner-script");
 
   new Typed(element ,{
-    strings: ["SHORT-TEMPERED TIEFLING ROGUE FROM A HALFWAY HOUSE WHO REALLY KNOWS HOW TO PARTY.", "POSITIVE HALF-ORC SORCERER FROM THE HOLD OF A SLAVE SHIP WHO HAS BEEN EXILED TWICE UNDER DIFFERENT NAMES.", "EGOTISTICAL TIEFLING BARBARIAN FROM THE DEEP WOOD WHO LEFT THEIR HOME IN DISGRACE."],
+    strings: ["What's up? We Can write a random story for your character.", "Your character is an orc from Vancouver, played for the Grizzles, now is on a quest to find...", "His meaning in life."],
     typeSpeed: 75,
     loop: true
   });
