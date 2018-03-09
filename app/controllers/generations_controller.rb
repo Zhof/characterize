@@ -22,7 +22,7 @@ class GenerationsController < ApplicationController
     suggested_words = generator.fetch_possibilities(params[:word])
 
     response = {
-      word: params[:word]
+      word: params[:word],
       suggestions: suggested_words
     }
 

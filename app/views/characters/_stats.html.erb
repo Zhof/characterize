@@ -1,1 +1,30 @@
-<h1>stats form</h1>
+<h1>Name</h1>
+
+
+<div class="character-build">
+  <div>
+    <%= simple_form_for @character do |f| %>
+      <%= f.label :race, "Race" %>
+      <%= f.input_field :race, as: :select, collection: @races, class:"form-control", id:"race" %>
+      <%= f.label :job, "Class" %>
+      <%= f.input_field :job, as: :select, collection: @jobs, class:"form-control" %>
+      <%= f.label :alignment, "Alignment" %>
+      <%= f.input_field :alignment, as: :select, collection: @alignments, class:"form-control" %>
+      <%= f.label :background, "Background" %>
+      <%= f.input_field :background, as: :select, collection: @backgrounds, class:"form-control" %>
+    <% end %>
+  </div>
+  <div class="character-sheet">
+    <div class="character-sheet-head">
+      <%= image_tag "top_edge.png", class:"paper"%>
+    </div>
+    <div class="character-sheet-body">
+      <div class="stats">
+        <p>yo</p>
+      </div>
+      <div  class="story">
+        <p>hey</p>
+      </div>
+    </div>
+  </div>
+</div>
