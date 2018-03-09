@@ -1,6 +1,6 @@
 <%= form_tag({controller: "characters", actions: "create"}, method: "post") do %>
   <div>
-    <%= text_area_tag 'storybox', "", size: "100x15" %>
+    <%= text_area_tag 'story', "", size: "100x15" %>
     <%= submit_tag "Save story", class: "btn" %>
   </div>
 <% end %>
@@ -11,8 +11,8 @@
 
 
 <script>
-  const story = []
-  const storybox = document.getElementById("storybox")
+  const storyary = []
+  const story = document.getElementById("story")
   const wordbuttons = document.querySelectorAll("a.word-selection");
   wordbuttons.forEach(function(wordbutton) {
     wordbutton.addEventListener("click", (event) => {
@@ -29,8 +29,8 @@
           wordbuttons[index].innerText = suggestion
         });
         // replace all existing word buttons with new words
-        story.push(data.word)
-        storybox.value = story.join(' ')
+        storyary.push(data.word)
+        story.value = storyary.join(' ')
         });
       });
     });
