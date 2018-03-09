@@ -1,14 +1,33 @@
-<%= form_tag({controller: "characters", actions: "create"}, method: "post") do %>
+<div class="character-build">
   <div>
-    <%= text_area_tag 'story', "", size: "100x15" %>
-    <%= submit_tag "Save story", class: "btn" %>
+    <% @starting_words.each do |word| %>
+      <div class="row">
+        <div class="col-md-12">
+          <a class="btn word-selection" href="#"><%= word.capitalize %></a>
+        </div>
+      </div>
+    <% end %>
   </div>
-<% end %>
 
-<% @starting_words.each do |word| %>
-  <a class="btn word-selection" href="#"><%= word.capitalize %></a>
-<% end %>
-
+  <div class="character-sheet">
+    <div class="character-sheet-head">
+      <%= image_tag "top_edge.png", class:"paper"%>
+    </div>
+    <div class="character-sheet-body">
+      <div class="stats">
+        <p>yo</p>
+      </div>
+      <div class="story">
+        <%= form_tag({controller: "characters", actions: "create"}, method: "post") do %>
+          <div>
+            <%= text_area_tag 'story', "", size: "50x15" %>
+            <%= submit_tag "SAVE STORY", class: "btn" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
 
 <script>
   const storyary = []

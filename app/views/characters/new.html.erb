@@ -1,16 +1,18 @@
-<div class="first-part">
+<div id="first-part">
   <%= render "characters/stats" %>
 </div>
 
-<div class="second-part" style="">
+<div id="second-part" style="display: none">
   <%= render "characters/story" %>
 </div>
 
-<!-- <script>
-  const button = document.getElementById("button");
-  button.addEventListener("click", () => {
-    document.getElementById(".first-part").style.display = "none";
-    document.getElementById(".second-part").style.display = "initial";
+<script>
+  const button = document.getElementById("confirm");
+  button.addEventListener("click", (event) => {
+    event.preventDefault();
+    console.info('running');
+    document.getElementById("first-part").style.display = "none";
+    document.getElementById("second-part").style.display = "initial";
   })
-</script> -->
+</script>
 
