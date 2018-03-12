@@ -1,11 +1,10 @@
 <h1 align="center">MY CHARACTERS</h1>
-
 <div class="index-container">
   <div class="character-grid">
     <% @characters.each_with_index do |character| %>
       <%= link_to character_path(character) do %>
         <div class="character-card">
-          <%= image_tag 'barbarian.png', :class => "avatar" %>
+          <%= image_tag @character.photo, :class => "avatar" %>
           <div class="character-card-content">
             <div class="content-header">
               <h4 align="right"><%= character.name %></h4>
