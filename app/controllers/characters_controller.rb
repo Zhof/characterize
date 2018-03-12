@@ -67,11 +67,11 @@ class CharactersController < ApplicationController
       params.require(:character).permit(:race, :job, :location, :trait, :quirk, :story)
     else
       {
-        :name => "Bob",
-        :race => "dwarf",
-        :job => "wizard",
-        :alignment => "Chaotic good",
-        :background => "Archaeologist",
+        :name => params[:name],
+        :race => params[:race],
+        :job => parmams[:job],
+        :alignment => params[:alignment],
+        :background => params[:background],
         :story => params[:story],
         :full => true
       }

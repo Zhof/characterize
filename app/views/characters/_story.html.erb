@@ -18,7 +18,7 @@
         <%= form_tag({controller: "characters", actions: "create"}, method: "post") do %>
           <div>
             <%= text_area_tag 'story', "", size: "58x15" %>
-            <%= submit_tag "SAVE STORY", class: "btn" %>
+            <%= submit_tag "SAVE STORY", class: "btn", id:"save-story" %>
           </div>
         <% end %>
       </div>
@@ -55,4 +55,21 @@
         }
       });
     });
+  const attributes = document.getElementById("attributes").children
+  const save = document.getElementById("save-story")
+  save.addEventListener("click", (event) => {
+    fetch(`<%= characters_path %>`, {
+      method: 'post',
+      action: 'create',
+      headers:{
+        'X-Requested-With': 'XMLHttpRequest',
+        'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+        'Content-Type': 'application/json',
+      },
+      credentials: 'same-origin'
+      body: JSON.stringify({
+        name: attributes.name.value
+      })
+    });
+  });
 </script>

@@ -11,6 +11,8 @@ class CharacterGenerator
   def fetch_possibilities(word: nil)
     if word == nil
       word = @ngrams.keys.sample
+    elsif word == "." || word == ","
+      word = @ngrams.keys.sample
     end
 
     words = word_options(@ngrams, word, 1)
@@ -23,8 +25,7 @@ class CharacterGenerator
     end
 
     words << "."
-    words << "!"
-    words << "?"
+    words << ","
 
     return words # return array of next word choices
   end
