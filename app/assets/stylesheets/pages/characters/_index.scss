@@ -1,46 +1,79 @@
-
-.container {
-  width: 80%;
-  padding: 2px 16px;
+h1 {
+  font-weight: lighter;
+  padding-top: 30px;
+  padding-bottom: 40px;
+  color: #4D4D4D;
 }
 
-h2 {
-  font-weight: bold;
-  padding-top: 10px;
-  padding-bottom: 40px;
+.index-container {
+  a, a:hover {
+    text-decoration: none;
+  }
+
 }
 
 .character-card {
-  position: relative;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  // position: relative;
   transition: 0.3s;
-  min-height: 350px;
-  border-radius: 5px;
+  width: 375px;
+  height: 250px;
+  // background: #FFFFFF;
+  background: linear-gradient(180deg, rgba(62, 72, 87, 1) 40%, rgba(255, 255, 255, 1) 40%);
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.15);
+  border-radius: 5px 40px 40px 40px;
+  margin-top: 75px;
+}
+
+.index-container .character-grid {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: space-around;
+  margin: 0 auto;
+  width: 90vw;
+}
+
+.index-container .character-grid a {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .character-card:hover {
-  box-shadow: 0 15px 15px 0 rgba(0,0,0,0.2);
+  box-shadow: 10px 10px 15px rgba(0,0,0,0.15);
 }
 
 .avatar {
-  width: 25%;
-  height:30%;
-  // border-radius: 50%;
   position: absolute;
-  top: 70%;
-  left: 1%;
+  width: 87px;
+  height: 127px;
+  right: 30px;
+  top: 40px;
+}
+
+.content-header {
+  height: 90px;
+  display: flex;
+  align-items: center;
 }
 
 .content-header h4 {
+  font-family: Roboto;
   font-weight: bold;
-  padding-left: 90px;
-  padding-bottom: 10px;
-  padding-top: 20px;
-  padding-right: 20px;
+  font-size: 22px;
+  color: white;
+  text-align: left;
+  padding-top: 15px;
+  padding-left: 30px;
+  max-width: 265px;
 }
 
 .content-body p {
-  margin-top: 10px;
-  padding: 10px;
-  text-align: justify;
+  padding: 25px 30px;
+  font-size: 20px;
+}
+
+.top-color {
+  background-color: blue;
+  height: 30%;
 }

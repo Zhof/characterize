@@ -20,7 +20,7 @@ class CharactersController < ApplicationController
 
     if current_user
       @character.user = current_user
-      if @character.save
+      if @character.save!
         redirect_to characters_path
       else
         redirect_to root_path, notice: "Something went wrong, please try again"
