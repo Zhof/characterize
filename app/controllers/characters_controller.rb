@@ -16,6 +16,8 @@ class CharactersController < ApplicationController
 
   def create
     @character = Character.new(character_params)
+    @character.photo = "characters/#{character_params[:race]}_#{character_params[:job]}.png"
+
     if current_user
       @character.user = current_user
       if @character.save
@@ -29,20 +31,6 @@ class CharactersController < ApplicationController
   end
 
   def show
-    @images = [
-      "characters/dragonborn_wizard.png",
-      "characters/dwarf_cleric.png",
-      "characters/dwarf_fighter.png",
-      "characters/elf_bard.png",
-      "characters/elf_druid.png",
-      "characters/gnome_ranger.png",
-      "characters/half_elf_wizard.png",
-      "characters/half_orc_fighter.png",
-      "characters/human.png",
-      "characters/human_barbarian.png",
-      "characters/human_sorcerer.png",
-      "characters/tiefling_warlock.png"
-      ].sample
   end
 
   def index

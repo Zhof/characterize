@@ -14,7 +14,8 @@
 .image {
   position: relative;
   top: -90px;
-
+  max-width: 420px;
+  max-height: 620px;
   @media screen and (max-width: 900px) {
     display: none;
   }
