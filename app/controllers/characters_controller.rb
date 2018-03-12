@@ -30,6 +30,20 @@ class CharactersController < ApplicationController
   end
 
   def show
+    @images = [
+      "characters/dragonborn_wizard.png",
+      "characters/dwarf_cleric.png",
+      "characters/dwarf_fighter.png",
+      "characters/elf_bard.png",
+      "characters/elf_druid.png",
+      "characters/gnome_ranger.png",
+      "characters/half_elf_wizard.png",
+      "characters/half_orc_fighter.png",
+      "characters/human.png",
+      "characters/human_barbarian.png",
+      "characters/human_sorcerer.png",
+      "characters/tiefling_warlock.png"
+      ].sample
   end
 
   def index
@@ -53,11 +67,11 @@ class CharactersController < ApplicationController
       params.require(:character).permit(:race, :job, :location, :trait, :quirk, :story)
     else
       {
-        :name => "Bob",
-        :race => "dwarf",
-        :job => "wizard",
-        :alignment => "Chaotic good",
-        :background => "Archaeologist",
+        :name => params[:name],
+        :race => params[:race],
+        :job => parmams[:job],
+        :alignment => params[:alignment],
+        :background => params[:background],
         :story => params[:story],
         :full => true
       }

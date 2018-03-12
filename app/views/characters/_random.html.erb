@@ -1,6 +1,6 @@
 <%= render "shared/character_show" %>
 
 <div class="buttons-show">
-  <%= link_to 'DELETE', new_character_path, class:"btn" %>
+  <%= link_to 'DELETE', { action: :destroy, id: @character.id }, method: :delete, data: {confirm: "Are you sure?"}, class:"btn" %>
   <%= link_to 'SHARE', characters_path, class:"btn" %>
 </div>
