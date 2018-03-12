@@ -15,12 +15,10 @@
     <div class="character-sheet-body">
       <div class="stats"></div>
       <div class="story">
-        <%= form_tag({controller: "characters", actions: "create"}, method: "post") do %>
-          <div>
-            <%= text_area_tag 'story', "", size: "58x15" %>
-            <%= submit_tag "SAVE STORY", class: "btn", id:"save-story" %>
-          </div>
-        <% end %>
+        <div>
+          <%= text_area_tag 'story', "", size: "58x15" %>
+          <%= button_tag "SAVE STORY", class: "btn", id:"save-story" %>
+        </div>
       </div>
     </div>
   </div>
@@ -58,18 +56,25 @@
   const attributes = document.getElementById("attributes").children
   const save = document.getElementById("save-story")
   save.addEventListener("click", (event) => {
-    fetch(`<%= characters_path %>`, {
+    fetch("/characters", {
       method: 'post',
-      action: 'create',
+      actions: 'create',
       headers:{
         'X-Requested-With': 'XMLHttpRequest',
         'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
         'Content-Type': 'application/json',
       },
-      credentials: 'same-origin'
+      credentials: 'same-origin',
       body: JSON.stringify({
-        name: attributes.name.value
+        name: attributes.character_name.value,
+        race: attributes.race.value,
+        job: attributes.character_job.value,
+        alignment: attributes.character_alignment.value,
+        background: attributes.character_background.value,
+        story: story.value
       })
+    }).then((response) => {
+      window.location = "/characters";
     });
   });
 </script>
