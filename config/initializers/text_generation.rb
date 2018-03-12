@@ -1,27 +1,57 @@
+class Ngram
+  attr_accessor :options
+
+  def initialize(target)
+    @target = target
+    @options = options
+    @ngram_frequencies = Hash.new { |word, follow_word| word[follow_word] = Hash.new(0) }
+  end
+
+  def ngrams(n)
+    @target.split(' ').each_cons(n).to_a
+  end
+
+  def compute_nth_gram(n)
+    ngram_frequencies = @ngram_frequencies.clone
+
+    ngrams(n).each do |gram|
+      first_key = (n - 1).times.map { |i| gram[i].downcase }.join(' ')
+      ngram_frequencies[first_key][gram[n - 1].downcase] += 1
+    end
+
+    ngram_frequencies
+  end
+
+end
+
 class CharacterGenerator
-  attr_accessor :path, :file, :text, :ngrams
+  attr_accessor :path, :file, :text, :ngrams, :word_choices
   def initialize(depth)
     raise if depth == 1
     @path = Rails.root.to_s + "/db/DND_text_library.txt"
     @file = File.read(@path)
     @text = PragmaticTokenizer::Tokenizer.new(clean: true, classic_filter: true, punctuation: :none).tokenize(@file).join(" ")
     @ngrams = Ngram.new(@text).compute_nth_gram(depth)
+    @word_choices = {}
+    @ngrams.each do |key, value|
+     @word_choices[key] = word_options(@ngrams, key).flatten
+    end
   end
 
   def fetch_possibilities(word: nil)
-    if word == nil
-      word = @ngrams.keys.sample
-    elsif word == "." || word == ","
-      word = @ngrams.keys.sample
+    if word == nil || word == "." || word == ","
+      word = @word_choices.keys.sample
+    else
+      word = word.downcase
     end
 
-    words = word_options(@ngrams, word, 1)
+    words = @word_choices[word][0..4]
 
     if words.length < 10
       limit = 9 - words.length
       shuffled_frequent_words[0..(limit / 2)].each { |w| words << w[0] }
       limit = 9 - words.length
-      @ngrams.keys.sample(limit).each { |w| words << w }
+      @word_choices.keys.sample(limit).each { |w| words << w }
     end
 
     words << "."
@@ -61,17 +91,15 @@ class CharacterGenerator
 
   private
 
-  def word_options(word_chain, word, threshold)
+  def word_options(word_chain, word)
     # Return most probable words to show up after the word given
     return [] if not word_chain.keys.include?(word)
 
     options = []
 
-    word_chain[word].each do |key, value|
-      options << key if value >= threshold
-    end
-    options = options[0..8].sample(4)
-    return options.sort[0..4]
+    options << word_chain[word].sort_by {|key, value| -value}.map(&:first)
+
+    return options
   end
 
   def word_frequencies
@@ -81,3 +109,6 @@ class CharacterGenerator
     word_frequency.sort_by {|x,y| [-y, x]}
   end
 end
+
+
+Generator = CharacterGenerator.new(2)

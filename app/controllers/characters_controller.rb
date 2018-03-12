@@ -11,7 +11,7 @@ class CharactersController < ApplicationController
     @alignments = json["alignments"]
     @backgrounds = json["backgrounds"]
 
-    @starting_words = CharacterGenerator.new(2).fetch_possibilities
+    @starting_words = Generator.fetch_possibilities
   end
 
   def create
