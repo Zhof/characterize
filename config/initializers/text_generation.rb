@@ -45,7 +45,7 @@ class CharacterGenerator
       word = word.downcase
     end
 
-    words = @word_choices[word][0..4]
+    words = @word_choices[word][0..6].sample(4).shuffle
 
     if words.length < 10
       limit = 9 - words.length
