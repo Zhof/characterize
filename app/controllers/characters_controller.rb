@@ -11,12 +11,11 @@ class CharactersController < ApplicationController
     @alignments = json["alignments"]
     @backgrounds = json["backgrounds"]
 
-    @starting_words = CharacterGenerator.new(2).fetch_possibilities
+    @starting_words = Generator.fetch_possibilities
   end
 
   def create
     @character = Character.new(character_params)
-
     if current_user
       @character.user = current_user
       if @character.save!
@@ -63,8 +62,8 @@ class CharactersController < ApplicationController
   end
 
   def character_params
-    if params[:character]
-      params.require(:character).permit(:name, :race, :job, :location, :trait, :quirk, :story)
+    if params[:character][:trait]
+      params.require(:character).permit(:name, :race, :job, :location, :trait, :quirk, :story, :alignment)
     else
       {
         :name => params[:name],
