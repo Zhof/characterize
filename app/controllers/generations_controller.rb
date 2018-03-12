@@ -20,8 +20,7 @@ class GenerationsController < ApplicationController
 
 
   def generate_story
-    generator = CharacterGenerator.new(2)
-    suggested_words = generator.fetch_possibilities(word: params[:word])
+    suggested_words = Generator.fetch_possibilities(word: params[:word])
 
     response = {
       word: params[:word],
