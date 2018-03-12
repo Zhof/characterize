@@ -5,6 +5,10 @@
   justify-content: space-around;
 }
 
+.build-form {
+  min-width: 540px;
+}
+
 .character-sheet {
   width: 600px;
 }
@@ -17,6 +21,11 @@
   // background: linear-gradient(180deg, rgba(62, 72, 87, 1) 50%, rgba(0, 0, 0, 0) 100%);
   background-color: rgba(62, 72, 87, 1);
   height: 550px;
+}
+
+.character-sheet-body h3 {
+  margin-top: 0px;
+  padding-top: 15px;
 }
 
 .paper {
