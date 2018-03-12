@@ -16,7 +16,6 @@ class CharactersController < ApplicationController
 
   def create
     @character = Character.new(character_params)
-
     if current_user
       @character.user = current_user
       if @character.save
@@ -63,13 +62,13 @@ class CharactersController < ApplicationController
   end
 
   def character_params
-    if params[:trait]
-      params.require(:character).permit(:race, :job, :location, :trait, :quirk, :story)
+    if params[:character][:trait]
+      params.require(:character).permit(:name, :race, :job, :location, :trait, :quirk, :story, :alignment)
     else
       {
         :name => params[:name],
         :race => params[:race],
-        :job => parmams[:job],
+        :job => params[:job],
         :alignment => params[:alignment],
         :background => params[:background],
         :story => params[:story],
@@ -77,5 +76,4 @@ class CharactersController < ApplicationController
       }
     end
   end
-
 end
