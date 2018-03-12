@@ -19,7 +19,7 @@ class CharactersController < ApplicationController
 
     if current_user
       @character.user = current_user
-      if @character.save
+      if @character.save!
         redirect_to characters_path
       else
         redirect_to root_path, notice: "Something went wrong, please try again"
@@ -63,13 +63,13 @@ class CharactersController < ApplicationController
   end
 
   def character_params
-    if params[:trait]
-      params.require(:character).permit(:race, :job, :location, :trait, :quirk, :story)
+    if params[:character]
+      params.require(:character).permit(:name, :race, :job, :location, :trait, :quirk, :story)
     else
       {
         :name => params[:name],
         :race => params[:race],
-        :job => parmams[:job],
+        :job => params[:job],
         :alignment => params[:alignment],
         :background => params[:background],
         :story => params[:story],
@@ -77,5 +77,4 @@ class CharactersController < ApplicationController
       }
     end
   end
-
 end
