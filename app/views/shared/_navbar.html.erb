@@ -7,10 +7,10 @@
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
     <div class="menu-icons">
-      <%= link_to image_tag('book.png'), characters_path, class:"icons book"%>
-      <%= link_to image_tag('dice.png'), new_generation_path, class:"icons dice"%>
-      <%= link_to image_tag('quill_pen.png'), new_character_path, class:"icons quill"%>
-      <%= link_to image_tag('dark_knight_helmet.png'), characters_path, class:"icons helmet"%>
+      <%= link_to image_tag('book.png', alt: "MY CHARACTERS", title: "MY CHARACTERS"), characters_path, class:"icons book"%>
+      <%= link_to image_tag('dice.png', alt: "QUICK STORY", title: "QUICK STORY"), new_generation_path, class:"icons dice"%>
+      <%= link_to image_tag('quill_pen.png', alt: "CUSTOM STORY", title: "CUSTOM STORY"), new_character_path, class:"icons quill"%>
+      <%= link_to image_tag('dark_knight_helmet.png', alt: "MY CHARACTERS", title: "MY CHARACTERS"), characters_path, class:"icons helmet"%>
     </div>
 
     <% if user_signed_in? %>
