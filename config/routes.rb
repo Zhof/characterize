@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :characters, except: [:edit, :update]
   resources :generations, only: [:new]
   get 'generations/generate_story', to: 'generations#generate_story', as: 'generate_story'
+  get 'generations/generate_sentence', to: 'generations#generate_sentence', as: 'generate_sentence'
 end

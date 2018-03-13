@@ -18,6 +18,18 @@ class GenerationsController < ApplicationController
     render json: response
   end
 
+  def generate_sentence
+    sentence = Generator.generate_sentence(word: params[:word])
+
+    response = {
+      word: sentence.last,
+      sentence: sentence
+    }
+
+    render json: response
+  end
+
+
   private
 
   def generate_attributes
@@ -40,7 +52,7 @@ class GenerationsController < ApplicationController
       'flaw' => attributes[:backgrounds][background]['flaws'].sample
     }
 
-    character_params[:story] = template.gsub(/trait|race|job|location|quirk/) { |match| character_params[match] }
+    character_params[:story] = template.gsub(/trait|race|job|location|quirk/) { |match| character_params[match] } + "."
 
     character_params
   end

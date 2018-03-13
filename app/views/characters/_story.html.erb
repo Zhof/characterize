@@ -7,6 +7,7 @@
         </div>
       </div>
     <% end %>
+    <%= button_tag "Generate a sentence", class: "btn", id:"generate-sentence"%>
   </div>
   <div class="character-sheet">
     <div class="character-sheet-head">
@@ -31,15 +32,15 @@
 </div>
 
 <script>
-  let respond = true
-  const storyary = []
-  const story = document.getElementById("story")
+  let respond = true;
+  const storyary = [];
+  const story = document.getElementById("story");
   const wordbuttons = document.querySelectorAll("a.word-selection");
   wordbuttons.forEach(function(wordbutton) {
     wordbutton.addEventListener("click", (event) => {
       var word = event.srcElement.innerText;
       if(respond) {
-        respond = false
+        respond = false;
         fetch(`<%= generate_story_path %>?word=${word}`, {
           credentials: "same-origin"
         })
@@ -54,11 +55,32 @@
           });
           // replace all existing word buttons with new words
           storyary.push(data.word)
-          story.value = storyary.join(' ')
-          });
-        }
-      });
+          story.value = storyary.join(' ');
+        });
+      }
     });
+  });
+  const sentenceGenerator = document.getElementById("generate-sentence");
+  sentenceGenerator.addEventListener("click", (event) => {
+    let curr_word = "";
+    if(storyary.last) {
+      curr_word = storyary.last;
+    }
+    if(respond) {
+      respond = false;
+      fetch(`<%= generate_sentence_path %>?word=${curr_word}`, {
+        credentials: "same-origin"
+      })
+      .then(response => {
+        return response.json();
+      })
+      .then((data) => {
+        respond = true;
+        storyary.push(data.sentence);
+        story.value = storyary.join(' ');
+      });
+    }
+  });
   const attributes = document.getElementById("attributes").children
   const save = document.getElementById("save-story")
   save.addEventListener("click", (event) => {
