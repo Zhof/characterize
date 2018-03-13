@@ -1,6 +1,6 @@
 .character-show-container {
   margin-top: 90px;
-  min-height: 550px;
+  min-height: 500px;
 }
 
 .character-show-inner-container {
@@ -39,7 +39,7 @@
 }
 
 .card {
-  height: 500px;
+  // height: 500px;
   background: linear-gradient(180deg, rgba(62, 72, 87, 0.75) 70%, rgba(0, 0, 0, 0) 100%);
 }
 
@@ -60,6 +60,9 @@
   border-radius: 5px 40px 40px 40px;
   margin-bottom: 20px;
   text-align: justify;
+  max-width: 1000px;
+  max-height: 300px;
+  overflow: auto;
 }
 
 .char-background {
@@ -68,6 +71,8 @@
   background-color: rgba(196, 196, 196, 0.2);
   padding: 20px;
   border-radius: 40px 5px 40px 40px;
+  max-width: 1000px;
+  margin-bottom: 15px;
 }
 
 .char-background-grid {
@@ -85,7 +90,7 @@
 
 .my-background p {
   margin-bottom: 0px;
-  text-align: right;
+  text-align: left;
   font-weight: 400;
   font-size:23px;
 }
