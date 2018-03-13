@@ -23,6 +23,7 @@ class GenerationsController < ApplicationController
     path = Rails.root.to_s + "/db/text.json"
     attributes = load_attributes(path)
     template = attributes[:templates].sample
+    background = attributes[:backgrounds].keys.sample
 
     character_params = {
       'name' => attributes[:names].sample,
@@ -30,7 +31,12 @@ class GenerationsController < ApplicationController
       'race' => attributes[:races].sample,
       'job' => attributes[:jobs].sample,
       'location' => attributes[:locations].sample,
-      'quirk' => attributes[:quirks].sample
+      'quirk' => attributes[:quirks].sample,
+      'background' => background.to_s,
+      'personality_traits' => attributes[:backgrounds][background]['personality_traits'].sample(2).join(' '),
+      'ideal' => attributes[:backgrounds][background]['ideals'].sample,
+      'bond' => attributes[:backgrounds][background]['bonds'].sample,
+      'flaw' => attributes[:backgrounds][background]['flaws'].sample
     }
 
     character_params[:story] = template.gsub(/trait|race|job|location|quirk/) { |match| character_params[match] }
@@ -49,7 +55,9 @@ class GenerationsController < ApplicationController
       races: text["races"],
       jobs: text["jobs"],
       locations: text["locations"],
-      quirks: text["quirks"]
+      quirks: text["quirks"],
+      backgrounds: text["backgrounds"]
     }
   end
 end
+
