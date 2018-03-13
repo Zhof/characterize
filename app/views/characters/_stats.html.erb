@@ -11,9 +11,13 @@
       <%= f.input_field :alignment, as: :select, collection: @alignments, class:"form-control" %>
       <%= f.label :background, "Background" %>
       <%= f.input_field :background, as: :select, collection: @backgrounds.keys, id: "background", class:"form-control" %>
+      <%= f.label :personality_traits, "Personality traits" %>
       <%= f.input_field :personality_traits, as: :select, collection: [], id: "personality_traits", class: "form-control", multiple: true %>
+      <%= f.label :ideal, "Ideals" %>
       <%= f.input_field :ideal, as: :select, collection: [], id: "ideals", class: "form-control" %>
+      <%= f.label :bond, "Bonds" %>
       <%= f.input_field :bond, as: :select, collection: [], id: "bonds", class: "form-control" %>
+      <%= f.label :flaw, "Flaws" %>
       <%= f.input_field :flaw, as: :select, collection: [], id: "flaws", class: "form-control" %>
       <%= f.button :button, "CONFIRM", id:"confirm" %>
     <% end %>
