@@ -59,6 +59,10 @@ class CharactersController < ApplicationController
         :job => params[:job],
         :alignment => params[:alignment],
         :background => params[:background],
+        :personality_traits => params[:personality_traits],
+        :ideal => params[:ideal],
+        :bond => params[:bond],
+        :flaw => params[:flaw],
         :story => params[:story],
         :full => true
       }

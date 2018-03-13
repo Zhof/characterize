@@ -13,8 +13,8 @@
       <%= image_tag "top_edge.png", class:"paper"%>
     </div>
     <div class="character-sheet-body">
-      <div>
-        <h3>CHARACTER SHEET</h3>
+      <div class="title">
+        <p>Character Sheet</p>
       </div>
       <div class="stats"></div>
       <div class="story">
@@ -76,7 +76,11 @@
         race: attributes.race.value,
         job: attributes.character_job.value,
         alignment: attributes.character_alignment.value,
-        background: attributes.character_background.value,
+        background: attributes.background.value,
+        personality_traits: attributes.personality_traits.value,
+        ideal: attributes.ideals.value,
+        bond: attributes.bonds.value,
+        flaw: attributes.flaws.value,
         story: story.value
       })
     }).then((response) => {

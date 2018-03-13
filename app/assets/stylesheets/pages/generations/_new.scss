@@ -1,5 +1,5 @@
 .character-show-container {
-  margin-top: 100px;
+  margin-top: 90px;
   min-height: 550px;
 }
 
@@ -13,7 +13,7 @@
 
 .image {
   position: relative;
-  top: -90px;
+  top: -80px;
   max-width: 420px;
   max-height: 620px;
   margin-left: 15px;
@@ -39,21 +39,55 @@
 }
 
 .card {
-  height: 475px;
-  background: linear-gradient(180deg, rgba(62, 72, 87, 0.75) 50%, rgba(0, 0, 0, 0) 100%);
+  height: 500px;
+  background: linear-gradient(180deg, rgba(62, 72, 87, 0.75) 70%, rgba(0, 0, 0, 0) 100%);
 }
 
 .desc {
   color: white;
-  text-align: justify;
-  padding-top: 70px;
   font-family: Roboto;
-  font-weight: 300;
-  font-size: 30px;
 
   @media screen and (max-width: 500px) {
     font-size: 17px;
   }
+}
+
+.char-story {
+  font-weight: 400;
+  font-size: 30px;
+  background-color: rgba(196, 196, 196, 0.2);
+  padding: 23px;
+  border-radius: 5px 40px 40px 40px;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.char-background {
+  font-weight: 300;
+  font-size: 20px;
+  background-color: rgba(196, 196, 196, 0.2);
+  padding: 20px;
+  border-radius: 40px 5px 40px 40px;
+}
+
+.char-background-grid {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: space-around;
+  margin: 0 auto;
+}
+
+.background-details {
+  max-width: 400px;
+  margin-top: 10px;
+  text-align: justify;
+}
+
+.my-background p {
+  margin-bottom: 0px;
+  text-align: right;
+  font-weight: 400;
+  font-size:23px;
 }
 
 .buttons {
