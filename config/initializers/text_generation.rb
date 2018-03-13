@@ -34,7 +34,7 @@ class CharacterGenerator
     @ngrams = Ngram.new(@text).compute_nth_gram(depth)
     @word_choices = {}
     @ngrams.each do |key, value|
-     @word_choices[key] = word_options(@ngrams, key).flatten
+      @word_choices[key] = word_options(@ngrams, key).flatten
     end
     @stop_words = File.read(Rails.root.to_s + "/db/stop_words.txt").split("\n")
   end
