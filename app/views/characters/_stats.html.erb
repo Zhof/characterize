@@ -10,9 +10,14 @@
       <%= f.label :alignment, "Alignment" %>
       <%= f.input_field :alignment, as: :select, collection: @alignments, class:"form-control" %>
       <%= f.label :background, "Background" %>
-      <%= f.input_field :background, as: :select, collection: @backgrounds, class:"form-control" %>
+      <%= f.input_field :background, as: :select, collection: @backgrounds.keys, id: "background", class:"form-control" %>
+      <%= f.input_field :personality_traits, as: :select, collection: [], id: "personality_traits", class: "form-control", multiple: true %>
+      <%= f.input_field :ideal, as: :select, collection: [], id: "ideals", class: "form-control" %>
+      <%= f.input_field :bond, as: :select, collection: [], id: "bonds", class: "form-control" %>
+      <%= f.input_field :flaw, as: :select, collection: [], id: "flaws", class: "form-control" %>
       <%= f.button :button, "CONFIRM", id:"confirm" %>
     <% end %>
+  <div id="character_attributes" data-character_attributes="<%= JSON.generate(@backgrounds) %>"></div>
   </div>
   <div class="character-sheet">
     <div class="character-sheet-head">
