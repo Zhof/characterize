@@ -2,20 +2,7 @@ class GenerationsController < ApplicationController
   def new
     @character_params = generate_attributes
     @character = Character.new(@character_params)
-    @images = [
-      "characters/dragonborn_wizard.png",
-      "characters/dwarf_cleric.png",
-      "characters/dwarf_fighter.png",
-      "characters/elf_bard.png",
-      "characters/elf_druid.png",
-      "characters/gnome_ranger.png",
-      "characters/half_elf_wizard.png",
-      "characters/half_orc_fighter.png",
-      "characters/human.png",
-      "characters/human_barbarian.png",
-      "characters/human_sorcerer.png",
-      "characters/tiefling_warlock.png"
-      ].sample
+    @character.photo = "characters/#{@character_params['race']}_#{@character_params['job']}.png"
   end
 
 

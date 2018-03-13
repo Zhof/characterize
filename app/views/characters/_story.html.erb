@@ -1,5 +1,5 @@
 <div class="character-build">
-  <div>
+  <div class="build-buttons">
     <% @starting_words.each do |word| %>
       <div class="row">
         <div class="col-md-12">
@@ -13,6 +13,9 @@
       <%= image_tag "top_edge.png", class:"paper"%>
     </div>
     <div class="character-sheet-body">
+      <div>
+        <h3>CHARACTER SHEET</h3>
+      </div>
       <div class="stats"></div>
       <div class="story">
         <div>
@@ -20,6 +23,9 @@
           <%= button_tag "SAVE STORY", class: "btn", id:"save-story" %>
         </div>
       </div>
+    </div>
+    <div>
+    <%= image_tag "bottom_edge.png", class:"paper"%>
     </div>
   </div>
 </div>

@@ -1,5 +1,5 @@
 <div class="character-build">
-  <div>
+  <div class="build-form">
     <%= simple_form_for @character, html: {id: "attributes"} do |f| %>
       <%= f.label :name, "Name", id: "name-label"%>
       <%= f.input_field :name, as: :string, class:"form-control" %>
@@ -19,8 +19,15 @@
       <%= image_tag "top_edge.png", class:"paper"%>
     </div>
     <div class="character-sheet-body">
+      <div>
+        <h3>CHARACTER SHEET</h3>
+      </div>
       <div class="stats">
       </div>
     </div>
+    <div>
+      <%= image_tag "bottom_edge.png", class:"paper"%>
+    </div>
   </div>
 </div>
+
