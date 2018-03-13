@@ -6,6 +6,7 @@
         <%= @character.name.upcase %>
       </div>
       <div>
+        <div style="text-align: justify;">
         <div class="desc">
           <%= @character.story %>
           <div class="background">
@@ -15,6 +16,28 @@
             <p>Bond: <%= @character.bond %></p>
             <p>Flaw: <%= @character.flaw %></p>
           </div>
+          <div class="char-background">
+            <div class="char-background-grid">
+              <div>
+              </div>
+              <div class="my-background">
+                <p>MY BACKGROUND: <%= @character.background.upcase %></p>
+              </div>
+              <div class="background-details">
+              <p><b>Personality traits</b> <%= @character.personality_traits %></p>
+              </div>
+              <div class="background-details">
+              <p><b>Ideal</b> <%= @character.ideal %></p>
+              </div>
+              <div class="background-details">
+              <p><b>Bond</b> <%= @character.bond %></p>
+              </div>
+              <div class="background-details">
+              <p><b>Flaw</b> <%= @character.flaw %></p>
+              </div>
+            </div>
+          </div>
+        </div>
         </div>
       </div>
     </div>
