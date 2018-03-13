@@ -1,5 +1,6 @@
 .build-buttons {
   min-width: 540px;
+  text-align: center;
 }
 
 #story {
@@ -7,6 +8,7 @@
   outline: none;
   border: none;
   color: white;
+  width: 550px;
 }
 
 .character-sheet {
@@ -16,4 +18,8 @@
 
 .row {
   margin: 5px;
+}
+
+#save-story {
+  background-color: #727d89;
 }

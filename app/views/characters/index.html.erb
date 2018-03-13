@@ -10,7 +10,7 @@
               <h4 align="right"><%= character.name %></h4>
             </div>
             <div class="content-body">
-              <p><%= character.story %></p>
+              <p><%= truncate(character.story, :length => 140) %></p>
             </div>
           </div>
         </div>
