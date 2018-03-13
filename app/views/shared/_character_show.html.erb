@@ -6,7 +6,9 @@
         <%= @character.name.upcase %>
       </div>
       <div>
+        <div style="text-align: justify;">
         <div class="desc">
+          <!-- <span class="story"></span> -->
           <%= @character.story %>.
           <div class="background">
             <p>Background: <%= @character.background %></p>
@@ -15,6 +17,7 @@
             <p>Bond: <%= @character.bond %></p>
             <p>Flaw: <%= @character.flaw %></p>
           </div>
+        </div>
         </div>
       </div>
     </div>
