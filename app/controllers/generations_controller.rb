@@ -3,6 +3,7 @@ class GenerationsController < ApplicationController
     @character_params = generate_attributes
     @character = Character.new(@character_params)
     @character.photo = "characters/#{@character_params['race']}_#{@character_params['job']}.png"
+    # @character.photo = "characters/#{@character_params['race']}_#{@character_params['job']}.png"
   end
 
 

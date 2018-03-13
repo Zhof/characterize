@@ -4,13 +4,13 @@
     <% @characters.each_with_index do |character| %>
       <%= link_to character_path(character) do %>
         <div class="character-card">
-          <%= image_tag @character.photo, :class => "avatar" %>
+          <%= image_tag character.photo, :class => "avatar" %>
           <div class="character-card-content">
             <div class="content-header">
               <h4 align="right"><%= character.name %></h4>
             </div>
             <div class="content-body">
-              <p><%= character.story %></p>
+              <p><%= truncate(character.story, :length => 140) %></p>
             </div>
           </div>
         </div>
