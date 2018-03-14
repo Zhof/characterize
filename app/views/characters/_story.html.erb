@@ -1,12 +1,21 @@
-<div class="character-build">
-  <div class="build-buttons">
-    <% @starting_words.each do |word| %>
-      <div class="row">
-        <div class="col-md-12">
-          <a class="btn word-selection" href="#"><%= word.capitalize %></a>
-        </div>
+<div class="character-story-generator">
+  <div class="character-summary">
+    <div class="stats-card">
+      <div class="stats dl">
+        <dl id="attributes-list">
+        </dl>
       </div>
-    <% end %>
+    </div>
+    <button class="btn edit-characteristics" id="edit-characteristics">Edit Characteristics</button>
+  </div>
+  <div class="sentence-generator">
+    <div class="btn-group build-buttons">
+      <% @starting_words.each_slice(2) do |slice| %>
+          <% slice.each do |word| %>
+            <button class="btn word-selection" href="#"><%= word.capitalize %></button>
+          <% end %>
+      <% end %>
+    </div>
     <%= button_tag "Generate a sentence", class: "btn", id:"generate-sentence"%>
   </div>
   <div class="character-sheet">
@@ -17,96 +26,17 @@
       <div class="title">
         <p>Character Sheet</p>
       </div>
-      <div class="stats"></div>
       <div class="story">
         <div>
           <%= text_area_tag 'story', "", size: "58x15" %>
-          <%= button_tag "SAVE STORY", class: "btn", id:"save-story" %>
+          <%= button_tag "Save", class: "btn", id:"save-story" %>
+          <%= button_tag "Restart", class: "btn", id:"restart-story" %>
         </div>
       </div>
     </div>
     <div>
-    <%= image_tag "bottom_edge.png", class:"paper"%>
+      <%= image_tag "bottom_edge.png", class:"paper"%>
     </div>
   </div>
 </div>
 
-<script>
-  let respond = true;
-  const storyary = [];
-  const story = document.getElementById("story");
-  const wordbuttons = document.querySelectorAll("a.word-selection");
-  wordbuttons.forEach(function(wordbutton) {
-    wordbutton.addEventListener("click", (event) => {
-      var word = event.srcElement.innerText;
-      if(respond) {
-        respond = false;
-        fetch(`<%= generate_story_path %>?word=${word}`, {
-          credentials: "same-origin"
-        })
-        .then(response => {
-          return response.json();
-        })
-        .then((data) => {
-          respond = true
-          // grab array of new words
-          data.suggestions.forEach(function(suggestion, index) {
-            wordbuttons[index].innerText = suggestion
-          });
-          // replace all existing word buttons with new words
-          storyary.push(data.word)
-          story.value = storyary.join(' ');
-        });
-      }
-    });
-  });
-  const sentenceGenerator = document.getElementById("generate-sentence");
-  sentenceGenerator.addEventListener("click", (event) => {
-    let curr_word = "";
-    if(storyary.last) {
-      curr_word = storyary.last;
-    }
-    if(respond) {
-      respond = false;
-      fetch(`<%= generate_sentence_path %>?word=${curr_word}`, {
-        credentials: "same-origin"
-      })
-      .then(response => {
-        return response.json();
-      })
-      .then((data) => {
-        respond = true;
-        storyary.push(data.sentence);
-        story.value = storyary.join(' ');
-      });
-    }
-  });
-  const attributes = document.getElementById("attributes").children
-  const save = document.getElementById("save-story")
-  save.addEventListener("click", (event) => {
-    fetch("/characters", {
-      method: 'post',
-      actions: 'create',
-      headers:{
-        'X-Requested-With': 'XMLHttpRequest',
-        'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
-        'Content-Type': 'application/json',
-      },
-      credentials: 'same-origin',
-      body: JSON.stringify({
-        name: attributes.character_name.value,
-        race: attributes.race.value,
-        job: attributes.character_job.value,
-        alignment: attributes.character_alignment.value,
-        background: attributes.background.value,
-        personality_traits: attributes.personality_traits.value,
-        ideal: attributes.ideals.value,
-        bond: attributes.bonds.value,
-        flaw: attributes.flaws.value,
-        story: story.value
-      })
-    }).then((response) => {
-      window.location = "/characters";
-    });
-  });
-</script>

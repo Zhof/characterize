@@ -800,7 +800,7 @@
       "always gives the bad news first",
       "worries some of their memories have been tampered with",
       "makes inappropriate jokes at the worst times",
-      "on the run after having an affair with a noble's daughter",
+      "is on the run after having an affair with a noble's daughter",
       "has a huge debt to repay",
       "always wanted to be an artist",
       "hasn't yet accomplished anything in their short life",
@@ -877,10 +877,10 @@
         "personality_traits": [
           "I idolize a particular hero of my faith, and constantly refer to that person's deeds and example.",
           "I can find common ground between the fiercest enemies, empathizing with them and always working towards peace.",
-          "I see omens in every action. The gods try to speak to us, we just need to listen.",
+          "I see omens in every action - the gods try to speak to us, we just need to listen.",
           "Nothing can shake my optimistic attitude.",
           "I am tolerant (or intolerant) of other faiths and respect (or condemn) the worship of other gods.",
-          "I've enjoyed fine food, drink, and high society among my temple's elite. Rough living grates on me.",
+          "I've enjoyed fine food, drink, and high society among my temple's elite - rough living grates on me.",
           "I've spent so long in the temple that I have little practical experience dealing with people in the outside world."
         ],
         "ideals": [
@@ -947,11 +947,11 @@
       "Criminal": {
         "personality_traits": [
           "I always have a plan for what to do when things go wrong.",
-          "I am always calm, no matter what the situation. I never raise my voice or let my emotions control me.",
-          "The first thing I do in a new place is note the locations of everything valuable-or where such things could be hidden.",
+          "I am always calm, no matter what the situation and therefore never raise my voice or let my emotions control me.",
+          "The first thing I do in a new place is note the locations of everything valuable, or where such things could be hidden.",
           "I would rather make a new friend than a new enemy.",
-          "I am incredibly slow to trust. Those who seem the fairest often have the most to hide.",
-          "I don't pay attention to the risks in a situation. Never tell me the odds.",
+          "I am incredibly slow to trust - those who seem the fairest often have the most to hide.",
+          "I don't pay attention to the risks in a situation - never tell me the odds.",
           "The best way to get me to do something is to tell me I can't do it.",
           "I blow up at the slightest insult."
         ],
@@ -984,7 +984,7 @@
         "personality_traits": [
           "I know a story relevant to almost every situation.",
           "Whenever I come to a new place, I collect local rumors and spread gossip.",
-          "I’m a hopeless romantic, always searching for that 'special someone.'",
+          "I’m a hopeless romantic, always searching for that 'special someone'.",
           "Nobody stays angry at me or around me for long, since I can defuse any amount of tension.",
           "I love a good insult, even one directed at me.",
           "I get bitter if I’m not the center of attention.",
@@ -1023,9 +1023,9 @@
           "When I set my mind to something, I follow through no matter what gets in my way.",
           "I have a strong sense of fair play and always try to find the most equitable solution to arguments.",
           "I’m confident in my own abilities and do what I can to instill confidence in others.",
-          "Thinking is for other people. I prefer action.",
+          "Thinking is for other people, I prefer action.",
           "I misuse long words in an attempt to sound smarter.",
-          "I get bored easily. When am I going to get on with my destiny?"
+          "I get bored easily, I always wonder when I'm going to get on with my destiny."
         ],
         "ideals": [
           "Respect. People deserve to be treated with dignity and respect. (Good)",
@@ -1054,14 +1054,14 @@
       },
       "Guild Artisan": {
         "personality_traits": [
-          "I believe that anything worth doing is worth doing right. I can’t help it— I’m a perfectionist.",
+          "I believe that anything worth doing is worth doing right, I can’t help it if I’m a perfectionist.",
           "I’m a snob who looks down on those who can’t appreciate fine art.",
           "I always want to know how things work and what makes people tick.",
           "I’m full of witty aphorisms and have a proverb for every occasion.",
           "I’m rude to people who lack my commitment to hard work and fair play.",
           "I like to talk at length about my profession.",
           "I don’t part with my money easily and will haggle tirelessly to get the best deal possible.",
-          "I’m well known for my work, and I want to make sure everyone appreciates it. I'm always taken aback when people haven’t heard of me."
+          "I’m well known for my work, I want to make sure everyone appreciates and am always taken aback when people haven’t heard of me."
         ],
         "ideals": [
           "Community. It is the duty of all civilized people to strengthen the bonds of community and the security of civilization. (Lawful)",
@@ -1131,7 +1131,7 @@
           "No one could doubt by looking at my regal bearing that I am a cut above the unwashed masses.",
           "I take great pains to always look my best and follow the latest fashions.",
           "I don’t like to get my hands dirty, and I won’t be caught dead in unsuitable accommodations.",
-          "Despite my noble birth, I do not place myself above other folk. We all have the same blood.",
+          "Despite my noble birth, I do not place myself above other folk - we all have the same blood.",
           "My favor, once lost, is lost forever.",
           "If you do me an injury, I will crush you, ruin your name, and salt your fields."
         ],
@@ -1164,9 +1164,9 @@
         "personality_traits": [
           "I’m driven by a wanderlust that led me away from home.",
           "I watch over my friends as if they were a litter of newborn pups.",
-          "I once ran twenty-five miles without stopping to warn to my clan of an approaching orc horde. I’d do it again if I had to.",
+          "I once ran twenty-five miles without stopping to warn to my clan of an approaching orc horde and I’d do it again if I had to.",
           "I have a lesson for every situation, drawn from observing nature.",
-          "I place no stock in wealthy or well-mannered folk. Money and manners won’t save you from a hungry owlbear.",
+          "I place no stock in wealthy or well-mannered folk - money and manners won’t save you from a hungry owlbear.",
           "I’m always picking things up, absently fiddling with them, and sometimes accidentally breaking them.",
           "I feel far more comfortable around animals than people.",
           "I was, in fact, raised by wolves."
@@ -1203,7 +1203,7 @@
           "I'm used to helping out those who aren’t as smart as I am, and I patiently explain anything and everything to others.",
           "There’s nothing I like more than a good mystery.",
           "I’m willing to listen to every side of an argument before I make my own judgment.",
-          "I . . . speak . . . slowly . . . when talking . . . to idiots, . . . which . . . almost . . . everyone . . . is . . . compared . . . to me.",
+          "I-speak-slowly-when talking-to idiots, which-almost-everyone-is-compared-to me.",
           "I am horribly, horribly awkward in social situations.",
           "I’m convinced that people are always trying to steal my secrets."
         ],
@@ -1271,13 +1271,13 @@
       "Soldier": {
         "personality_traits": [
           "I'm always polite and respectful.",
-          "I’m haunted by memories of war. I can’t get the images of violence out of my mind.",
+          "I’m haunted by memories of war - I can’t get the images of violence out of my mind.",
           "I’ve lost too many friends, and I’m slow to make new ones.",
           "I’m full of inspiring and cautionary tales from my military experience relevant to almost every combat situation.",
           "I can stare down a hell hound without flinching.",
           "I enjoy being strong and like breaking things.",
           "I have a crude sense of humor.",
-          "I face problems head-on. A simple, direct solution is the best path to success."
+          "I face problems head-on because a simple, direct solution is the best path to success."
         ],
         "ideals": [
           "Greater Good. Our lot is to lay down our lives in defense of others. (Good)",

@@ -7,31 +7,7 @@
 
 .build-form {
   min-width: 540px;
-}
-
-.character-sheet {
-  width: 600px;
-}
-
-.build-form {
   margin-top: 50px;
-}
-
-.character-sheet-body {
-  // background: linear-gradient(180deg, rgba(62, 72, 87, 1) 50%, rgba(0, 0, 0, 0) 100%);
-  background-color: rgba(62, 72, 87, 1);
-  height: 550px;
-}
-
-.character-sheet-body h3 {
-  margin-top: 0px;
-  padding-top: 15px;
-}
-
-.paper {
-  position: relative;
-  width: 600px;
-  height: auto;
 }
 
 #confirm {
@@ -52,3 +28,4 @@
   font-size: 60px;
   color: white;
 }
+
