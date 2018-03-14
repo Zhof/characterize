@@ -4,9 +4,12 @@
 // }
 
 .character-summary {
-  margin-top: 50px;
   position: relative;
   max-width: 30%;
+  .edit-characteristics {
+    margin-top: 5px;
+    margin-left: 15px;
+  }
 }
 
 #story {
@@ -26,12 +29,17 @@
   background-color: #727d89;
 }
 
+#restart-story {
+  background-color: #727d89;
+}
+
 .character-story-generator {
   display:flex;
   flex-direction: row;
   width: 100vw;
   & > div {
     min-width: 30%;
+    margin-top: 50px;
   }
   .sentence-generator {
     display: flex;
@@ -60,11 +68,6 @@
 
 .stats-card h4 {
   font-weight: bold;
-}
-
-.btn-group button {
-  padding: 5px;
-  margin: 0 5px;
 }
 
 .stats dd {
