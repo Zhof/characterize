@@ -56,7 +56,6 @@ class CharacterGenerator
     end
 
     words << "."
-    words << ","
 
     return words # return array of next word choices
   end
