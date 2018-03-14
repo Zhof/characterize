@@ -7,27 +7,20 @@
       <%= f.input_field :race, as: :select, collection: @races, class:"form-control", id:"race" %>
       <%= f.label :job, "Class" %>
       <%= f.input_field :job, as: :select, collection: @jobs, class:"form-control" %>
+      <%= f.label :background, "Background" %>
+      <%= f.input_field :background, as: :select, collection: @backgrounds.keys, id: "background", class:"form-control" %>
       <%= f.label :alignment, "Alignment" %>
       <%= f.input_field :alignment, as: :select, collection: @alignments, class:"form-control" %>
-      <%= f.label :background, "Background" %>
-      <%= f.input_field :background, as: :select, collection: @backgrounds, class:"form-control" %>
+      <%= f.label :personality_traits, "Personality Traits" %>
+      <%= f.input_field :personality_traits, as: :select, collection: [], id: "personality_traits", class:"form-control", multiple: true %>
+      <%= f.label :ideal, "Ideals" %>
+      <%= f.input_field :ideal, as: :select, collection: [], id: "ideals", class:"form-control" %>
+      <%= f.label :bond, "Bonds" %>
+      <%= f.input_field :bond, as: :select, collection: [], id: "bonds", class:"form-control" %>
+      <%= f.label :flaw, "Flaws" %>
+      <%= f.input_field :flaw, as: :select, collection: [], id: "flaws", class:"form-control" %>
       <%= f.button :button, "CONFIRM", id:"confirm" %>
     <% end %>
-  </div>
-  <div class="character-sheet">
-    <div class="character-sheet-head">
-      <%= image_tag "top_edge.png", class:"paper"%>
-    </div>
-    <div class="character-sheet-body">
-      <div>
-        <h3>CHARACTER SHEET</h3>
-      </div>
-      <div class="stats">
-      </div>
-    </div>
-    <div>
-      <%= image_tag "bottom_edge.png", class:"paper"%>
-    </div>
+  <div id="character_attributes" data-character_attributes="<%= JSON.generate(@backgrounds) %>"></div>
   </div>
 </div>
-

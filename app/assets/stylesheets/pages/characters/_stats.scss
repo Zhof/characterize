@@ -2,40 +2,17 @@
   margin-top: 50px;
   position: relative;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 
 .build-form {
   min-width: 540px;
-}
-
-.character-sheet {
-  width: 600px;
-}
-
-.character-sheet-head {
-
-}
-
-.character-sheet-body {
-  // background: linear-gradient(180deg, rgba(62, 72, 87, 1) 50%, rgba(0, 0, 0, 0) 100%);
-  background-color: rgba(62, 72, 87, 1);
-  height: 550px;
-}
-
-.character-sheet-body h3 {
-  margin-top: 0px;
-  padding-top: 15px;
-}
-
-.paper {
-  position: relative;
-  width: 600px;
-  height: auto;
+  margin-top: 50px;
 }
 
 #confirm {
-  margin-top: 10px;
+  margin-top: 40px;
+  margin-left: 165px;
 }
 
 #name-label {
@@ -45,3 +22,10 @@
 #character_name {
   margin-bottom: 10px;
 }
+
+.title p {
+  font-family: tangerine;
+  font-size: 60px;
+  color: white;
+}
+

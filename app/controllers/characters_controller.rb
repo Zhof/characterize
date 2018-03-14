@@ -51,7 +51,7 @@ class CharactersController < ApplicationController
 
   def character_params
     if params[:character][:trait]
-      params.require(:character).permit(:name, :race, :job, :location, :trait, :quirk, :story, :alignment)
+      params.require(:character).permit(:name, :race, :job, :location, :trait, :quirk, :story, :alignment, :background, :personality_traits, :bond, :ideal, :flaw)
     else
       {
         :name => params[:name],
@@ -59,6 +59,10 @@ class CharactersController < ApplicationController
         :job => params[:job],
         :alignment => params[:alignment],
         :background => params[:background],
+        :personality_traits => params[:personality_traits],
+        :ideal => params[:ideal],
+        :bond => params[:bond],
+        :flaw => params[:flaw],
         :story => params[:story],
         :full => true
       }

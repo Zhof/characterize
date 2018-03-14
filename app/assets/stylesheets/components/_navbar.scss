@@ -36,13 +36,22 @@
   padding: 0 20px;
 }
 
+.navbar-wagon-item:hover {
+  color: #4F6C7D
+}
+
 /* Navbar link */
 .navbar-wagon-link {
-  color: #616668;
+  color: white;
   font-size: 14px;
 }
+
+.logout {
+  color: white;
+}
+
 .navbar-wagon-link:hover {
-  color: #da552f;
+  color: #506D7D;
   text-decoration: none;
 }
 
@@ -83,6 +92,12 @@
   height: 50px;
 }
 
+.icons:hover {
+  transform: scale(1.13);
+  transition: 0.5s ease;
+
+}
+
 .menu-icons {
   position: absolute;
   display: flex;
@@ -97,3 +112,28 @@
   top: 0px;
   width: 100%;
 }
+
+// .tooltip {
+//     position: relative;
+//     display: inline-block;
+// }
+
+// .tooltip .tooltiptext {
+//     visibility: hidden;
+//     width: 120px;
+//     background-color: black;
+//     color: #fff;
+//     text-align: center;
+//     padding: 5px 0;
+//     border-radius: 6px;
+//     width: 120px;
+//     top: 100%;
+//     left: 50%;
+//     margin-left: -60px;
+//     position: absolute;
+//     z-index: 1;
+// }
+
+// .tooltip:hover .tooltiptext {
+//     visibility: visible;
+// }
