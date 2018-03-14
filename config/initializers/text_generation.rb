@@ -25,7 +25,7 @@ class Ngram
 end
 
 class CharacterGenerator
-  attr_accessor :path, :file, :text, :ngrams, :word_choices
+  attr_accessor :path, :file, :text, :ngrams, :word_choices, :stop_words
   def initialize(depth)
     raise if depth == 1
     @path = Rails.root.to_s + "/db/DND_text_library.txt"
@@ -33,10 +33,10 @@ class CharacterGenerator
     @text = PragmaticTokenizer::Tokenizer.new(clean: true, classic_filter: true, punctuation: :none).tokenize(@file).join(" ")
     @ngrams = Ngram.new(@text).compute_nth_gram(depth)
     @word_choices = {}
+    @stop_words = File.read(Rails.root.to_s + "/db/stop_words.txt").split("\n")
     @ngrams.each do |key, value|
       @word_choices[key] = word_options(@ngrams, key).flatten
     end
-    @stop_words = File.read(Rails.root.to_s + "/db/stop_words.txt").split("\n")
   end
 
   def fetch_possibilities(word: nil)
@@ -61,15 +61,15 @@ class CharacterGenerator
   end
 
   def shuffled_frequent_words
-    word_frequencies[0..9].sample(5)
+    word_frequencies[0..19].sample(5)
   end
 
   def generate_sentence(word_count: nil, word: nil)
     if word_count == nil
-      word_count = 5
+      word_count = (8..20).to_a.sample
     end
     if word == nil || word == ""
-      curr_word = shuffled_frequent_words[0][0]
+      curr_word = shuffled_frequent_words.sample[0]
     else
       curr_word = word
     end
@@ -79,13 +79,19 @@ class CharacterGenerator
 
     word_count.times do
       options = word_options(ngrams, curr_word)
+      options.each do |word|
+        if stop_word?(word)
+          options.delete(word)
+        end
+      end
       if options[0]
         next_word = options[0]
         ngrams[curr_word][next_word] -= 1
         curr_word = options[0]
         sentence << curr_word
       else
-        break
+        curr_word = shuffled_frequent_words.sample[0]
+        sentence << curr_word
       end
     end
     sentence.join(" ")
@@ -104,7 +110,7 @@ class CharacterGenerator
     options = []
 
     options << word_chain[word].sort_by {|key, value| -value}.map(&:first)
-
+    options.flatten!
     return options
   end
 
