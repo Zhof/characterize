@@ -33,7 +33,13 @@
       "Helja Fireforge",
       "Gunnloda Ungart",
       "Balasar Verthisathurgiesh",
-      "Lady Bird"
+      "Lady Bird",
+      "Zhakk the Angry",
+      "Zhakrag Vein Axe",
+      "Iwan the Lame",
+      "Leal the Magnificent",
+      "Seymour the Pompous",
+      "Doyt Spook"
     ],
 
     "traits": [
@@ -131,7 +137,7 @@
       "the wet desert",
       "a local brewery",
       "a run down tavern",
-      "the boneyard",
+      "a boneyard",
       "a maximum security prison",
       "a small family farm",
       "the scorched plains",
@@ -141,7 +147,9 @@
       "the city sewers",
       "a forgotten elven monastery",
       "Lady Merigold's Dance Academy",
-      "a magical swamp"
+      "a magical swamp",
+      "an unspeakable place",
+      "an overpriced resort"
     ],
 
     "quirks": [
@@ -190,7 +198,14 @@
       "loves ice sculptures",
       "is always late",
       "has no sense of humor",
-      "wants to get over their fear of heights"
+      "wants to get over their fear of heights",
+      "has three adorable dogs",
+      "has night terrors",
+      "wants to open an antique shop",
+      "believes in love at first sight",
+      "is very bad with names",
+      "corrects everybody's grammar",
+      "has never cried in their life, not even once"
     ],
 
     "alignments": [
