@@ -17,6 +17,11 @@
 @import "pages/generations/new";
 @import "pages/characters/stats";
 
-body {
-  padding-top: 70px;
+
+body{
+  height: 100vh;
+}
+
+.main-content {
+  height: calc(100% - 107px);
 }
