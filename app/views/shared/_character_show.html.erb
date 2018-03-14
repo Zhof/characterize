@@ -20,16 +20,17 @@
               <div>
               </div>
               <div class="background-details">
-              <p><b>Personality traits</b> <%= @character.personality_traits %></p>
+              <p><b>Personality traits:</b> <%= @character.personality_traits.split('.')[0] %>.</p>
+              <p><%= @character.personality_traits.split('.')[1] %>.</p>
               </div>
               <div class="background-details">
-              <p><b>Ideal</b> <%= @character.ideal %></p>
+              <p><b>Ideal:</b> <%= @character.ideal %></p>
               </div>
               <div class="background-details">
-              <p><b>Bond</b> <%= @character.bond %></p>
+              <p><b>Bond:</b> <%= @character.bond %></p>
               </div>
               <div class="background-details">
-              <p><b>Flaw</b> <%= @character.flaw %></p>
+              <p><b>Flaw:</b> <%= @character.flaw %></p>
               </div>
             </div>
           </div>
