@@ -1,13 +1,12 @@
-import Typed from 'typed.js';
+// import Typed from 'typed.js';
 
-const initializeTypedJs = () => {
-  const element = document.querySelector(".story");
+// const initializeTypedJsNewCharacter = () => {
+//   const element = document.querySelector("#asd");
 
-  new Typed(element ,{
-    strings: [<%= @character.story %>.],
-    typeSpeed: 75,
-    loop: true
-  });
-}
+//   new Typed(element ,{
+//     strings: [element.dataset.story],
+//     typeSpeed: 12,
+//   });
+// }
 
-export { initializeTypedJs };
+// export { initializeTypedJsNewCharacter };
