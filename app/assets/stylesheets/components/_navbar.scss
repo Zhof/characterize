@@ -36,13 +36,22 @@
   padding: 0 20px;
 }
 
+.navbar-wagon-item:hover {
+  color: #4F6C7D
+}
+
 /* Navbar link */
 .navbar-wagon-link {
-  color: #616668;
+  color: white;
   font-size: 14px;
 }
+
+.logout {
+  color: white;
+}
+
 .navbar-wagon-link:hover {
-  color: #da552f;
+  color: #506D7D;
   text-decoration: none;
 }
 
@@ -85,6 +94,8 @@
 
 .icons:hover {
   transform: scale(1.13);
+  transition: 0.5s ease;
+
 }
 
 .menu-icons {
