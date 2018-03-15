@@ -874,7 +874,7 @@
 
     "backgrounds": {
       "Acolyte": {
-        "personality_trait": [
+        "personality_traits": [
           "I idolize a particular hero of my faith, and constantly refer to that person's deeds and example.",
           "I can find common ground between the fiercest enemies, empathizing with them and always working towards peace.",
           "I see omens in every action - the gods try to speak to us, we just need to listen.",
@@ -909,7 +909,7 @@
         ]
       },
       "Charlatan": {
-        "personality_trait": [
+        "personality_traits": [
           "I fall in and out of love easily, and am always pursuing someone.",
           "I have a joke for every occasion, especially occasions where humor is inappropriate.",
           "Flattery is my preferred trick for getting what I want.",
@@ -945,7 +945,7 @@
         ]
       },
       "Criminal": {
-        "personality_trait": [
+        "personality_traits": [
           "I always have a plan for what to do when things go wrong.",
           "I am always calm, no matter what the situation and therefore never raise my voice or let my emotions control me.",
           "The first thing I do in a new place is note the locations of everything valuable, or where such things could be hidden.",
@@ -981,7 +981,7 @@
         ]
       },
       "Entertainer": {
-        "personality_trait": [
+        "personality_traits": [
           "I know a story relevant to almost every situation.",
           "Whenever I come to a new place, I collect local rumors and spread gossip.",
           "I’m a hopeless romantic, always searching for that 'special someone'.",
@@ -1017,7 +1017,7 @@
         ]
       },
       "Folk Hero": {
-        "personality_trait": [
+        "personality_traits": [
           "I judge people by their actions, not their words.",
           "If someone is in trouble, I’m always ready to lend help.",
           "When I set my mind to something, I follow through no matter what gets in my way.",
@@ -1053,7 +1053,7 @@
         ]
       },
       "Guild Artisan": {
-        "personality_trait": [
+        "personality_traits": [
           "I believe that anything worth doing is worth doing right, I can’t help it if I’m a perfectionist.",
           "I’m a snob who looks down on those who can’t appreciate fine art.",
           "I always want to know how things work and what makes people tick.",
@@ -1089,7 +1089,7 @@
         ]
       },
       "Hermit": {
-        "personality_trait": [
+        "personality_traits": [
           "I’ve been isolated for so long that I rarely speak, preferring gestures and the occasional grunt.",
           "I am utterly serene, even in the face of disaster.",
           "The leader of my community had something wise to say on every topic, and I am eager to share that wisdom.",
@@ -1125,7 +1125,7 @@
         ]
       },
       "Noble": {
-        "personality_trait": [
+        "personality_traits": [
           "My eloquent flattery makes everyone I talk to feel like the most wonderful and important person in the world.",
           "The common folk love me for my kindness and generosity.",
           "No one could doubt by looking at my regal bearing that I am a cut above the unwashed masses.",
@@ -1161,7 +1161,7 @@
         ]
       },
       "Outlander": {
-        "personality_trait": [
+        "personality_traits": [
           "I’m driven by a wanderlust that led me away from home.",
           "I watch over my friends as if they were a litter of newborn pups.",
           "I once ran twenty-five miles without stopping to warn to my clan of an approaching orc horde and I’d do it again if I had to.",
@@ -1197,7 +1197,7 @@
         ]
       },
       "Sage": {
-        "personality_trait": [
+        "personality_traits": [
           "I use polysyllabic words that convey the impression of great erudition.",
           "I've read every book in the world’s greatest libraries—or I like to boast that I have.",
           "I'm used to helping out those who aren’t as smart as I am, and I patiently explain anything and everything to others.",
@@ -1233,7 +1233,7 @@
         ]
       },
       "Sailor": {
-        "personality_trait": [
+        "personality_traits": [
           "My friends know they can rely on me, no matter what.",
           "I work hard so that I can play hard when the work is done.",
           "I enjoy sailing into new ports and making new friends over a flagon of ale.",
@@ -1269,7 +1269,7 @@
         ]
       },
       "Soldier": {
-        "personality_trait": [
+        "personality_traits": [
           "I'm always polite and respectful.",
           "I’m haunted by memories of war - I can’t get the images of violence out of my mind.",
           "I’ve lost too many friends, and I’m slow to make new ones.",
@@ -1305,7 +1305,7 @@
         ]
       },
       "Urchin": {
-        "personality_trait": [
+        "personality_traits": [
           "I hide scraps of food and trinkets away in my pockets.",
           "I ask a lot of questions.",
           "I like to squeeze into small places where no one else can get to me.",
