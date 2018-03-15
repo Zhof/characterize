@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   get 'generations/generate_sentence', to: 'generations#generate_sentence', as: 'generate_sentence'
   get '/tavern', to: 'characters#tavern', as: 'tavern'
   post 'characters/:id/share', to: 'characters#share', as: 'shared_character'
+  post 'characters/:id/buy_pint', to: 'characters#buy_pint', as: 'buy_pint'
 end
