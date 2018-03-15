@@ -7,6 +7,10 @@
 </div>
 
 <script>
+  function capitalize(word) {
+    return word.charAt(0).toUpperCase() + word.slice(1);
+  }
+
   const button = document.getElementById("confirm");
   const attributesList = document.getElementById("attributes-list");
   button.addEventListener("click", (event) => {
@@ -15,7 +19,7 @@
     document.getElementById("second-part").style.display = "initial";
     // let attributes = document.getElementById("attributes").children;
     attributesList.innerHTML =
-      `<h4> ${selectedAttributes.name} </h4>
+      `<h4> Character sheet for: ${selectedAttributes.name} </h4>
       <dt>Race</dt>
       <dd> ${selectedAttributes.race} </dd>
       <dt>Class</dt>
@@ -34,7 +38,7 @@
       <dd> ${selectedAttributes.flaw} </dd>`;
   });
   let respond = true;
-  const storyary = [];
+  let storyary = [];
   const story = document.getElementById("story");
   const wordbuttons = document.querySelectorAll("button.word-selection");
   wordbuttons.forEach(function(wordbutton) {
@@ -50,13 +54,23 @@
         })
         .then((data) => {
           respond = true
+          // replace all existing word buttons with new words
+          // storyary.push(data.word)
+          if (data.word === "." || story.value === "") {
+            story.value = story.value + data.word
+          } else {
+            story.value = story.value + " " + data.word
+          }
+
+
           // grab array of new words
           data.suggestions.forEach(function(suggestion, index) {
-            wordbuttons[index].innerText = suggestion
+            if (story.value[story.value.length - 1] === ".") {
+              wordbuttons[index].innerText = capitalize(suggestion)
+            } else {
+              wordbuttons[index].innerText = suggestion
+            }
           });
-          // replace all existing word buttons with new words
-          storyary.push(data.word)
-          story.value = storyary.join(' ');
         });
       }
     });
@@ -64,8 +78,9 @@
   const sentenceGenerator = document.getElementById("generate-sentence");
   sentenceGenerator.addEventListener("click", (event) => {
     let curr_word = "";
-    if(storyary.last) {
-      curr_word = storyary.last;
+    storyary = story.value.split(' ')
+    if(storyary[storyary.length - 1]) {
+      curr_word = storyary[storyary.length - 1];
     }
     if(respond) {
       respond = false;
@@ -77,8 +92,12 @@
       })
       .then((data) => {
         respond = true;
-        storyary.push(data.sentence);
-        story.value = storyary.join(' ');
+        if(story.value[story.value.length - 1] === "." || story.value === "") {
+          story.value += " " + data.sentence.replace(data.sentence[0], data.sentence[0].toUpperCase())
+        }
+        else {
+          story.value += " " + data.sentence
+        }
       });
     }
   });
@@ -121,9 +140,7 @@
   const edit = document.getElementById("edit-characteristics");
   edit.addEventListener("click", (event) => {
     event.preventDefault();
-    console.info('running');
-    document.getElementById("first-part").style.display = "initial";
-    document.getElementById("second-part").style.display = "none";
+    location.reload();
   });
 
   // TODO
