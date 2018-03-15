@@ -10,7 +10,7 @@
               </dl>
             </div>
           </div>
-          <button class="btn edit-characteristics" id="edit-characteristics">Edit Characteristics</button>
+          <button class="btn edit-characteristics" id="edit-characteristics">Edit details</button>
         </div>
 
       </div>
@@ -28,7 +28,7 @@
                 <% end %>
             </div>
           </div>
-          <%= button_tag "Generate a sentence", class: "btn", id:"generate-sentence"%>
+          <%= button_tag "Generate some words", class: "btn", id:"generate-sentence"%>
         </div>
 
       </div>
@@ -40,19 +40,17 @@
           </div>
           <div class="character-sheet-body">
             <div class="title">
-              <p>Character Sheet</p>
+              <p>Your Backstory</p>
             </div>
             <div class="story">
-              <div>
-                <%= text_area_tag 'story', "" %>
-                <%= button_tag "Save", class: "btn", id:"save-story" %>
-                <%= button_tag "Restart", class: "btn", id:"restart-story" %>
-              </div>
+              <%= text_area_tag 'story', "" %>
             </div>
           </div>
           <div>
             <%= image_tag "bottom_edge.png", class:"paper"%>
           </div>
+          <%= button_tag "Save", class: "btn", id:"save-story" %>
+          <%= button_tag "Restart", class: "btn", id:"restart-story" %>
         </div>
 
       </div>
