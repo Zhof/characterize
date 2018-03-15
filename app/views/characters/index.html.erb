@@ -10,7 +10,12 @@
               <h4 align="right"><%= character.name %></h4>
             </div>
             <div class="content-body">
-              <p><%= truncate(character.story, :length => 120) %></p>
+              <p><%= truncate(character.story, :length => 90) %></p>
+              <% if character.shared == true %>
+                <div class="pints">
+                  <p><%= character.rating %><%= image_tag 'pint.png', class:"pint_icon"%></p>
+                </div>
+              <% end %>
             </div>
           </div>
         </div>

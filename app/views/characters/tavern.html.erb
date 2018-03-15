@@ -6,14 +6,17 @@
         <div class="character-card">
           <%= image_tag character.photo, :class => "avatar" %>
           <div class="character-card-content">
-            <div class="content-header">
-              <div>
+            <div class="content-header-tavern">
+              <div class="inner-header">
                 <h4 align="right"><%= character.name %></h4>
-                <p> username </p>
+                <p> created by <b><%= character.user.username %></b></p>
               </div>
             </div>
-            <div class="content-body">
-              <p><%= truncate(character.story, :length => 120) %></p>
+            <div class="content-body-tavern">
+              <p><%= truncate(character.story, :length => 90) %></p>
+              <div class="pints">
+                <p><%= character.rating %><%= image_tag 'pint.png', class:"pint_icon"%></p>
+              </div>
             </div>
           </div>
         </div>

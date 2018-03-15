@@ -1,0 +1,39 @@
+.content-header-tavern {
+  height: 90px;
+  display: flex;
+  align-items: center;
+}
+
+.content-header-tavern h4 {
+  font-family: Roboto;
+  font-weight: bold;
+  font-size: 22px;
+  color: white;
+  text-align: left;
+  padding-top: 15px;
+  padding-left: 30px;
+  margin-bottom: 2px;
+  max-width: 265px;
+}
+
+.inner-header p {
+  margin-left: 30px;
+  color: #717982;
+  font-size: 15px;
+}
+
+.pints p {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  text-align: right;
+}
+
+.content-body-tavern {
+  padding: 25px 30px 0px 30px;
+  font-size: 20px;
+}
+
+.pint_icon {
+  width: 25px;
+  height: 25px;
+}

@@ -1,5 +1,5 @@
 class CharactersController < ApplicationController
-  before_action :set_character, only: [:show, :destroy, :share]
+  before_action :set_character, only: [:show, :destroy, :share, :buy_pint]
 
   def new
     @character = Character.new
@@ -17,6 +17,7 @@ class CharactersController < ApplicationController
   def create
     @character = Character.new(character_params)
     @character.photo = "characters/#{character_params[:race]}_#{character_params[:job]}.png"
+    @character.rating = 0
 
     if current_user
       @character.user = current_user
@@ -45,8 +46,16 @@ class CharactersController < ApplicationController
 
   def share
     @character.shared = true
+    if @character.save
+      redirect_to tavern_path
+    else
+      redirect_to character_path(@character), notice: "This character is already at the Tavern"
+    end
+  end
+
+  def buy_pint
+    @character.rating += 1
     @character.save
-    redirect_to tavern_path
   end
 
   def destroy
