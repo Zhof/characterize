@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="68px" height="90px" viewBox="0 0 68 90" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>noun_125555_cc</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="noun_125555_cc" fill-rule="nonzero" fill="#000000">
+            <g id="Group">
+                <path d="M5.6,77.4 L0.1,77.4 L0.1,11.1 C0.1,5.1 5,0.1 11.1,0.1 L68,0.1 L68,70.5 L12,70.5 C8.9,70.6 5.6,73 5.6,77.4 Z M11,5.7 C8,5.7 5.6,8.1 5.6,11.1 L5.6,66.9 C7.5,65.7 9.8,65 12,65 L62.4,65 L62.4,5.7 L11,5.7 Z" id="Shape"></path>
+                <rect id="Rectangle-path" x="19" y="24" width="29" height="5"></rect>
+                <rect id="Rectangle-path" x="19" y="40" width="29" height="5"></rect>
+            </g>
+            <path d="M67.9,89.8 L12,89.8 C6.1,89.8 0.1,85.2 0.1,77.4 L5.6,77.4 C5.6,81.9 8.9,84.3 12,84.3 L67.9,84.3 L67.9,89.8 Z" id="Shape"></path>
+            <path d="M67,89.9 C61,89.9 54.6,84.3 54.6,77.5 C54.6,70.7 61,65.1 67,65.1 L67,70.6 C64,70.6 60.1,73.7 60.1,77.5 C60.1,81.3 64,84.4 67,84.4 L67,89.9 Z" id="Shape"></path>
+        </g>
+    </g>
+</svg>

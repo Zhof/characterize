@@ -2,7 +2,7 @@
 .navbar-wagon {
   position: relative;
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
-  background: rgba(21, 21, 21, 1);
+  background: rgba(4,38,59,1) ;
   transition: all 0.3s ease;
   height: 70px;
   padding: 0px 30px;
@@ -11,6 +11,10 @@
   justify-content: space-between;
 }
 
+.navbar-home{
+  background: transparent !important;
+  box-shadow: none;
+}
 /* Logo */
 .navbar-wagon-brand img {
   height: 50px;
@@ -60,6 +64,7 @@
   margin-top: 15px;
   box-shadow: 1px 1px 4px #E6E6E6;
   border-color: #E6E6E6;
+  background-color: #02253C;
 }
 .navbar-wagon-dropdown-menu li > a {
   transition: color 0.3s ease;
@@ -73,18 +78,18 @@
   background: transparent !important;
   color: black !important;
 }
-.navbar-wagon-dropdown-menu:before {
-  content: ' ';
-  height: 10px;
-  width: 10px;
-  position: absolute;
-  right: 10px;
-  top: -6px;
-  background-color: white;
-  transform: rotate(45deg);
-  border-left: 1px solid #E6E6E6;
-  border-top: 1px solid #E6E6E6;
-}
+// .navbar-wagon-dropdown-menu:before {
+//   content: ' ';
+//   height: 10px;
+//   width: 10px;
+//   position: absolute;
+//   right: 10px;
+//   top: -6px;
+//   background-color: white;
+//   transform: rotate(45deg);
+//   border-left: 1px solid #E6E6E6;
+//   border-top: 1px solid #E6E6E6;
+// }
 
 .icons img {
   // position: absolute;
