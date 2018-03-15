@@ -2,5 +2,5 @@
 
 <div class="buttons-show">
   <%= link_to 'DELETE', { action: :destroy, id: @character.id }, method: :delete, data: {confirm: "Are you sure?"}, class:"btn" %>
-  <%= link_to 'SHARE', characters_path, class:"btn" %>
+  <%= link_to 'SHARE', { action: :share, id: @character.id }, method: :post, data: {confirm: "Are you sure?"}, class:"btn" %>
 </div>

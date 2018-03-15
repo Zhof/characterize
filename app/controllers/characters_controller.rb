@@ -1,5 +1,5 @@
 class CharactersController < ApplicationController
-  before_action :set_character, only: [:show, :destroy]
+  before_action :set_character, only: [:show, :destroy, :share]
 
   def new
     @character = Character.new
@@ -36,6 +36,17 @@ class CharactersController < ApplicationController
   def index
     @user = current_user
     @characters = Character.where(user: current_user)
+  end
+
+  def tavern
+    user = current_user
+    @characters = Character.where(shared: true)
+  end
+
+  def share
+    @character.shared = true
+    @character.save
+    redirect_to tavern_path
   end
 
   def destroy
