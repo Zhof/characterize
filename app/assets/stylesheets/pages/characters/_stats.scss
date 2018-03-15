@@ -1,9 +1,3 @@
-.character-build {
-  margin-top: 50px;
-  position: relative;
-  display: flex;
-  justify-content: space-evenly;
-}
 
 .build-form {
   min-width: 540px;
@@ -29,3 +23,52 @@
   color: white;
 }
 
+.character-build-container {
+  
+}
+
+.character-build {
+}
+
+.character-choice {
+  padding: 10px;
+  text-align: center;
+  background-color: lightgrey;
+  width: 50%;
+  margin: 10px;
+  cursor: pointer;
+
+  label {
+    cursor: pointer;
+  }
+
+  input {
+    display: none;
+  }
+
+  &.wide {
+    width: 80%;
+  }
+}
+
+.character-choice-selected {
+  background-color: green !important;
+}
+
+.character-attribute-section {
+  // height: 0px;
+  // overflow: hidden;
+  // transition: all 1000ms;
+
+  margin: 0 auto;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#character-name {
+  width: 80%;
+  height: 60px;
+}
