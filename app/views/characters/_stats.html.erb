@@ -5,7 +5,7 @@
 
       <div class="character-attribute-section" id="race-selection">
         <h1>Name</h1>
-        <%= text_field_tag "name", "", id: "character-name" %>
+        <%= text_field_tag "name", "", id: "character-name", class:"type-name" %>
         <h1>Race</h1>
         <% @races.each do |race| %>
           <div class="character-choice chacter-select-btn" data-attribute="race" data-value="<%= race %>" data-parent_id="race-selection">
@@ -14,7 +14,7 @@
           </div>
         <% end %>
       </div>
-      
+
       <div class="character-attribute-section" id="job-selection" style="display: none;">
         <h1>Class</h1>
         <% @jobs.each do |job| %>
@@ -43,7 +43,7 @@
             <%= label_tag "alignment-#{alignment}", alignment.capitalize %>
           </div>
         <% end %>
-      </div>    
+      </div>
 
       <div class="character-attribute-section" id="personality_traits-selection" data-attribute="personality_traits" style="display: none;">
         <h1>Personality</h1>
@@ -51,7 +51,7 @@
 
       <div class="character-attribute-section" id="personality_traits-selection2" data-attribute="personality_traits2" style="display: none;">
         <h1>Personality</h1>
-      </div>      
+      </div>
 
       <div class="character-attribute-section" id="ideal-selection" style="display: none;">
         <h1>Ideal</h1>
