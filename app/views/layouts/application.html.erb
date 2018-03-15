@@ -27,12 +27,12 @@
       <div id="navbar">
         <%= render 'shared/navbar' %>
       </div>
-      <div id="body">
+      <div id="">
         <%= yield %>
       </div>
-      <div id="footer">
-        <%= render 'shared/footer' %>
-      </div>
+    </div>
+    <div class="footer-container">
+      <%= render 'shared/footer' %>
     </div>
   </body>
     <%= javascript_include_tag 'application' %>

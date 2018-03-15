@@ -1,18 +1,26 @@
 // Specific CSS for your home-page
 .landing-background {
   // background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2), url('banner.jpg'));
-  background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), asset-url('landing_background.jpeg');
+  background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 100%), asset-url('landing_background.jpeg');
   background-size: cover;
   background-repeat: no-repeat;
   // position: absolute;
   width: 100%;
   // height: 100vh;
-  height: calc(100% - 175px);
-  top: 70px;
+  height: calc(100%);
+  top: 0;
   position: absolute;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 
+.btn-wrapper{
+  margin-top: 20px;
+}
 
 .landing-text {
   opacity: 1;
@@ -20,21 +28,22 @@
   font-weight: bold !important;
   color: white !important;
   font-size: 70px;
-  padding: 165px 0 40px 0;
   margin: 0px;
+  font-family: $trajan;
 }
 
 .landing-sub-text {
   opacity: 1;
-  color: $brand-primary !important;
+  color: #00243d !important;
   text-align: center !important;
-  font-size: 28px;
+  font-size: 50px;
   padding-bottom: 0px;
   margin-top: 0px;
+  font-family: $tungsten;
 }
 
 .banner-buttons {
-  padding-top: 30px;
+  margin-left: 10px;
   text-align: center;
 
   a {
@@ -42,13 +51,16 @@
 
   }
   p:hover {
-    background-color: #2a3749;
+    background-color: white;
+    color: #00243d;
     transform: scale(1.07);
     transition: 0.25s ease;
   }
 
   p {
     border: none !important;
+    font-family: $tungsten;
+    font-size: 28px;
   }
  }
 
@@ -56,5 +68,6 @@
 .banner-script {
   color: white !important;
   font-size: 20px;
+  font-family: $gotham-light;
 }
 

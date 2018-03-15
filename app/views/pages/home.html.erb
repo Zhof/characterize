@@ -4,14 +4,11 @@
   <div style="text-align: center;">
     <span class="banner-script"></span>
   </div>
-  <div class="banner-buttons">
-    <%= link_to new_generation_path do %>
+  <div class='btn-wrapper'>
+    <%= link_to new_generation_path, class: "banner-buttons" do %>
       <p class="btn btn-primary">QUICK STORY</p>
     <% end %>
-    &nbsp;
-    &nbsp;
-    &nbsp;
-    <%= link_to new_character_path do %>
+    <%= link_to new_character_path, class: "banner-buttons"  do %>
       <p class="btn btn-primary">CUSTOM STORY</p>
     <% end %>
   </div>
