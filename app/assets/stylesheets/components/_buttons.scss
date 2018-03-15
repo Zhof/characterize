@@ -1,0 +1,18 @@
+.chacter-select-btn {
+  background-color: rgba(62, 72, 87, 0.75);
+  color: rgb(50, 50, 50);
+  line-height: 2;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  label {
+    margin: 0;
+  }
+}
+
+.chacter-select-btn:hover {
+  background-color: rgba(62, 72, 87, 0.6);
+  color: white;
+}
