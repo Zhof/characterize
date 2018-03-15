@@ -56,6 +56,7 @@ class CharactersController < ApplicationController
   def buy_pint
     @character.rating += 1
     @character.save
+    redirect_to character_path
   end
 
   def destroy
