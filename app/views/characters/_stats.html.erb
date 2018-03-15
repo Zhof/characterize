@@ -1,27 +1,70 @@
-<div class="character-build">
-  <div class="build-form">
-    <%= simple_form_for @character, html: {id: "attributes"} do |f| %>
-      <%= f.label :name, "Name", id: "name-label"%>
-      <%= f.input_field :name, as: :string, class:"form-control" %>
-      <%= f.label :race, "Race" %>
-      <%= f.input_field :race, as: :select, collection: @races, class:"form-control", id:"race" %>
-      <%= f.label :job, "Class" %>
-      <%= f.input_field :job, as: :select, collection: @jobs, class:"form-control" %>
-      <%= f.label :background, "Background" %>
-      <%= f.input_field :background, as: :select, collection: @backgrounds.keys, id: "background", class:"form-control" %>
-      <%= f.label :alignment, "Alignment" %>
-      <%= f.input_field :alignment, as: :select, collection: @alignments, class:"form-control" %>
-      <%= f.label :personality_traits, "Personality Traits" %>
-      <%= f.input_field :personality_traits, as: :select, collection: [], id: "personality_traits", class:"form-control", multiple: true %>
-      <%= f.label :ideal, "Ideals" %>
-      <%= f.input_field :ideal, as: :select, collection: [], id: "ideals", class:"form-control" %>
-      <%= f.label :bond, "Bonds" %>
-      <%= f.input_field :bond, as: :select, collection: [], id: "bonds", class:"form-control" %>
-      <%= f.label :flaw, "Flaws" %>
-      <%= f.input_field :flaw, as: :select, collection: [], id: "flaws", class:"form-control" %>
-      <%= f.button :button, "CONFIRM", id:"confirm" %>
-    <% end %>
-  <div id="character_attributes" data-character_attributes="<%= JSON.generate(@backgrounds) %>"></div>
+<div id="character_attributes" data-character_attributes="<%= JSON.generate(@backgrounds) %>"></div>
+
+<div class="character-build-container">
+  <div class="character-build">
+
+      <div class="character-attribute-section" id="race-selection">
+        <h1>Name</h1>
+        <%= text_field_tag "name", "", id: "character-name" %>
+        <h1>Race</h1>
+        <% @races.each do |race| %>
+          <div class="character-choice chacter-select-btn" data-attribute="race" data-value="<%= race %>" data-parent_id="race-selection">
+            <%= radio_button_tag "race", race, id: "race-#{race}" %>
+            <%= label_tag "race-#{race}", race.capitalize %>
+          </div>
+        <% end %>
+      </div>
+      
+      <div class="character-attribute-section" id="job-selection" style="display: none;">
+        <h1>Class</h1>
+        <% @jobs.each do |job| %>
+          <div class="character-choice chacter-select-btn" data-attribute="job" data-value="<%= job %>" data-parent_id="job-selection">
+            <%= radio_button_tag "job", job, id: "job-#{job}" %>
+            <%= label_tag "job-#{job}", job.capitalize %>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="character-attribute-section" id="background-selection" style="display: none;">
+        <h1>Background</h1>
+        <% @backgrounds.keys.each do |background| %>
+          <div class="character-choice chacter-select-btn" data-parent_id="background-selection" data-attribute="background" data-value="<%= background %>" data-value="<%= background %>">
+            <%= radio_button_tag "background", background, id: "background-#{background}" %>
+            <%= label_tag "background-#{background}", background.capitalize %>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="character-attribute-section" id="alignment-selection" style="display: none;">
+        <h1>Moral Alignment</h1>
+        <% @alignments.each do |alignment| %>
+          <div class="character-choice chacter-select-btn" data-parent_id="alignment-selection" data-attribute="alignment" data-value="<%= alignment %>">
+            <%= radio_button_tag "alignment", alignment, id: "alignment-#{alignment}" %>
+            <%= label_tag "alignment-#{alignment}", alignment.capitalize %>
+          </div>
+        <% end %>
+      </div>    
+
+      <div class="character-attribute-section" id="personality_traits-selection" data-attribute="personality_traits" style="display: none;">
+        <h1>Personality</h1>
+      </div>
+
+      <div class="character-attribute-section" id="personality_traits-selection2" data-attribute="personality_traits2" style="display: none;">
+        <h1>Personality</h1>
+      </div>      
+
+      <div class="character-attribute-section" id="ideal-selection" style="display: none;">
+        <h1>Ideal</h1>
+      </div>
+
+      <div class="character-attribute-section" id="bond-selection" style="display: none;">
+        <h1>Bond</h1>
+      </div>
+
+      <div class="character-attribute-section" id="flaw-selection" style="display: none;">
+        <h1>Flaw</h1>
+        <button class="hidden" id="confirm">Next!</button>
+      </div>
+
   </div>
 </div>
-

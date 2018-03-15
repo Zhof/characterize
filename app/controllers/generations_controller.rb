@@ -47,9 +47,9 @@ class GenerationsController < ApplicationController
       'quirk' => attributes[:quirks].sample,
       'background' => background.to_s,
       'personality_traits' => attributes[:backgrounds][background]['personality_traits'].sample(2).join(' '),
-      'ideal' => attributes[:backgrounds][background]['ideals'].sample,
-      'bond' => attributes[:backgrounds][background]['bonds'].sample,
-      'flaw' => attributes[:backgrounds][background]['flaws'].sample
+      'ideal' => attributes[:backgrounds][background]['ideal'].sample,
+      'bond' => attributes[:backgrounds][background]['bond'].sample,
+      'flaw' => attributes[:backgrounds][background]['flaw'].sample
     }
 
     character_params[:story] = template.gsub(/trait|race|job|location|quirk/) { |match| character_params[match] } + "."
