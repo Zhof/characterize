@@ -1,0 +1,23 @@
+<h1 align="center">THE TAVERN</h1>
+<div class="index-container">
+  <div class="character-grid">
+    <% @characters.each_with_index do |character| %>
+      <%= link_to character_path(character) do %>
+        <div class="character-card">
+          <%= image_tag character.photo, :class => "avatar" %>
+          <div class="character-card-content">
+            <div class="content-header">
+              <div>
+                <h4 align="right"><%= character.name %></h4>
+                <p> username </p>
+              </div>
+            </div>
+            <div class="content-body">
+              <p><%= truncate(character.story, :length => 120) %></p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

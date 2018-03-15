@@ -45,8 +45,8 @@ h1 {
 
 .avatar {
   position: absolute;
-  width: 87px;
-  height: 127px;
+  max-width: 87px;
+  max-height: 127px;
   right: 30px;
   top: 40px;
 }

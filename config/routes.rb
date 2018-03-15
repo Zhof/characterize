@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   resources :generations, only: [:new]
   get 'generations/generate_story', to: 'generations#generate_story', as: 'generate_story'
   get 'generations/generate_sentence', to: 'generations#generate_sentence', as: 'generate_sentence'
+  get '/tavern', to: 'characters#tavern', as: 'tavern'
+  post 'characters/:id/share', to: 'characters#share', as: 'shared_character'
 end
