@@ -37,6 +37,7 @@ class CharacterGenerator
     @ngrams.each do |key, value|
       @word_choices[key] = word_options(@ngrams, key).flatten
     end
+    @word_frequencies = word_frequencies
   end
 
   def fetch_possibilities(word: nil)
@@ -46,12 +47,12 @@ class CharacterGenerator
       word = word.downcase
     end
 
-    words = @word_choices[word][0..6].sample(4).shuffle
+    words = @word_choices[word][0..15].sample(10).shuffle
 
-    if words.length < 10
-      limit = 9 - words.length
+    if words.length < 20
+      limit = 19 - words.length
       shuffled_frequent_words[0..(limit / 2)].each { |w| words << w[0] }
-      limit = 9 - words.length
+      limit = 19 - words.length
       @word_choices.keys.sample(limit).each { |w| words << w }
     end
 
@@ -61,21 +62,22 @@ class CharacterGenerator
   end
 
   def shuffled_frequent_words
-    word_frequencies[0..19].sample(5)
+    @word_frequencies[0..19].sample(8)
   end
 
   def generate_sentence(word_count: nil, word: nil)
+    ngrams = @ngrams.clone
+    sentence = []
+
     if word_count == nil
       word_count = (8..20).to_a.sample
     end
     if word == nil || word == ""
       curr_word = shuffled_frequent_words.sample[0]
+      sentence << curr_word
     else
       curr_word = word
     end
-    ngrams = @ngrams.clone
-    sentence = []
-    sentence << curr_word
 
     word_count.times do
       options = word_options(ngrams, curr_word)
@@ -84,10 +86,10 @@ class CharacterGenerator
           options.delete(word)
         end
       end
-      if options[0]
-        next_word = options[0]
+      if options[0] && options[1] && options[2]
+        next_word = options[0..3].sample
         ngrams[curr_word][next_word] -= 1
-        curr_word = options[0]
+        curr_word = next_word
         sentence << curr_word
       else
         curr_word = shuffled_frequent_words.sample[0]

@@ -1,46 +1,48 @@
-<div class="card character-show-container">
-  <div class="character-show-inner-container">
-    <div>
-      <!-- name and description -->
-      <div id="character_name">
-        <%= @character.name.upcase %>
-      </div>
+<div class="character-show-container">
+  <div class="card">
+    <div class="character-show-inner-container">
       <div>
-        <div style="text-align: justify;">
-        <div class="desc">
-          <div class="char-story">
-       <!--      <span data-story="<% @character.story %>" id="asd"></span> -->
-       <%= @character.story %>
-          </div>
-          <div class="char-background">
-            <div class="char-background-grid">
-              <div class="my-background">
-                <p>MY BACKGROUND: <%= @character.background.upcase %></p>
-              </div>
-              <div>
-              </div>
-              <div class="background-details">
-              <p><b>Personality traits:</b> <%= @character.personality_traits.split('.')[0] %>.</p>
-              <p><%= @character.personality_traits.split('.')[1] %>.</p>
-              </div>
-              <div class="background-details">
-              <p><b>Ideal:</b> <%= @character.ideal %></p>
-              </div>
-              <div class="background-details">
-              <p><b>Bond:</b> <%= @character.bond %></p>
-              </div>
-              <div class="background-details">
-              <p><b>Flaw:</b> <%= @character.flaw %></p>
+        <!-- name and description -->
+        <div id="character_name">
+          <%= @character.name.upcase %>
+        </div>
+        <div>
+          <div style="text-align: justify;">
+          <div class="desc">
+            <div class="char-story">
+         <!--      <span data-story="<% @character.story %>" id="asd"></span> -->
+         <%= @character.story %>
+            </div>
+            <div class="char-background">
+              <div class="char-background-grid">
+                <div class="my-background">
+                  <p>MY BACKGROUND: <%= @character.background.upcase %></p>
+                </div>
+                <div>
+                </div>
+                <div class="background-details">
+                <p><b>Personality traits:</b> <%= @character.personality_traits.split('.')[0] %>.</p>
+                <p><%= @character.personality_traits.split('.')[1] %>.</p>
+                </div>
+                <div class="background-details">
+                <p><b>Ideal:</b> <%= @character.ideal %></p>
+                </div>
+                <div class="background-details">
+                <p><b>Bond:</b> <%= @character.bond %></p>
+                </div>
+                <div class="background-details">
+                <p><b>Flaw:</b> <%= @character.flaw %></p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+          </div>
         </div>
       </div>
-    </div>
-    <div>
-      <!-- image -->
-      <%= image_tag @character.photo, class:"image" %>
+      <div>
+        <!-- image -->
+        <%= image_tag @character.photo, class:"image" %>
+      </div>
     </div>
   </div>
 </div>

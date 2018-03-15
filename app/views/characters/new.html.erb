@@ -7,34 +7,38 @@
 </div>
 
 <script>
+  function capitalize(word) {
+    return word.charAt(0).toUpperCase() + word.slice(1);
+  }
+
   const button = document.getElementById("confirm");
   const attributesList = document.getElementById("attributes-list");
   button.addEventListener("click", (event) => {
     event.preventDefault();
     document.getElementById("first-part").style.display = "none";
     document.getElementById("second-part").style.display = "initial";
-    let attributes = document.getElementById("attributes").children;
+    // let attributes = document.getElementById("attributes").children;
     attributesList.innerHTML =
-      `<h4> ${attributes.character_name.value} </h4>
+      `<h4> Character sheet for: ${selectedAttributes.name} </h4>
       <dt>Race</dt>
-      <dd> ${attributes.race.value} </dd>
+      <dd> ${selectedAttributes.race} </dd>
       <dt>Class</dt>
-      <dd> ${attributes.character_job.value} </dd>
+      <dd> ${selectedAttributes.job} </dd>
       <dt>Alignment</dt>
-      <dd> ${attributes.character_alignment.value} </dd>
+      <dd> ${selectedAttributes.alignment} </dd>
       <dt>Background</dt>
-      <dd> ${attributes.background.value} </dd>
+      <dd> ${selectedAttributes.background} </dd>
       <dt>Personality Traits</dt>
-      <dd> ${attributes.personality_traits.value} </dd>
+      <dd> ${selectedAttributes.personality_traits} </dd>
       <dt>Ideal</dt>
-      <dd> ${attributes.ideals.value} </dd>
+      <dd> ${selectedAttributes.ideal} </dd>
       <dt>Bond</dt>
-      <dd> ${attributes.bonds.value} </dd>
+      <dd> ${selectedAttributes.bond} </dd>
       <dt>Flaw</dt>
-      <dd> ${attributes.flaws.value} </dd>`;
+      <dd> ${selectedAttributes.flaw} </dd>`;
   });
   let respond = true;
-  const storyary = [];
+  let storyary = [];
   const story = document.getElementById("story");
   const wordbuttons = document.querySelectorAll("button.word-selection");
   wordbuttons.forEach(function(wordbutton) {
@@ -50,13 +54,23 @@
         })
         .then((data) => {
           respond = true
+          // replace all existing word buttons with new words
+          // storyary.push(data.word)
+          if (data.word === "." || story.value === "") {
+            story.value = story.value + data.word
+          } else {
+            story.value = story.value + " " + data.word
+          }
+
+
           // grab array of new words
           data.suggestions.forEach(function(suggestion, index) {
-            wordbuttons[index].innerText = suggestion
+            if (story.value[story.value.length - 1] === ".") {
+              wordbuttons[index].innerText = capitalize(suggestion)
+            } else {
+              wordbuttons[index].innerText = suggestion
+            }
           });
-          // replace all existing word buttons with new words
-          storyary.push(data.word)
-          story.value = storyary.join(' ');
         });
       }
     });
@@ -64,8 +78,9 @@
   const sentenceGenerator = document.getElementById("generate-sentence");
   sentenceGenerator.addEventListener("click", (event) => {
     let curr_word = "";
-    if(storyary.last) {
-      curr_word = storyary.last;
+    storyary = story.value.split(' ')
+    if(storyary[storyary.length - 1]) {
+      curr_word = storyary[storyary.length - 1];
     }
     if(respond) {
       respond = false;
@@ -77,14 +92,17 @@
       })
       .then((data) => {
         respond = true;
-        storyary.push(data.sentence);
-        story.value = storyary.join(' ');
+        if(story.value[story.value.length - 1] === "." || story.value === "") {
+          story.value += " " + data.sentence.replace(data.sentence[0], data.sentence[0].toUpperCase())
+        }
+        else {
+          story.value += " " + data.sentence
+        }
       });
     }
   });
   const save = document.getElementById("save-story")
   save.addEventListener("click", (event) => {
-    let attributes = document.getElementById("attributes").children
     fetch("/characters", {
       method: 'post',
       actions: 'create',
@@ -95,15 +113,15 @@
       },
       credentials: 'same-origin',
       body: JSON.stringify({
-        name: attributes.character_name.value,
-        race: attributes.race.value,
-        job: attributes.character_job.value,
-        alignment: attributes.character_alignment.value,
-        background: attributes.background.value,
-        personality_traits: attributes.personality_traits.value,
-        ideal: attributes.ideals.value,
-        bond: attributes.bonds.value,
-        flaw: attributes.flaws.value,
+        name: selectedAttributes.name,
+        race: selectedAttributes.race,
+        job: selectedAttributes.job,
+        alignment: selectedAttributes.alignment,
+        background: selectedAttributes.background,
+        personality_traits: selectedAttributes.personality_traits,
+        ideal: selectedAttributes.ideal,
+        bond: selectedAttributes.bond,
+        flaw: selectedAttributes.flaw,
         story: story.value
       })
     }).then((response) => {
@@ -122,9 +140,7 @@
   const edit = document.getElementById("edit-characteristics");
   edit.addEventListener("click", (event) => {
     event.preventDefault();
-    console.info('running');
-    document.getElementById("first-part").style.display = "initial";
-    document.getElementById("second-part").style.display = "none";
+    location.reload();
   });
 
   // TODO

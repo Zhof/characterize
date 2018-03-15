@@ -1,28 +1,18 @@
 <div class="landing-background">
-  <div id="wrapper">
-    <div id="container">
-      <div class="col align-self-center">
-        <h1 class="landing-text">CHARACTERIZE</h1>
-        <h2 class="landing-sub-text">BUILD YOUR BACKSTORY</h2>
-        <br>
-        <br>
-        <br>
-        <div style="text-align: center;">
-          <span class="banner-script"></span>
-        </div>
-        <br>
-        <br>
-        <div class="banner-buttons">
-          <%= link_to new_generation_path do %>
-            <p class="btn btn-primary">QUICK STORY</p>
-          <% end %>
-          &nbsp;
-          &nbsp;
-          <%= link_to new_character_path do %>
-            <p class="btn btn-primary">CUSTOM STORY</p>
-          <% end %>
-        </div>
-      </div>
-    </div>
+  <h1 class="landing-text">CHARACTERIZE</h1>
+  <h2 class="landing-sub-text">BUILD YOUR BACKSTORY</h2>
+  <div style="text-align: center;">
+    <span class="banner-script"></span>
+  </div>
+  <div class="banner-buttons">
+    <%= link_to new_generation_path do %>
+      <p class="btn btn-primary">QUICK STORY</p>
+    <% end %>
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    <%= link_to new_character_path do %>
+      <p class="btn btn-primary">CUSTOM STORY</p>
+    <% end %>
   </div>
 </div>

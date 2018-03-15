@@ -6,9 +6,10 @@
   background-repeat: no-repeat;
   // position: absolute;
   width: 100%;
-  padding-top: 50px;
   // height: 100vh;
-  height: calc(100vh - 70px);
+  height: calc(100% - 175px);
+  top: 70px;
+  position: absolute;
 }
 
 
@@ -19,11 +20,8 @@
   font-weight: bold !important;
   color: white !important;
   font-size: 70px;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  border-top: 0px;
-  margin-top:20px;
-  margin-bottom: 0px;
+  padding: 165px 0 40px 0;
+  margin: 0px;
 }
 
 .landing-sub-text {
@@ -36,7 +34,9 @@
 }
 
 .banner-buttons {
+  padding-top: 30px;
   text-align: center;
+
   a {
     color: white;
 
@@ -44,8 +44,9 @@
   p:hover {
     background-color: #2a3749;
     transform: scale(1.07);
-    transition: 0.5s ease;
+    transition: 0.25s ease;
   }
+
   p {
     border: none !important;
   }

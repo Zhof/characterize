@@ -1,8 +1,19 @@
-h1 {
+.landing-text h1 {
   font-weight: lighter;
-  padding-top: 30px;
+  margin-top: 90px;
   padding-bottom: 10px;
   color: #4D4D4D;
+}
+
+.index-title {
+  font-family: tangerine;
+  font-size: 90px;
+}
+
+.title p {
+  font-family: tangerine;
+  font-size: 60px;
+  color: white;
 }
 
 .index-container {
