@@ -7,10 +7,10 @@
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
     <div class="menu-icons">
-      <%= link_to image_tag('book.png', alt: "MY CHARACTERS", title: "MY CHARACTERS"), tavern_path, class:"icons book"%>
+      <%= link_to image_tag('dark_knight_helmet.png', alt: "MY CHARACTERS", title: "MY CHARACTERS"), characters_path, class:"icons helmet"%>
       <%= link_to image_tag('dice.png', alt: "QUICK STORY", title: "QUICK STORY"), new_generation_path, class:"icons dice"%>
       <%= link_to image_tag('quill_pen.png', alt: "CUSTOM STORY", title: "CUSTOM STORY"), new_character_path, class:"icons quill"%>
-      <%= link_to image_tag('dark_knight_helmet.png', alt: "MY CHARACTERS", title: "MY CHARACTERS"), characters_path, class:"icons helmet"%>
+      <%= link_to image_tag('book.png', alt: "MY CHARACTERS", title: "THE TAVERN"), tavern_path, class:"icons book"%>
     </div>
 
     <% if user_signed_in? %>
@@ -28,9 +28,10 @@
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="#">Some mobile link</a></li>
-        <li><a href="#">Other one</a></li>
-        <li><a href="#">Other one</a></li>
+        <li><%= link_to 'My characters', characters_path %></li>
+        <li><%= link_to 'Quick story', new_generation_path %></li>
+        <li><%= link_to 'Custom story', new_character_path %></li>
+        <li><%= link_to 'The tavern', tavern_path %></li>
       </ul>
     </div>
   </div>
