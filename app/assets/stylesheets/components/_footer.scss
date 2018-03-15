@@ -8,3 +8,23 @@
   background: black !important;
   a { color: #506D7D !important; }
 }
+
+
+.footer-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #00243d;
+  color: white;
+
+  h5{
+    font-family: "TrajanPro";
+    margin: 0;
+  }
+  p{
+    font-size: 12px;
+    margin: 0;
+     font-family: $gotham-light;
+  }
+}
