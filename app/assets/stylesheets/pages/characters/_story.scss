@@ -5,7 +5,7 @@
 
 .character-summary {
   position: relative;
-  max-width: 30%;
+  // max-width: 30%;
   padding-left: 15px;
   .edit-characteristics {
     margin-top: 5px;
@@ -18,7 +18,8 @@
   outline: none;
   border: none;
   color: white;
-  // width: 550px;
+  width: 100%;
+  min-height: 400px;
 }
 
 .character-sheet {
@@ -35,12 +36,12 @@
 }
 
 .character-story-generator {
-  display:flex;
-  flex-direction: row;
+  // display:flex;
+  // flex-direction: row;
   width: 99vw;
   padding-top: 5%;
   & > div {
-    min-width: 30%;
+    // min-width: 30%;
     margin-top: 50px;
   }
   .sentence-generator {
@@ -76,14 +77,14 @@
 }
 
 .character-sheet {
-  width: 600px;
+  width: 100%;
   align-items: center;
 }
 
 .character-sheet-body {
   // background: linear-gradient(180deg, rgba(62, 72, 87, 1) 50%, rgba(0, 0, 0, 0) 100%);
   background-color: rgba(62, 72, 87, 1);
-  height: 550px;
+  width: 100%;
 }
 
 .character-sheet-body h3 {
@@ -93,7 +94,7 @@
 
 .paper {
   position: relative;
-  width: 600px;
+  width: 100%;
   height: auto;
 }
 

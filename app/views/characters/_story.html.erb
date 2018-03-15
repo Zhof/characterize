@@ -1,42 +1,59 @@
-<div class="character-story-generator">
-  <div class="character-summary">
-    <div class="stats-card">
-      <div class="stats dl">
-        <dl id="attributes-list">
-        </dl>
-      </div>
-    </div>
-    <button class="btn edit-characteristics" id="edit-characteristics">Edit Characteristics</button>
-  </div>
-  <div class="sentence-generator">
-    <div class="btn-group build-buttons">
-      <% @starting_words.each_slice(2) do |slice| %>
-          <% slice.each do |word| %>
-            <button class="btn word-selection" href="#"><%= word.capitalize %></button>
-          <% end %>
-      <% end %>
-    </div>
-    <%= button_tag "Generate a sentence", class: "btn", id:"generate-sentence"%>
-  </div>
-  <div class="character-sheet">
-    <div class="character-sheet-head">
-      <%= image_tag "top_edge.png", class:"paper"%>
-    </div>
-    <div class="character-sheet-body">
-      <div class="title">
-        <p>Character Sheet</p>
-      </div>
-      <div class="story">
-        <div>
-          <%= text_area_tag 'story', "", size: "58x15" %>
-          <%= button_tag "Save", class: "btn", id:"save-story" %>
-          <%= button_tag "Restart", class: "btn", id:"restart-story" %>
+<!-- <div class="character-story-generator"> -->
+  <div class="container character-story-generator">
+    <div class="row">
+      <div class="col-xs-13 col-lg-4">
+        
+        <div class="character-summary">
+          <div class="stats-card">
+            <div class="stats dl">
+              <dl id="attributes-list">
+              </dl>
+            </div>
+          </div>
+          <button class="btn edit-characteristics" id="edit-characteristics">Edit Characteristics</button>
         </div>
+
+      </div>
+      <div class="col-xs-13 col-lg-4">
+        
+        <div class="sentence-generator">
+          <div class="btn-group build-buttons">
+            <% @starting_words.each_slice(2) do |slice| %>
+                <% slice.each do |word| %>
+                  <button class="btn word-selection" href="#"><%= word.capitalize %></button>
+                <% end %>
+            <% end %>
+          </div>
+          <%= button_tag "Generate a sentence", class: "btn", id:"generate-sentence"%>
+        </div>
+
+      </div>
+      <div class="col-xs-13 col-lg-4">
+        
+        <div class="character-sheet">
+          <div class="character-sheet-head">
+            <%= image_tag "top_edge.png", class:"paper"%>
+          </div>
+          <div class="character-sheet-body">
+            <div class="title">
+              <p>Character Sheet</p>
+            </div>
+            <div class="story">
+              <div>
+                <%= text_area_tag 'story', "" %>
+                <%= button_tag "Save", class: "btn", id:"save-story" %>
+                <%= button_tag "Restart", class: "btn", id:"restart-story" %>
+              </div>
+            </div>
+          </div>
+          <div>
+            <%= image_tag "bottom_edge.png", class:"paper"%>
+          </div>
+        </div>
+
       </div>
     </div>
-    <div>
-      <%= image_tag "bottom_edge.png", class:"paper"%>
-    </div>
   </div>
-</div>
+<!-- </div> -->
+
 

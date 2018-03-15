@@ -22,12 +22,18 @@
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body style="background-color: #F7F7F7;">
-    <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
-    <div class="main-content">
-      <%= yield %>
+    <div id="container">
+      <div id="navbar">
+        <%= render 'shared/navbar' %>
+      </div>
+      <div id="body">
+        <%= yield %>
+      </div>
+      <div id="footer">
+        <%= render 'shared/footer' %>
+      </div>
     </div>
-    <%= render 'shared/footer' %>
   </body>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
