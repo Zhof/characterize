@@ -32,9 +32,34 @@
   background-color: #727d89;
 }
 
+  background-color: #7E838D;
+  color: white;
+  width: 200px;
+  height: 50px;
+  line-height: 2;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+}
+
+#save-story:hover {
+  background-color: #59778D;
+  color: white;
+}
+
 #restart-story {
+  background-color: #7E838D;
   margin-top: 10px;
-  background-color: #727d89;
+  color: white;
+  width: 200px;
+  height: 50px;
+  line-height: 2;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+}
+
+#restart-story:hover {
+  background-color: #59778D;
+  color: white;
 }
 
 .character-story-generator {
@@ -106,5 +131,8 @@
 .title p {
   font-family: tangerine;
   font-size: 60px;
-  color: white;
+}
+
+.btn-word-selection{
+  radius: 5px;
 }
