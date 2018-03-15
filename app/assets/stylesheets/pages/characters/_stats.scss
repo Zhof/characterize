@@ -33,10 +33,14 @@
 .character-choice {
   padding: 10px;
   text-align: center;
-  background-color: #7E838D;
+  background-color: #00243d;
   width: 50%;
   margin: 10px;
   cursor: pointer;
+  border: none !important;
+  font-family: "Roboto";
+  font-size: 20px;
+  font-weight: normal;
 
   label {
     cursor: pointer;
