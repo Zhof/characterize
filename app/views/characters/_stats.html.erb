@@ -4,9 +4,11 @@
   <div class="character-build">
 
           <div class="character-attribute-section" id="race-selection">
-            <h1>Name</h1>
-            <%= text_field_tag "name", "", id: "character-name", class:"type-name" %>
-            <h1>Race</h1>
+            <div class="name-wrapper">
+              <h1 >Name</h1>
+              <%= text_field_tag "name", "", id: "character-name", class:"type-name" %>
+            </div>
+            <h1 style="width: 100%">Race</h1>
             <div class="container">
               <div class="row">
                 <% @races.each do |race| %>

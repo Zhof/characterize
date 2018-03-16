@@ -20,22 +20,35 @@
     // let attributes = document.getElementById("attributes").children;
     attributesList.innerHTML =
       `<h1> ${selectedAttributes.name} </h1>
-      <dt>Race</dt>
-      <dd> ${selectedAttributes.race} </dd>
-      <dt>Class</dt>
-      <dd> ${selectedAttributes.job} </dd>
-      <dt>Alignment</dt>
-      <dd> ${selectedAttributes.alignment} </dd>
-      <dt>Background</dt>
-      <dd> ${selectedAttributes.background} </dd>
-      <dt>Personality Traits</dt>
-      <dd> ${selectedAttributes.personality_traits} </dd>
-      <dt>Ideal</dt>
-      <dd> ${selectedAttributes.ideal} </dd>
-      <dt>Bond</dt>
-      <dd> ${selectedAttributes.bond} </dd>
-      <dt>Flaw</dt>
-      <dd> ${selectedAttributes.flaw} </dd>`;
+      <div class="flex-std">
+          <div class="card-info-content">
+            <h2>Race</h2>
+            <p> ${selectedAttributes.race} </p>
+          </div>
+          <div class="card-info-content">
+            <h2>Class</h2>
+            <p> ${selectedAttributes.job} </p>
+          </div>
+        </div>
+        <div class="flex-std">
+          <div class="card-info-content">
+            <h2>Alignment</h2>
+            <p> ${selectedAttributes.alignment} </p>
+          </div>
+          <div class="card-info-content">
+            <h2>Background</h2>
+            <p> ${selectedAttributes.background} </p>
+          </div>
+        </div>
+      </div>
+      <h2>Personality Traits</h2>
+      <p> ${selectedAttributes.personality_traits} </p>
+      <h2>Ideal</h2>
+      <p> ${selectedAttributes.ideal} </p>
+      <h2>Bond</h2>
+      <p> ${selectedAttributes.bond} </p>
+      <h2>Flaw</h2>
+      <p> ${selectedAttributes.flaw} </p>`;
   });
   let respond = true;
   let storyary = [];

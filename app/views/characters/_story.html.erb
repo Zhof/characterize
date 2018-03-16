@@ -10,7 +10,6 @@
               </dl>
             </div>
           </div>
-          <button class="btn edit-characteristics" id="edit-characteristics">Edit details</button>
         </div>
 
       </div>
@@ -22,13 +21,13 @@
                 <% @starting_words.each do |word| %>
                   <div class="random-word-button col-xs-4 col-sm-4 col-md-4">
 
-                      <button class="btn word-selection" href="#"><%= word.capitalize %></button>
+                      <button class="btn-word word-selection" href="#"><%= word.capitalize %></button>
 
                   </div>
                 <% end %>
             </div>
           </div>
-          <%= button_tag "Generate some words", class: "btn", id:"generate-sentence"%>
+          <%= button_tag "Generate some words", class: "master-button", id:"generate-sentence"%>
         </div>
 
       </div>
@@ -49,8 +48,8 @@
           <div>
             <%= image_tag "bottom_edge.png", class:"paper bottom"%>
           </div>
-          <%= button_tag "Save", class: "btn", id:"save-story" %>
-          <%= button_tag "Restart", class: "btn", id:"restart-story" %>
+          <%= button_tag "Save", class: "master-button", id:"save-story" %>
+          <%= button_tag "Restart", class: "master-button", id:"restart-story" %>
         </div>
 
       </div>
