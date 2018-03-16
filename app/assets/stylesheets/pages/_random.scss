@@ -21,12 +21,16 @@
   max-height:400px;
   width: auto;
   height: auto;
-  @media screen and (max-width: 900px) {
-    display: none;
-  }
+}
+
+.char-button {
+  margin-bottom: 10px;
 }
 
 .car-card-img-wrapper{
+  @media screen and (max-width: 900px) {
+    display: none;
+  }
   height: auto;
   width: 400px;
   height: auto;
@@ -41,6 +45,9 @@
   width: calc(100% - 400px);
   height: calc(100vh - 184px);
   border-radius: 4px;
+  @media screen and (max-width: 900px) {
+    width: 100%;
+  }  
 }
 
 .car-info-padding{
