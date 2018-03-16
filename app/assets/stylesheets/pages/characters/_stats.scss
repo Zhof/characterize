@@ -1,3 +1,7 @@
+.character-name {
+  margin-top: 15px;
+}
+
 .character-stats-container {
   padding: 0;
   width: 100%;
@@ -43,6 +47,10 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
+
+  h1 {
+    margin-right: 10px !important;
+  }
 }
 
 .race-header {
@@ -51,7 +59,7 @@
 }
 
 .character-choice {
-  min-width: 275px;
+  min-width: 175px;
   text-align: center;
   margin: 10px;
   cursor: pointer;
