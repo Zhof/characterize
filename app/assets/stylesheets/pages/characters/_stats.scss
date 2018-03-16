@@ -38,16 +38,16 @@
 }
 
 .name-wrapper{
+  padding: 0 25px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
 }
-.char
-.character-build-container {
-}
 
-.character-build {
+.race-header {
+  padding: 0 25px;
+  margin-top: 30px !important;
 }
 
 .character-choice {
@@ -102,8 +102,12 @@
   }
 }
 
+.character-attribute-header {
+  margin-bottom: 25px;
+}
+
 #character-name {
-  width: 80%;
+  width: 85%;
   font-size: 22px;
   text-align: left;
   padding: 10px 20px;

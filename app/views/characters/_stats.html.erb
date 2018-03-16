@@ -8,7 +8,7 @@
               <h1 >Name</h1>
               <%= text_field_tag "name", "", id: "character-name", class:"type-name" %>
             </div>
-            <h1 style="width: 100%">Race</h1>
+            <h1 style="width: 100%" class="race-header">Race</h1>
             <div class="container">
               <div class="row">
                 <% @races.each do |race| %>
@@ -25,7 +25,7 @@
 
 
           <div class="character-attribute-section" id="job-selection" style="display: none;">
-            <h1>Class</h1>
+            <h1 class="character-attribute-header">Class</h1>
             <div class="container">
               <div class="row">
                 <% @jobs.each do |job| %>
@@ -43,7 +43,7 @@
 
 
           <div class="character-attribute-section" id="background-selection" style="display: none;">
-            <h1>Background</h1>
+            <h1 class="character-attribute-header">Background</h1>
             <div class="container">
               <div class="row">
                 <% @backgrounds.keys.each do |background| %>
@@ -61,7 +61,7 @@
 
 
           <div class="character-attribute-section" id="alignment-selection" style="display: none;">
-            <h1>Moral Alignment</h1>
+            <h1 class="character-attribute-header">Moral Alignment</h1>
             <div class="container">
               <div class="row">
               <% @alignments.each do |alignment| %>
@@ -79,7 +79,7 @@
 
 
           <div class="character-attribute-section" id="personality_traits-selection" data-attribute="personality_traits" style="display: none;">
-            <h1>Personality</h1>
+            <h1 class="character-attribute-header">Personality</h1>
             <div class="container">
               <div class="row">
               </div>
@@ -89,7 +89,7 @@
 
 
           <div class="character-attribute-section" id="personality_traits-selection2" data-attribute="personality_traits2" style="display: none;">
-            <h1>Personality</h1>
+            <h1 class="character-attribute-header">Personality</h1>
             <div class="container">
               <div class="row">
               </div>
@@ -99,7 +99,7 @@
 
 
           <div class="character-attribute-section" id="ideal-selection" style="display: none;">
-            <h1>Ideal</h1>
+            <h1 class="character-attribute-header">Ideal</h1>
             <div class="container">
               <div class="row">
               </div>
@@ -109,7 +109,7 @@
 
 
           <div class="character-attribute-section" id="bond-selection" style="display: none;">
-            <h1>Bond</h1>
+            <h1 class="character-attribute-header">Bond</h1>
             <div class="container">
               <div class="row">
               </div>
@@ -118,7 +118,7 @@
 
 
           <div class="character-attribute-section" id="flaw-selection" style="display: none;">
-            <h1>Flaw</h1>
+            <h1 class="character-attribute-header">Flaw</h1>
             <div class="container">
               <div class="row">
               </div>
