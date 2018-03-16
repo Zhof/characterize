@@ -1,48 +1,52 @@
-<div class="character-show-container">
-  <div class="card">
-    <div class="character-show-inner-container">
-      <div>
-        <!-- name and description -->
-        <div id="character_name">
-          <%= @character.name.upcase %>
-        </div>
-        <div>
-          <div style="text-align: justify;">
-          <div class="desc">
-            <div class="char-story">
-         <!--      <span data-story="<% @character.story %>" id="asd"></span> -->
-         <%= @character.story %>
-            </div>
-            <div class="char-background">
-              <div class="char-background-grid">
-                <div class="my-background">
-                  <p>MY BACKGROUND: <%= @character.background.upcase %></p>
-                </div>
-                <div>
-                </div>
-                <div class="background-details">
-                <p><b>Personality traits:</b> <%= @character.personality_traits.split('.')[0] %>.</p>
-                <p><%= @character.personality_traits.split('.')[1] %>.</p>
-                </div>
-                <div class="background-details">
-                <p><b>Ideal:</b> <%= @character.ideal %></p>
-                </div>
-                <div class="background-details">
-                <p><b>Bond:</b> <%= @character.bond %></p>
-                </div>
-                <div class="background-details">
-                <p><b>Flaw:</b> <%= @character.flaw %></p>
-                </div>
-              </div>
-            </div>
-          </div>
-          </div>
-        </div>
+<div class="car-card-wrapper">
+  <div class="row">
+    <div class="col-xs-2">
+      <div class="car-card-img-wrapper">
+        <%= image_tag @character.photo, class: "image" %>
       </div>
-      <div>
-        <!-- image -->
-        <%= image_tag @character.photo, class:"image" %>
+    </div>
+    <div class="col-xs-8">
+      <div class="car-info-wrapper">
+        <div class="car-info-padding">
+          <h1><%= @character.name.upcase %></h1>
+          <p><%= @character.story %></p>
+          <div>
+            <h2>MY BACKGROUND</h2>
+            <p><%= @character.background.upcase %></p>
+          </div>
+          <div>
+            <h2>Personality traits</h2>
+            <p><%= @character.personality_traits.split('.')[0] %>. <%= @character.personality_traits.split('.')[1] %>.</p>
+          </div>
+          <div>
+            <h2>Ideal:</h2>
+            <p><%= @character.ideal %></p>
+          </div>
+          <div>
+            <h2>Bond:</h2>
+            <p><%= @character.bond %></p>
+          </div>
+          <div>
+            <h2>Flaw:</h2>
+            <p><%= @character.flaw %></p></p>
+          </div>
+
+          <%= simple_form_for @character do |f| %>
+            <%= f.input :story, as: :hidden %>
+            <% @character_params.each do |attribute, value| %>
+              <%= f.input attribute.to_sym, as: :hidden %>
+            <% end %>
+            <div class= "buttons">
+              <%= link_to 'RANDOM AGAIN', new_generation_path, class: "default-btn btn" %>
+              <%= f.button :submit, "SAVE THIS" %>
+              <%= link_to 'CUSTOM STORY', new_character_path, class: "default-btn btn" %>
+            </div>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
 </div>
+
+
+
