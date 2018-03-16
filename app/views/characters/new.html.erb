@@ -13,8 +13,10 @@
   }
   const button = document.getElementById("confirm");
   const attributesList = document.getElementById("attributes-list");
+  const wordbuttons = document.querySelectorAll("button.word-selection");
   button.addEventListener("click", (event) => {
     event.preventDefault();
+    wordbuttons[wordbuttons.length - 1].innerText = capitalize(selectedAttributes.name);
     document.getElementById("first-part").style.display = "none";
     document.getElementById("second-part").style.display = "initial";
     // let attributes = document.getElementById("attributes").children;
@@ -40,7 +42,6 @@
   let respond = true;
   let storyary = [];
   const story = document.getElementById("story");
-  const wordbuttons = document.querySelectorAll("button.word-selection");
   wordbuttons.forEach(function(wordbutton) {
     wordbutton.addEventListener("click", (event) => {
       var word = event.srcElement.innerText;
@@ -62,6 +63,7 @@
             story.value = story.value + " " + data.word
           }
           // grab array of new words
+          data.suggestions.push(capitalize(attributesList.firstElementChild.innerText))
           data.suggestions.forEach(function(suggestion, index) {
             if (story.value[story.value.length - 1] === ".") {
               wordbuttons[index].innerText = capitalize(suggestion)
