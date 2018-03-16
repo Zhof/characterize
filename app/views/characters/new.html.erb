@@ -16,7 +16,12 @@
   const wordbuttons = document.querySelectorAll("button.word-selection");
   button.addEventListener("click", (event) => {
     event.preventDefault();
-    wordbuttons[wordbuttons.length - 1].innerText = capitalize(selectedAttributes.name);
+    if(selectedAttributes.name) {
+      wordbuttons[wordbuttons.length - 1].innerText = capitalize(selectedAttributes.name);
+    }
+    else {
+      wordbuttons[wordbuttons.length - 1].innerText = "Undefined";
+    };
     document.getElementById("first-part").style.display = "none";
     document.getElementById("second-part").style.display = "initial";
     // let attributes = document.getElementById("attributes").children;
