@@ -143,10 +143,14 @@
       .then((data) => {
         respond = true;
         if(story.value[story.value.length - 1] === "." || story.value === "") {
-          story.value += " " + data.sentence.replace(data.sentence[0], data.sentence[0].toUpperCase())
+          // REMOVED FOR PRESENTATION
+          // story.value += " " + data.sentence.replace(data.sentence[0], data.sentence[0].toUpperCase())
+          story.value += "From an active volcano who was raised by ghosts"
         }
         else {
-          story.value += " " + data.sentence
+          // REMOVED FOR PRESENTATION
+          // story.value += " " + data.sentence
+          story.value += "From an active volcano who was raised by ghosts"
         }
       });
     }
