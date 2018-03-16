@@ -17,6 +17,7 @@ const selectCharacterOption = (selectedElement) => {
   parent.style.display = "none";
   const nextSectionId = allCharacterAttributePages.indexOf(parent.id) + 1;
   global.selectedAttributes[selectedElement.dataset.attribute] = selectedElement.dataset.value;
+  window.scrollTo(0, 0);
   if (allCharacterAttributePages[nextSectionId]) {
     document.getElementById(allCharacterAttributePages[nextSectionId]).style.display = "flex";
   } else {
