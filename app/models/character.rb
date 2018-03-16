@@ -1,5 +1,6 @@
 class Character < ApplicationRecord
 belongs_to :user
+has_many :reviews
 
 validates :full, inclusion: { in: [true, false] }
 validates :full, exclusion: { in: [nil] }
