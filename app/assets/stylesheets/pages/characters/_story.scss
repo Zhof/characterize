@@ -1,7 +1,6 @@
-// .build-buttons {
-//   min-width: 540px;
-//   text-align: center;
-// }
+.build-buttons {
+  width: 100% !important;
+}
 
 .character-summary {
   position: relative;
@@ -27,9 +26,19 @@
   text-align: center;
 }
 
+.random-word-button {
+  padding: 0px 5px;
+}
+
 #save-story {
-  margin-top: 10px;
   background-color: #727d89;
+  margin-top: 10px;
+
+  color: white;
+  padding: 5px;
+  line-height: 2;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
 }
 
 #save-story:hover {
@@ -38,11 +47,10 @@
 }
 
 #restart-story {
-  background-color: #7E838D;
+  background-color: #00243d;
   margin-top: 10px;
   color: white;
-  width: 200px;
-  height: 50px;
+  padding: 5px;
   line-height: 2;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
@@ -53,13 +61,38 @@
   color: white;
 }
 
+.story-column {
+  padding: 0;
+}
+
+.generation-column {
+  margin-bottom: 40px;
+  @media (min-width: 1200px) {
+    &.word-selection-column {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      height: 90vh;
+    }
+  }
+}
+
 .character-story-generator {
+  @media (max-width: 1200px) {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
   // display:flex;
   // flex-direction: row;
-  width: 99vw;
+  // width: 99vw;
+  padding-top: 20px;
+  margin: 0;
+  width: 100%;
+
   & > div {
     // min-width: 30%;
-    margin-top: 50px;
+    margin-bottom: 50px;
   }
   .sentence-generator {
     display: flex;
@@ -67,18 +100,28 @@
     align-items: center;
     justify-content: center;
     .btn-group {
-      display: grid;
-      grid-template-columns: auto auto;
-      grid-column-gap: 20px;
-      grid-row-gap: 10px;
+      // display: grid;
+      // grid-template-columns: auto auto;
+      // grid-column-gap: 20px;
+      // grid-row-gap: 10px;
     }
   }
+}
+
+.word-selection {
+  width: 100% !important;
+  margin: 3px;
 }
 
 .stats-card {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
   padding: 2px 10px;
+
+  h1 {
+    font-size: 46px;
+    font-weight: 600;
+  }
 }
 
 .stats-card:hover {
@@ -113,6 +156,10 @@
   position: relative;
   width: 100%;
   height: auto;
+
+  &.bottom {
+    top: -2px;
+  }
 }
 
 #generate-sentence {
@@ -122,8 +169,9 @@
 .title p {
   font-family: tangerine;
   font-size: 60px;
+  color: white;
 }
 
 .btn-word-selection{
-  radius: 5px;
+  radius: 5px !important;
 }

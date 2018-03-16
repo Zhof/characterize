@@ -8,144 +8,140 @@
 
 <% content_for(:after_js) do %>
   <script>
-    function capitalize(word) {
-      return word.charAt(0).toUpperCase() + word.slice(1);
-    }
-
-    const button = document.getElementById("confirm");
-    const attributesList = document.getElementById("attributes-list");
-    button.addEventListener("click", (event) => {
-      event.preventDefault();
-      document.getElementById("first-part").style.display = "none";
-      document.getElementById("second-part").style.display = "initial";
-      // let attributes = document.getElementById("attributes").children;
-      attributesList.innerHTML =
-        `<h4> Character sheet for: ${selectedAttributes.name} </h4>
-        <dt>Race</dt>
-        <dd> ${selectedAttributes.race} </dd>
-        <dt>Class</dt>
-        <dd> ${selectedAttributes.job} </dd>
-        <dt>Alignment</dt>
-        <dd> ${selectedAttributes.alignment} </dd>
-        <dt>Background</dt>
-        <dd> ${selectedAttributes.background} </dd>
-        <dt>Personality Traits</dt>
-        <dd> ${selectedAttributes.personality_traits} </dd>
-        <dt>Ideal</dt>
-        <dd> ${selectedAttributes.ideal} </dd>
-        <dt>Bond</dt>
-        <dd> ${selectedAttributes.bond} </dd>
-        <dt>Flaw</dt>
-        <dd> ${selectedAttributes.flaw} </dd>`;
-    });
-    let respond = true;
-    let storyary = [];
-    const story = document.getElementById("story");
-    const wordbuttons = document.querySelectorAll("button.word-selection");
-    wordbuttons.forEach(function(wordbutton) {
-      wordbutton.addEventListener("click", (event) => {
-        var word = event.srcElement.innerText;
-        if(respond) {
-          respond = false;
-          fetch(`<%= generate_story_path %>?word=${word}`, {
-            credentials: "same-origin"
-          })
-          .then(response => {
-            return response.json();
-          })
-          .then((data) => {
-            respond = true
-            // replace all existing word buttons with new words
-            // storyary.push(data.word)
-            if (data.word === "." || story.value === "") {
-              story.value = story.value + data.word
-            } else {
-              story.value = story.value + " " + data.word
-            }
-
-
-            // grab array of new words
-            data.suggestions.forEach(function(suggestion, index) {
-              if (story.value[story.value.length - 1] === ".") {
-                wordbuttons[index].innerText = capitalize(suggestion)
-              } else {
-                wordbuttons[index].innerText = suggestion
-              }
-            });
-          });
-        }
-      });
-    });
-    const sentenceGenerator = document.getElementById("generate-sentence");
-    sentenceGenerator.addEventListener("click", (event) => {
-      let curr_word = "";
-      storyary = story.value.split(' ')
-      if(storyary[storyary.length - 1]) {
-        curr_word = storyary[storyary.length - 1];
-      }
+  function capitalize(word) {
+    return word.charAt(0).toUpperCase() + word.slice(1);
+  }
+  const button = document.getElementById("confirm");
+  const attributesList = document.getElementById("attributes-list");
+  button.addEventListener("click", (event) => {
+    event.preventDefault();
+    document.getElementById("first-part").style.display = "none";
+    document.getElementById("second-part").style.display = "initial";
+    // let attributes = document.getElementById("attributes").children;
+    attributesList.innerHTML =
+      `<h1> ${selectedAttributes.name} </h1>
+      <dt>Race</dt>
+      <dd> ${selectedAttributes.race} </dd>
+      <dt>Class</dt>
+      <dd> ${selectedAttributes.job} </dd>
+      <dt>Alignment</dt>
+      <dd> ${selectedAttributes.alignment} </dd>
+      <dt>Background</dt>
+      <dd> ${selectedAttributes.background} </dd>
+      <dt>Personality Traits</dt>
+      <dd> ${selectedAttributes.personality_traits} </dd>
+      <dt>Ideal</dt>
+      <dd> ${selectedAttributes.ideal} </dd>
+      <dt>Bond</dt>
+      <dd> ${selectedAttributes.bond} </dd>
+      <dt>Flaw</dt>
+      <dd> ${selectedAttributes.flaw} </dd>`;
+  });
+  let respond = true;
+  let storyary = [];
+  const story = document.getElementById("story");
+  const wordbuttons = document.querySelectorAll("button.word-selection");
+  wordbuttons.forEach(function(wordbutton) {
+    wordbutton.addEventListener("click", (event) => {
+      var word = event.srcElement.innerText;
       if(respond) {
         respond = false;
-        fetch(`<%= generate_sentence_path %>?word=${curr_word}`, {
+        fetch(`<%= generate_story_path %>?word=${word}`, {
           credentials: "same-origin"
         })
         .then(response => {
           return response.json();
         })
         .then((data) => {
-          respond = true;
-          if(story.value[story.value.length - 1] === "." || story.value === "") {
-            story.value += " " + data.sentence.replace(data.sentence[0], data.sentence[0].toUpperCase())
+          respond = true
+          // replace all existing word buttons with new words
+          // storyary.push(data.word)
+          if (data.word === "." || story.value === "") {
+            story.value = story.value + data.word
+          } else {
+            story.value = story.value + " " + data.word
           }
-          else {
-            story.value += " " + data.sentence
-          }
+          // grab array of new words
+          data.suggestions.forEach(function(suggestion, index) {
+            if (story.value[story.value.length - 1] === ".") {
+              wordbuttons[index].innerText = capitalize(suggestion)
+            } else {
+              wordbuttons[index].innerText = suggestion
+            }
+          });
         });
       }
     });
-    const save = document.getElementById("save-story")
-    save.addEventListener("click", (event) => {
-      fetch("/characters", {
-        method: 'post',
-        actions: 'create',
-        headers:{
-          'X-Requested-With': 'XMLHttpRequest',
-          'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
-          'Content-Type': 'application/json',
-        },
-        credentials: 'same-origin',
-        body: JSON.stringify({
-          name: selectedAttributes.name,
-          race: selectedAttributes.race,
-          job: selectedAttributes.job,
-          alignment: selectedAttributes.alignment,
-          background: selectedAttributes.background,
-          personality_traits: selectedAttributes.personality_traits,
-          ideal: selectedAttributes.ideal,
-          bond: selectedAttributes.bond,
-          flaw: selectedAttributes.flaw,
-          story: story.value
-        })
-      }).then((response) => {
-        window.location = "/characters";
+  });
+  const sentenceGenerator = document.getElementById("generate-sentence");
+  sentenceGenerator.addEventListener("click", (event) => {
+    let curr_word = "";
+    storyary = story.value.split(' ')
+    if(storyary[storyary.length - 1]) {
+      curr_word = storyary[storyary.length - 1];
+    }
+    if(respond) {
+      respond = false;
+      fetch(`<%= generate_sentence_path %>?word=${curr_word}`, {
+        credentials: "same-origin"
+      })
+      .then(response => {
+        return response.json();
+      })
+      .then((data) => {
+        respond = true;
+        if(story.value[story.value.length - 1] === "." || story.value === "") {
+          story.value += " " + data.sentence.replace(data.sentence[0], data.sentence[0].toUpperCase())
+        }
+        else {
+          story.value += " " + data.sentence
+        }
       });
+    }
+  });
+  const save = document.getElementById("save-story")
+  save.addEventListener("click", (event) => {
+    fetch("/characters", {
+      method: 'post',
+      actions: 'create',
+      headers:{
+        'X-Requested-With': 'XMLHttpRequest',
+        'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+        'Content-Type': 'application/json',
+      },
+      credentials: 'same-origin',
+      body: JSON.stringify({
+        name: selectedAttributes.name,
+        race: selectedAttributes.race,
+        job: selectedAttributes.job,
+        alignment: selectedAttributes.alignment,
+        background: selectedAttributes.background,
+        personality_traits: selectedAttributes.personality_traits,
+        ideal: selectedAttributes.ideal,
+        bond: selectedAttributes.bond,
+        flaw: selectedAttributes.flaw,
+        story: story.value
+      })
+    }).then((response) => {
+      window.location = "/characters";
     });
-    const restart = document.getElementById("restart-story");
-    restart.addEventListener("click", (event) => {
-      storyary.length = 0;
-      story.value = "";
-      wordbuttons.forEach(function(wordbutton) {
-        var word = wordbutton.innerText;
-        wordbutton.innerText = word.charAt(0).toUpperCase() + word.slice(1);
-      });
+  });
+  const restart = document.getElementById("restart-story");
+  restart.addEventListener("click", (event) => {
+    storyary.length = 0;
+    story.value = "";
+    wordbuttons.forEach(function(wordbutton) {
+      var word = wordbutton.innerText;
+      wordbutton.innerText = word.charAt(0).toUpperCase() + word.slice(1);
     });
-    const edit = document.getElementById("edit-characteristics");
-    edit.addEventListener("click", (event) => {
-      event.preventDefault();
-      location.reload();
-    });
-
-    // TODO
-    // if story.value.last == "." change wordbuttons.innerText to capitalize
-  </script>
+  });
+  const edit = document.getElementById("edit-characteristics");
+  edit.addEventListener("click", (event) => {
+    event.preventDefault();
+    location.reload();
+  });
+  // TODO
+  // if story.value.last == "." change wordbuttons.innerText to capitalize
+</script>
 <% end   %>
 

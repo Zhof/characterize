@@ -1,25 +1,33 @@
 <h1 align="center" class="index-title">My Characters</h1>
 <div class="index-container">
-  <div class="character-grid">
-    <% @characters.each_with_index do |character| %>
-      <%= link_to character_path(character) do %>
-        <div class="character-card">
-          <%= image_tag character.photo, :class => "avatar" %>
-          <div class="character-card-content">
-            <div class="content-header">
-              <h4 align="right"><%= character.name %></h4>
-            </div>
-            <div class="content-body">
-              <p><%= truncate(character.story, :length => 90) %></p>
-              <% if character.shared == true %>
-                <div class="pints">
-                  <p><%= character.rating %><%= image_tag 'pint.png', class:"pint_icon"%></p>
+  <div class="container">
+    <div class="row">
+      <% @characters.each_with_index do |character| %>
+        <%= link_to character_path(character) do %>
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="character-card">
+              <%= image_tag character.photo, :class => "avatar" %>
+              <div class="character-card-content">
+                <div class="content-header-tavern">
+                  <div class="inner-header">
+                    <h4><%= character.name %></h4>
+                  </div>
                 </div>
-              <% end %>
+                <div class="content-body-tavern">
+                  <div class="character-bio">
+                    <%= truncate(character.story, :length => 90) %>
+                  </div>
+                  <% if character.shared %>
+                    <div class="pints">
+                      <span><%= character.rating %><%= image_tag 'pint.png', class:"pint_icon"%></span>
+                    </div>
+                  <% end %>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
   </div>
 </div>

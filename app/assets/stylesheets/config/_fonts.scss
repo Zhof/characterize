@@ -18,48 +18,48 @@ $headers-font: "Open Sans", "Roboto", "sans-serif";
 
 @font-face {
     font-family: 'TrajanPro';
-    src: url('fonts/TrajanPro.eot');
-    src: url('fonts/TrajanPro.eot') format('embedded-opentype'),
-         url('fonts/TrajanPro.woff2') format('woff2'),
-         url('fonts/TrajanPro.woff') format('woff'),
-         url('fonts/TrajanPro.ttf') format('truetype'),
-         url('fonts/TrajanPro.svg#TrajanPro') format('svg');
+    src: font-url('TrajanPro.eot');
+    src: font-url('TrajanPro.eot') format('embedded-opentype'),
+         font-url('TrajanPro.woff2') format('woff2'),
+         font-url('TrajanPro.woff') format('woff'),
+         font-url('TrajanPro.ttf') format('truetype'),
+         font-url('TrajanPro.svg#TrajanPro') format('svg');
 }
 $trajan: "TrajanPro";
 
 
 @font-face {
     font-family: 'TungstenMedium';
-    src: url('fonts/TungstenMedium.eot');
-    src: url('fonts/TungstenMedium.eot') format('embedded-opentype'),
-         url('fonts/TungstenMedium.woff2') format('woff2'),
-         url('fonts/TungstenMedium.woff') format('woff'),
-         url('fonts/TungstenMedium.ttf') format('truetype'),
-         url('fonts/TungstenMedium.svg#TungstenMedium') format('svg');
+    src: font-url('TungstenMedium.eot');
+    src: font-url('TungstenMedium.eot') format('embedded-opentype'),
+         font-url('TungstenMedium.woff2') format('woff2'),
+         font-url('TungstenMedium.woff') format('woff'),
+         font-url('TungstenMedium.ttf') format('truetype'),
+         font-url('TungstenMedium.svg#TungstenMedium') format('svg');
 }
 
 $tungsten: "TungstenMedium";
 
 @font-face {
     font-family: 'GothamNarrowMedium';
-    src: url('fonts/GothamNarrowMedium.eot');
-    src: url('fonts/GothamNarrowMedium.eot') format('embedded-opentype'),
-         url('fonts/GothamNarrowMedium.woff2') format('woff2'),
-         url('fonts/GothamNarrowMedium.woff') format('woff'),
-         url('fonts/GothamNarrowMedium.ttf') format('truetype'),
-         url('fonts/GothamNarrowMedium.svg#GothamNarrowMedium') format('svg');
+    src: font-url('GothamNarrowMedium.eot');
+    src: font-url('GothamNarrowMedium.eot') format('embedded-opentype'),
+         font-url('GothamNarrowMedium.woff2') format('woff2'),
+         font-url('GothamNarrowMedium.woff') format('woff'),
+         font-url('GothamNarrowMedium.ttf') format('truetype'),
+         font-url('GothamNarrowMedium.svg#GothamNarrowMedium') format('svg');
 }
 $gotham: "GothamNarrowMedium";
 
 
 @font-face {
     font-family: 'GothamNarrowLight';
-    src: url('fonts/GothamNarrowLight.eot');
-    src: url('fonts/GothamNarrowLight.eot') format('embedded-opentype'),
-         url('fonts/GothamNarrowLight.woff2') format('woff2'),
-         url('fonts/GothamNarrowLight.woff') format('woff'),
-         url('fonts/GothamNarrowLight.ttf') format('truetype'),
-         url('fonts/GothamNarrowLight.svg#GothamNarrowLight') format('svg');
+    src: font-url('GothamNarrowLight.eot');
+    src: font-url('GothamNarrowLight.eot') format('embedded-opentype'),
+         font-url('GothamNarrowLight.woff2') format('woff2'),
+         font-url('GothamNarrowLight.woff') format('woff'),
+         font-url('GothamNarrowLight.ttf') format('truetype'),
+         font-url('GothamNarrowLight.svg#GothamNarrowLight') format('svg');
 }
 
 $gotham-light: "GothamNarrowLight";
