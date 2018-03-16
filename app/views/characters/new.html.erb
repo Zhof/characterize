@@ -13,8 +13,15 @@
   }
   const button = document.getElementById("confirm");
   const attributesList = document.getElementById("attributes-list");
+  const wordbuttons = document.querySelectorAll("button.word-selection");
   button.addEventListener("click", (event) => {
     event.preventDefault();
+    if(selectedAttributes.name) {
+      wordbuttons[wordbuttons.length - 1].innerText = capitalize(selectedAttributes.name);
+    }
+    else {
+      wordbuttons[wordbuttons.length - 1].innerText = "Undefined";
+    };
     document.getElementById("first-part").style.display = "none";
     document.getElementById("second-part").style.display = "initial";
     // let attributes = document.getElementById("attributes").children;
@@ -49,11 +56,42 @@
       <p> ${selectedAttributes.bond} </p>
       <h2>Flaw</h2>
       <p> ${selectedAttributes.flaw} </p>`;
+// =======
+//       `
+//       <h1> ${selectedAttributes.name} </h1>
+//       <div class="container character-stats-container">
+//         <div class="row">
+//           <div class="col-xs-6">
+//           <dt>Race</dt>
+//             <dd> ${selectedAttributes.race} </dd>
+//           </div>
+//           <div class="col-xs-6">
+//             <dt>Class</dt>
+//             <dd> ${selectedAttributes.job} </dd>
+//           </div>
+//           <div class="col-xs-6">
+//             <dt>Alignment</dt>
+//             <dd> ${selectedAttributes.alignment} </dd>
+//           </div>
+//           <div class="col-xs-6">
+//             <dt>Background</dt>
+//             <dd> ${selectedAttributes.background} </dd>
+//           </div>
+//         </div>
+//       </div>
+//       <dt>Personality Traits</dt>
+//       <dd> ${selectedAttributes.personality_traits} </dd>
+//       <dt>Ideal</dt>
+//       <dd> ${selectedAttributes.ideal} </dd>
+//       <dt>Bond</dt>
+//       <dd> ${selectedAttributes.bond} </dd>
+//       <dt>Flaw</dt>
+//       <dd> ${selectedAttributes.flaw} </dd>`;
+// >>>>>>> master
   });
   let respond = true;
   let storyary = [];
   const story = document.getElementById("story");
-  const wordbuttons = document.querySelectorAll("button.word-selection");
   wordbuttons.forEach(function(wordbutton) {
     wordbutton.addEventListener("click", (event) => {
       var word = event.srcElement.innerText;
@@ -75,6 +113,7 @@
             story.value = story.value + " " + data.word
           }
           // grab array of new words
+          data.suggestions.push(capitalize(attributesList.firstElementChild.innerText))
           data.suggestions.forEach(function(suggestion, index) {
             if (story.value[story.value.length - 1] === ".") {
               wordbuttons[index].innerText = capitalize(suggestion)

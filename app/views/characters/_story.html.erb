@@ -1,7 +1,7 @@
 <!-- <div class="character-story-generator"> -->
   <div class="container character-story-generator">
     <div class="row">
-      <div class="generation-column col-xs-13 col-lg-4">
+      <div class="generation-column character-attribute-list col-xs-13 col-lg-4">
 
         <div class="character-summary">
           <div class="stats-card">
@@ -25,6 +25,9 @@
 
                   </div>
                 <% end %>
+                <div class="random-word-button col-xs-4 col-sm-4 col-md-4">
+                  <button class="btn word-selection" href="#"></button>
+                </div>
             </div>
           </div>
           <%= button_tag "Generate some words", class: "master-button", id:"generate-sentence"%>

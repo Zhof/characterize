@@ -41,7 +41,7 @@ class CharacterGenerator
   end
 
   def fetch_possibilities(word: nil)
-    if word == nil || word == "." || word == ","
+    if word == nil || word == "." || word == "," || !@word_choices[word.downcase]
       word = @word_choices.keys.sample
     else
       word = word.downcase
