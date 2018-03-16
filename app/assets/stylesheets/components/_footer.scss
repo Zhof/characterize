@@ -11,6 +11,9 @@
 
 
 .footer-container{
+  @media (screen and max-width: 1200px) {
+    display: none;  
+  }
   overflow: hidden;
   display: flex;
   justify-content: space-between;
