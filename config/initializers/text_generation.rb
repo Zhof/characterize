@@ -70,7 +70,7 @@ class CharacterGenerator
     sentence = []
 
     if word_count == nil
-      word_count = (8..20).to_a.sample
+      word_count = (3..6).to_a.sample
     end
     if word == nil || word == ""
       curr_word = shuffled_frequent_words.sample[0]

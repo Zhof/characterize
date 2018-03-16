@@ -40,21 +40,27 @@ class CharactersController < ApplicationController
   end
 
   def tavern
-    user = current_user
-    @characters = Character.where(shared: true)
+    @user = current_user
+    @characters = Character.where(shared: true).order(rating: :desc)
   end
 
   def share
-    @character.shared = true
-    if @character.save
-      redirect_to tavern_path
+    if @character.shared
+        redirect_to character_path(@character), alert: "This character is already at the Tavern"
     else
-      redirect_to character_path(@character), notice: "This character is already at the Tavern"
+      @character.shared = true
+      @character.save
+      redirect_to tavern_path
     end
   end
 
   def buy_pint
-    @character.rating += 1
+    if @character.rating
+      @character.rating += 1
+    else
+      @character.rating = 1
+    end
+
     @character.save
     redirect_to character_path
   end

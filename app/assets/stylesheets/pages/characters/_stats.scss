@@ -1,4 +1,8 @@
 
+#first-part {
+  margin: 0 auto;
+}
+
 .build-form {
   min-width: 540px;
   margin-top: 35px;
@@ -21,6 +25,7 @@
 
 .character-build-container {
   padding-bottom: 15px;
+  padding-top: 50px;
 }
 
 
@@ -30,7 +35,6 @@
 }
 
 .character-build-container {
-
 }
 
 .character-build {
@@ -38,12 +42,15 @@
 
 .character-choice {
   min-width: 275px;
-  padding: 10px;
   text-align: center;
-  background-color: #7E838D;
   width: 50%;
   margin: 10px;
   cursor: pointer;
+  background-color: #00243d;
+  color: white;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+  border-radius: 2PX;
+  padding: 10px;
 
   label {
     cursor: pointer;
@@ -56,6 +63,12 @@
   &.wide {
     width: 80%;
   }
+}
+
+.character-choice:hover {
+  color: #333;
+  color: white;
+  text-decoration: none;
 }
 
 .character-choice-selected {
