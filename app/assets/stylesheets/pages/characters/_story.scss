@@ -8,6 +8,10 @@
   padding-left: 15px;
   .edit-characteristics {
     margin-top: 10px;
+
+    @media screen and (max-width: 1400px) {
+      display: none;
+    }
   }
 }
 
