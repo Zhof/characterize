@@ -8,6 +8,10 @@
   padding-left: 15px;
   .edit-characteristics {
     margin-top: 10px;
+
+    @media screen and (max-width: 1400px) {
+      display: none;
+    }
   }
 }
 
@@ -28,6 +32,23 @@
 
 .random-word-button {
   padding: 0px 5px;
+
+  .btn {
+    padding: 10px 5px !important;
+
+    &:hover {
+      background-color: #59778D;
+      color: white;
+    }
+
+    &:focus {
+      color: white;
+    }
+
+    &:active {
+      color: white;
+    }    
+  }
 }
 
 #save-story {
