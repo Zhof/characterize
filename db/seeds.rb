@@ -8,4 +8,5 @@
 Character.destroy_all
 User.destroy_all
 
-user1 = User.create!(username: "dndboi", first_name: "rick", last_name: "moranis", email: "email@email.com", password: "1guest")
+user1 = User.create!(username: "Dndrulez", first_name: "ricky", last_name: "moranis", email: "email@email.com", password: "1guest")
+user2 = User.create!(email: "email2@email.com", password: "2guest", username: "iliekdnd", first_name: "segourney", last_name: "reaver")
