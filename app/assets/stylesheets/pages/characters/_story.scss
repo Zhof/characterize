@@ -28,7 +28,7 @@
 .character-sheet {
   display: inline-block;
   text-align: center;
-  height: calc(100vh - 140px);
+  height: calc(100vh - 300px);
 }
 
 .random-word-button {
@@ -102,8 +102,9 @@
     &.word-selection-column {
       display: flex;
       flex-direction: column;
-      height: 100vh;
-      justify-content: space-around;
+      height: calc(100vh - 230px);
+      min-height: 500px;
+      justify-content: center;
       align-items: center;
     }
   }
