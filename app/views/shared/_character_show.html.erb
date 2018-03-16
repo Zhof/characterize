@@ -4,8 +4,10 @@
   </div>
   <div class="car-info-wrapper">
     <div class="car-info-padding">
-      <h1><%= @character.name.upcase %></h1>
-      <p><%= @character.story %></p>
+      <div>
+        <h1><%= @character.name.upcase %></h1>
+        <p><%= @character.story %></p>
+      </div>
       <div class="flex-std">
         <% if @character.full == true %>
         <div class="card-info-content">

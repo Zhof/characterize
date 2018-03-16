@@ -26,36 +26,68 @@
     document.getElementById("second-part").style.display = "initial";
     // let attributes = document.getElementById("attributes").children;
     attributesList.innerHTML =
-      `
-      <h1> ${selectedAttributes.name} </h1>
-      <div class="container character-stats-container">
-        <div class="row">
-          <div class="col-xs-6">
-          <dt>Race</dt>
-            <dd> ${selectedAttributes.race} </dd>
+      `<h1> ${selectedAttributes.name} </h1>
+      <div class="flex-std">
+          <div class="card-info-content">
+            <h2>Race</h2>
+            <p> ${selectedAttributes.race} </p>
           </div>
-          <div class="col-xs-6">
-            <dt>Class</dt>
-            <dd> ${selectedAttributes.job} </dd>
-          </div>          
-          <div class="col-xs-6">
-            <dt>Alignment</dt>
-            <dd> ${selectedAttributes.alignment} </dd>
+          <div class="card-info-content">
+            <h2>Class</h2>
+            <p> ${selectedAttributes.job} </p>
           </div>
-          <div class="col-xs-6">
-            <dt>Background</dt>
-            <dd> ${selectedAttributes.background} </dd>
+        </div>
+        <div class="flex-std">
+          <div class="card-info-content">
+            <h2>Alignment</h2>
+            <p> ${selectedAttributes.alignment} </p>
+          </div>
+          <div class="card-info-content">
+            <h2>Background</h2>
+            <p> ${selectedAttributes.background} </p>
           </div>
         </div>
       </div>
-      <dt>Personality Traits</dt>
-      <dd> ${selectedAttributes.personality_traits} </dd>
-      <dt>Ideal</dt>
-      <dd> ${selectedAttributes.ideal} </dd>
-      <dt>Bond</dt>
-      <dd> ${selectedAttributes.bond} </dd>
-      <dt>Flaw</dt>
-      <dd> ${selectedAttributes.flaw} </dd>`;
+      <h2>Personality Traits</h2>
+      <p> ${selectedAttributes.personality_traits} </p>
+      <h2>Ideal</h2>
+      <p> ${selectedAttributes.ideal} </p>
+      <h2>Bond</h2>
+      <p> ${selectedAttributes.bond} </p>
+      <h2>Flaw</h2>
+      <p> ${selectedAttributes.flaw} </p>`;
+// =======
+//       `
+//       <h1> ${selectedAttributes.name} </h1>
+//       <div class="container character-stats-container">
+//         <div class="row">
+//           <div class="col-xs-6">
+//           <dt>Race</dt>
+//             <dd> ${selectedAttributes.race} </dd>
+//           </div>
+//           <div class="col-xs-6">
+//             <dt>Class</dt>
+//             <dd> ${selectedAttributes.job} </dd>
+//           </div>
+//           <div class="col-xs-6">
+//             <dt>Alignment</dt>
+//             <dd> ${selectedAttributes.alignment} </dd>
+//           </div>
+//           <div class="col-xs-6">
+//             <dt>Background</dt>
+//             <dd> ${selectedAttributes.background} </dd>
+//           </div>
+//         </div>
+//       </div>
+//       <dt>Personality Traits</dt>
+//       <dd> ${selectedAttributes.personality_traits} </dd>
+//       <dt>Ideal</dt>
+//       <dd> ${selectedAttributes.ideal} </dd>
+//       <dt>Bond</dt>
+//       <dd> ${selectedAttributes.bond} </dd>
+//       <dt>Flaw</dt>
+//       <dd> ${selectedAttributes.flaw} </dd>`;
+// >>>>>>> master
   });
   let respond = true;
   let storyary = [];

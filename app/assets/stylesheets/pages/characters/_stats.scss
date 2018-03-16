@@ -34,16 +34,16 @@
 
 
 .character-build-container {
-  padding-bottom: 15px;
-  padding-top: 50px;
+  margin-top: 100px;
 }
 
-
-#character-name {
-  width: 80%;
-  height: 60px;
+.name-wrapper{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
-
+.char
 .character-build-container {
 }
 
@@ -53,14 +53,15 @@
 .character-choice {
   min-width: 275px;
   text-align: center;
-  // width: 50%;
   margin: 10px;
   cursor: pointer;
-  background-color: #00243d;
-  color: white;
+  background-color: white;
+  color: #04273b;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
   border-radius: 2px;
   padding: 10px;
+  border: 2px solid #04273b;
+  font-family: "GothamNarrowLight";
 
   label {
     cursor: pointer;
@@ -77,9 +78,9 @@
 }
 
 .character-choice:hover {
-  color: #333;
   color: white;
   text-decoration: none;
+  background: #04273b;
 }
 
 .character-choice-selected {
@@ -93,9 +94,68 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  h1{
+    font-family: "TrajanPro";
+    font-size: 36px;
+    margin: 0;
+    color: #04283b;
+  }
 }
 
 #character-name {
   width: 80%;
-  height: 60px;
+  font-size: 22px;
+  text-align: left;
+  padding: 10px 20px;
+  font-family: "GothamNarrowLight";
 }
+#second-part{
+  margin-top: 100px;
+}
+.stats-card{
+  h1{
+    font-family: "TrajanPro";
+    font-size: 36px;
+    margin: 0;
+    color: #04283b;
+  }
+ h2{
+    font-family: $tungsten;
+    font-size: 24px;
+    margin: 0;
+  }
+  p {
+    font-size: 20px;
+    font-family: $gotham-light;
+    margin: 0;
+    margin: 10px 0;
+    font-weight: bold;
+    @media only screen and (max-width: 1440px) {
+      font-size: 16px;
+      margin: 0px;
+      }
+    }
+  }
+
+  .btn-word{
+    background-color: #00243d;
+    color: white;
+    width: 200px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 2PX;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    background-color: white;
+    color: #04273b;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+    border: 2px solid #04273b;
+    font-family: "GothamNarrowLight";
+    &:hover{
+      color: white;
+      text-decoration: none;
+      background: #04273b;
+    }
+  }
+
+
