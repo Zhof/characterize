@@ -26,15 +26,28 @@
     document.getElementById("second-part").style.display = "initial";
     // let attributes = document.getElementById("attributes").children;
     attributesList.innerHTML =
-      `<h1> ${selectedAttributes.name} </h1>
-      <dt>Race</dt>
-      <dd> ${selectedAttributes.race} </dd>
-      <dt>Class</dt>
-      <dd> ${selectedAttributes.job} </dd>
-      <dt>Alignment</dt>
-      <dd> ${selectedAttributes.alignment} </dd>
-      <dt>Background</dt>
-      <dd> ${selectedAttributes.background} </dd>
+      `
+      <h1> ${selectedAttributes.name} </h1>
+      <div class="container character-stats-container">
+        <div class="row">
+          <div class="col-xs-6">
+          <dt>Race</dt>
+            <dd> ${selectedAttributes.race} </dd>
+          </div>
+          <div class="col-xs-6">
+            <dt>Class</dt>
+            <dd> ${selectedAttributes.job} </dd>
+          </div>          
+          <div class="col-xs-6">
+            <dt>Alignment</dt>
+            <dd> ${selectedAttributes.alignment} </dd>
+          </div>
+          <div class="col-xs-6">
+            <dt>Background</dt>
+            <dd> ${selectedAttributes.background} </dd>
+          </div>
+        </div>
+      </div>
       <dt>Personality Traits</dt>
       <dd> ${selectedAttributes.personality_traits} </dd>
       <dt>Ideal</dt>
