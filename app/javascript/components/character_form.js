@@ -30,20 +30,20 @@ const initializeBackgroundSelectionMechanic = () => {
     jobOption.addEventListener("click", (event) => {
       const jobSelected = event.currentTarget.dataset.value;
       buildForms(extactAttributes(jobSelected));
-    
+
       tbdCharacterAttributePages.forEach((attributes) => {
         initializeAttributeSelection(attributes);
       })
     });
   });
 
-} 
+}
 
 const buildForms = (data) => {
   Object.keys(data).forEach((attribute) => {
     const attributeSelectionContainer = document.getElementById(`${attribute.toLowerCase()}-selection`);
     data[attribute].forEach((attributeValue) => {
-      attributeSelectionContainer.insertAdjacentHTML("beforeend", buildOption(attribute, attributeValue));
+      attributeSelectionContainer.querySelector(".row").insertAdjacentHTML("beforeend", buildOption(attribute, attributeValue));
     });
   });
 }
@@ -91,10 +91,14 @@ var allCharacterAttributePages = [
 ]
 
 const buildOption = (attribute, value) => {
-  return `<div class="character-choice chacter-select-btn wide" data-parent_id="${attribute}-selection" data-attribute="${attribute}" data-value="${value}">
-    <input type="radio" name="${attribute}" id="${value}_${value}" value="${value}">
-    <label for="${value}-${value}">${value}</label>
-  </div>`
+  // <div class="col-xs-6">
+  return `
+    <div class="character-choice chacter-select-btn wide" data-parent_id="${attribute}-selection" data-attribute="${attribute}" data-value="${value}">
+      <input type="radio" name="${attribute}" id="${value}_${value}" value="${value}">
+      <label for="${value}-${value}">${value}</label>
+    </div>
+  `
+  // </div>
 }
 
 const initializeCharacterForm = () => {
