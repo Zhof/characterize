@@ -46,7 +46,7 @@ class CharactersController < ApplicationController
 
   def share
     if @character.shared
-        redirect_to character_path(@character), alert: "This character is already at the Tavern"
+      redirect_to character_path(@character), alert: "This character is already at the Tavern"
     else
       @character.shared = true
       @character.save
