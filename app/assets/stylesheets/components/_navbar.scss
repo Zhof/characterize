@@ -91,6 +91,21 @@
 //   border-top: 1px solid #E6E6E6;
 // }
 
+.icons{
+  font-family: "TrajanPro";
+  font-size: 8px;
+  margin: 0;
+  color: white;
+  text-align: left;
+  margin: 0 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+    p{
+      margin: 0;
+    }
+}
 .icons img {
   // position: absolute;
   width: 50px;
@@ -108,7 +123,7 @@
   display: flex;
   justify-content: space-between;
   right: 150px;
-  width: 250px;
+  //width: 250px;
 }
 
 .sticky {

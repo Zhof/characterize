@@ -1,48 +1,59 @@
 <div class="car-card-wrapper">
-  <div class="row">
-    <div class="col-xs-2">
-      <div class="car-card-img-wrapper">
-        <%= image_tag @character.photo, class: "image" %>
+  <div class="car-card-img-wrapper">
+    <%= image_tag @character.photo, class: "image" %>
+  </div>
+  <div class="car-info-wrapper">
+    <div class="car-info-padding">
+      <h1><%= @character.name.upcase %></h1>
+      <p><%= @character.story %></p>
+      <div class="card-info-content">
+        <h2>MY BACKGROUND</h2>
+        <p><%= @character.background %></p>
       </div>
-    </div>
-    <div class="col-xs-8">
-      <div class="car-info-wrapper">
-        <div class="car-info-padding">
-          <h1><%= @character.name.upcase %></h1>
-          <p><%= @character.story %></p>
-          <div>
-            <h2>MY BACKGROUND</h2>
-            <p><%= @character.background.upcase %></p>
-          </div>
-          <div>
-            <h2>Personality traits</h2>
-            <p><%= @character.personality_traits.split('.')[0] %>. <%= @character.personality_traits.split('.')[1] %>.</p>
-          </div>
-          <div>
-            <h2>Ideal:</h2>
-            <p><%= @character.ideal %></p>
-          </div>
-          <div>
-            <h2>Bond:</h2>
-            <p><%= @character.bond %></p>
-          </div>
-          <div>
-            <h2>Flaw:</h2>
-            <p><%= @character.flaw %></p></p>
-          </div>
-
-          <%= simple_form_for @character do |f| %>
-            <%= f.input :story, as: :hidden %>
-            <% @character_params.each do |attribute, value| %>
-              <%= f.input attribute.to_sym, as: :hidden %>
-            <% end %>
-            <div class= "buttons">
-              <%= link_to 'RANDOM AGAIN', new_generation_path, class: "default-btn btn" %>
-              <%= f.button :submit, "SAVE THIS" %>
-              <%= link_to 'CUSTOM STORY', new_character_path, class: "default-btn btn" %>
-            </div>
-          <% end %>
+      <div class="flex-std">
+        <div class="card-info-content">
+          <h2>PERSONALITY TRAITS</h2>
+          <p><%= @character.personality_traits.split('.')[0] %>. <%= @character.personality_traits.split('.')[1] %>.</p>
         </div>
+        <div class="card-info-content">
+          <h2>IDEAL</h2>
+          <p><%= @character.ideal %></p>
+        </div>
+      </div>
+
+      <div class="flex-std">
+        <div class="card-info-content">
+          <h2>BOND</h2>
+          <p><%= @character.bond %></p>
+        </div>
+        <div class="card-info-content">
+          <h2>FLAW</h2>
+          <p><%= @character.flaw %></p></p>
+        </div>
+      </div>
+      <% unless @character_params.nil? %>
+        <%= simple_form_for @character do |f| %>
+        <%= f.input :story, as: :hidden %>
+        <% @character_params.each do |attribute, value| %>
+          <%= f.input attribute.to_sym, as: :hidden %>
+        <% end %>
+        <div class= "banner-buttons margin-top">
+          <%= link_to 'RANDOM AGAIN', new_generation_path, class: "btn btn-primary" %>
+          <%= f.button :submit, "SAVE THIS", class: "btn btn-primary" %>
+          <%= link_to 'CUSTOM STORY', new_character_path, class: "btn btn-primary" %>
+        </div>
+        <% end %>
+      <% end %>
+      <div class="banner-buttons margin-top">
+        <% unless @character.id.nil? %>
+        <% if  @character.user == current_user  %>
+          <%= link_to 'DELETE', { action: :destroy, id: @character.id }, method: :delete, class:"btn" %>
+          <%= link_to 'SHARE', { action: :share, id: @character.id }, method: :post, class:"btn" %>
+        <% else %>
+          <%= link_to 'BUY A PINT', { action: :buy_pint, id: @character.id }, method: :post, class:"btn" %>
+          <p><%= @character.rating %><%= link_to image_tag('pint.png', alt: "PINT", title: "BUY A PINT"), character_path, class:"icons" %></p>
+        <% end %>
+        <% end %>
       </div>
     </div>
   </div>

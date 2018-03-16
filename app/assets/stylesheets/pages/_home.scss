@@ -18,7 +18,7 @@
 }
 
 
-.btn-wrapper{
+.margin-top{
   margin-top: 20px;
 }
 
@@ -30,6 +30,7 @@
   font-size: 70px;
   margin: 0px;
   font-family: $trajan;
+  text-shadow: 2px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .landing-sub-text {
@@ -42,25 +43,28 @@
   font-family: $tungsten;
 }
 
-.banner-buttons {
+.margin-left-10{
   margin-left: 10px;
+}
+.banner-buttons {
+
   text-align: center;
 
   a {
     color: white;
-
+    }
+  input, a, p {
+    background-color: #00243d;
+    color: white;
+    border: none !important;
+    font-family: $tungsten;
+    font-size: 28px;
   }
-  p:hover {
+  input:hover, a:hover, p:hover {
     background-color: white;
     color: #00243d;
     transform: scale(1.07);
     transition: 0.25s ease;
-  }
-
-  p {
-    border: none !important;
-    font-family: $tungsten;
-    font-size: 28px;
   }
  }
 

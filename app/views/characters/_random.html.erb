@@ -1,11 +1,2 @@
 <%= render "shared/character_show" %>
 
-<div class="buttons-show">
-  <% if @character.user == current_user %>
-    <%= link_to 'DELETE', { action: :destroy, id: @character.id }, method: :delete, data: {confirm: "Are you sure?"}, class:"btn" %>
-    <%= link_to 'SHARE', { action: :share, id: @character.id }, method: :post, data: {confirm: "Are you sure?"}, class:"btn" %>
-  <% else %>
-    <%= link_to 'BUY A PINT', { action: :buy_pint, id: @character.id }, method: :post, class:"btn" %>
-    <p><%= @character.rating %><%= link_to image_tag('pint.png', alt: "PINT", title: "BUY A PINT"), character_path, class:"icons" %></p>
-  <% end %>
-</div>
