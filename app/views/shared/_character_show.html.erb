@@ -6,9 +6,17 @@
     <div class="car-info-padding">
       <h1><%= @character.name.upcase %></h1>
       <p><%= @character.story %></p>
-      <div class="card-info-content">
-        <h2>MY BACKGROUND</h2>
-        <p><%= @character.background %></p>
+      <div class="flex-std">
+        <% if @character.full == true %>
+        <div class="card-info-content">
+          <h2>RACE, CLASS, ALIGNMENT</h2>
+          <p><%= @character.race.capitalize %>, <%= @character.job.capitalize %>, <%= @character.alignment.capitalize %></p>
+        </div>
+        <% end %>
+        <div class="card-info-content">
+          <h2>MY BACKGROUND</h2>
+          <p><%= @character.background %></p>
+        </div>
       </div>
       <div class="flex-std">
         <div class="card-info-content">
