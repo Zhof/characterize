@@ -33,8 +33,33 @@
       "Iwan the Lame",
       "Leal the Magnificent",
       "Seymour the Pompous",
-      "Doyt Spook"
-
+      "Doyt Spook",
+      "Cariries Darkeyes",
+      "Grafire Battleheart",
+      "Stoiries Shipsail",
+      "Margretor Mongothsbeard",
+      "Wilkul Foechuckle",
+      "Nerismorel Laughshield",
+      "Tralannan Chorster",
+      "Kevtiln Arcanscape",
+      "Therthana Sandtracker",
+      "Maglyassa Soundinghorn",
+      "Udolamin Warstout",
+      "Ricven Tallcrippler",
+      "Belkul Shortankard",
+      "Xavian Graveltoes",
+      "Kevros Tigersoul",
+      "Gurora Treantspatience",
+      "Darhana Brushranger",
+      "Noreak Waveharp",
+      "Kevroar Steelfarmer",
+      "Frugeon Seaskipper",
+      "Alulynn Brushranger",
+      "Alistine Gemviper",
+      "Quinys Woodsheart",
+      "Stolove Underfoe",
+      "Vicorin Darksbane",
+      "Jandove Hollysharp"
     ],
 
     "traits": [
@@ -403,7 +428,11 @@
       "Lady Merigold's Dance Academy",
       "a magical swamp",
       "an unspeakable place",
-      "an overpriced tavern"
+      "an overpriced tavern",
+      "the iron mountain",
+      "the mean, uncobbled streets of the city",
+      "the guard's academy",
+      "a cliff-side village"
     ],
 
     "quirks": [
@@ -494,7 +523,11 @@
       "constantly tells jokes that aren’t funny",
       "calls all women “mother”",
       "always talks of ”the good old days”",
-      "swears at the least opportunity"
+      "swears at the least opportunity",
+      "seems to know everyone",
+      "left their home in disgrace",
+      "parties hard, way too hard",
+      "trying to avoid a prophecy"
     ],
 
     "alignments": [

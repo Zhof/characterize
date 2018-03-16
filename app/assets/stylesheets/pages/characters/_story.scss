@@ -23,6 +23,9 @@
   width: 100%;
   min-height: 450px;
   padding: 10px;
+  @media screen and (max-width: 1400px) {
+    min-height: 335px;
+  }
 }
 
 .character-sheet {
@@ -48,7 +51,7 @@
 
     &:active {
       color: white;
-    }    
+    }
   }
 }
 
@@ -58,7 +61,8 @@
     border: none !important;
     font-family: $tungsten;
     font-size: 28px;
-    padding: 10px;
+    padding: 8px 20px 8px 20px;
+    min-width: 90px;
 }
 
 #save-story:hover {
@@ -76,7 +80,8 @@
     border: none !important;
     font-family: $tungsten;
     font-size: 28px;
-    padding: 10px;
+    padding: 8px 20px 8px 20px;
+    min-width: 90px;
 }
 
 #restart-story:hover {
@@ -136,7 +141,7 @@ button#generate-sentence {
     margin: 0 auto;
   }
 
-  row {
+  .row {
     height: 100%;
   }
 
@@ -235,4 +240,8 @@ button#generate-sentence {
 
 .btn-word-selection{
   radius: 5px !important;
+}
+
+.bottom-edge {
+  padding-bottom: 8px;
 }
