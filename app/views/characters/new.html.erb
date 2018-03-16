@@ -6,11 +6,11 @@
   <%= render "characters/story" %>
 </div>
 
-<script>
+<% content_for(:after_js) do %>
+  <script>
   function capitalize(word) {
     return word.charAt(0).toUpperCase() + word.slice(1);
   }
-
   const button = document.getElementById("confirm");
   const attributesList = document.getElementById("attributes-list");
   button.addEventListener("click", (event) => {
@@ -61,8 +61,6 @@
           } else {
             story.value = story.value + " " + data.word
           }
-
-
           // grab array of new words
           data.suggestions.forEach(function(suggestion, index) {
             if (story.value[story.value.length - 1] === ".") {
@@ -142,8 +140,8 @@
     event.preventDefault();
     location.reload();
   });
-
   // TODO
   // if story.value.last == "." change wordbuttons.innerText to capitalize
 </script>
+<% end   %>
 

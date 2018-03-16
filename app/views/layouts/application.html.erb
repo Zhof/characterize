@@ -24,17 +24,15 @@
   <body style="background-color: #F7F7F7;">
     <%= render 'shared/flashes' %>
     <div id="container">
-      <div id="navbar">
         <%= render 'shared/navbar' %>
-      </div>
-      <div id="">
         <%= yield %>
-      </div>
     </div>
     <div class="footer-container">
       <%= render 'shared/footer' %>
     </div>
-  </body>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
+    <%= yield(:after_js) %>
+  </body>
+
 </html>

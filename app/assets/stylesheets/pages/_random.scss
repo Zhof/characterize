@@ -4,3 +4,80 @@
   justify-content: space-between;
   margin: 0 auto;
 }
+
+.car-card-wrapper{
+  display: flex;
+  align-items: center;
+  margin-top: 80px;
+  width: 100%;
+  margin-left: 20px;
+  margin-right: 20px;
+  justify-content: space-between;
+}
+
+.image {
+  //max-width: 30%;
+  max-width:400px;
+  max-height:400px;
+  width: auto;
+  height: auto;
+  @media screen and (max-width: 900px) {
+    display: none;
+  }
+}
+
+.car-card-img-wrapper{
+  height: auto;
+  width: 400px;
+  height: auto;
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+}
+
+.car-info-wrapper{
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 1);
+  background:white;
+  width: calc(100% - 400px);
+  height: calc(100vh - 184px);
+  border-radius: 4px;
+}
+
+.car-info-padding{
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+
+  h1{
+    font-family: $trajan;
+    font-size: 36px;
+    margin: 10px 0;
+    text-shadow: 2px 1px 3px rgba(0, 0, 0, 0.3);
+  }
+  h2{
+    font-family: $tungsten;
+    font-size: 24px;
+    margin: 0;
+  }
+  p{
+    font-size: 16px;
+    font-family: $gotham-light;
+    margin: 0;
+    margin: 10px 0;
+  }
+}
+
+.card-info-content
+{
+  width: 50%;
+  border: 1px solid white;
+  h2{
+      background: white;
+      color: #04273b;
+  }
+  p {
+    font-size: 14px;
+  }
+}

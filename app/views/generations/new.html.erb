@@ -1,13 +1,1 @@
 <%= render "shared/character_show" %>
-
-<%= simple_form_for @character do |f| %>
-  <%= f.input :story, as: :hidden %>
-  <% @character_params.each do |attribute, value| %>
-    <%= f.input attribute.to_sym, as: :hidden %>
-  <% end %>
-  <div class= "buttons">
-    <%= link_to 'RANDOM AGAIN', new_generation_path, class: "default-btn btn" %>
-    <%= f.button :submit, "SAVE THIS" %>
-    <%= link_to 'CUSTOM STORY', new_character_path, class: "default-btn btn" %>
-  </div>
-<% end %>

@@ -7,15 +7,15 @@
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
     <div class="menu-icons">
-      <%= link_to image_tag('tavern.png', alt: "TAVERN", title: "THE TAVERN"), tavern_path, class:"icons tavern"%>
-      <%= link_to image_tag('dice.png', alt: "QUICK STORY", title: "QUICK STORY"), new_generation_path, class:"icons dice"%>
-      <%= link_to image_tag('quill_pen.png', alt: "CUSTOM STORY", title: "CUSTOM STORY"), new_character_path, class:"icons quill"%>
-      <%= link_to image_tag('book.png', alt: "MY CHARACTERS", title: "MY CHARACTERS"), characters_path, class:"icons book"%>
+      <%= link_to characters_path, class:"icons book" do %> <%= image_tag('book.png', alt: "MY CHARACTERS", title: "MY CHARACTERS") %> <p>MY CHARACTERS</p> <% end %>
+      <%= link_to new_generation_path, class:"icons dice" do %> <%= image_tag('dice.png', alt: "QUICK STORY", title: "QUICK STORY") %> <p>QUICK STORY</p><% end %>
+      <%= link_to new_character_path, class:"icons quill" do %> <%=image_tag('quill_pen.png', alt: "CUSTOM STORY", title: "CUSTOM STORY") %> <p>CUSTOM STORY</p><% end %>
+      <%= link_to tavern_path, class:"icons helmet" do %> <%= image_tag('tavern.png', alt: "THE TAVERN", title: "THE TAVERN") %> <p>THE TAVERN</p><% end %>
     </div>
 
     <% if user_signed_in? %>
-      <%= link_to destroy_user_session_path, method: :delete do %>
-        <i style="color: white", class="fa fa-sign-out"></i>  <%= t(".sign_out", style: "color: white",default: "Log out") %>
+      <%= link_to destroy_user_session_path,  class: "log-out", method: :delete do %>
+        <!-- <i style="color: white", class="fa fa-sign-out"></i> -->  <%= t(".sign_out", style: "color: white;",default: "Log out",) %>
       <% end %>
     <% else %>
       <!-- Login link (when logged out) -->
