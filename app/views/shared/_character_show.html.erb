@@ -51,11 +51,13 @@
           <%= link_to 'SHARE', { action: :share, id: @character.id }, method: :post, class:"btn" %>
         <% else %>
           <%= link_to 'BUY A PINT', { action: :buy_pint, id: @character.id }, method: :post, class:"btn" %>
-          <p><%= @character.rating %><%= link_to image_tag('pint.png', alt: "PINT", title: "BUY A PINT"), character_path, class:"icons" %></p>
+      <div class="rating">
+        <p><%= @character.rating %></p><%= image_tag "pint.png", alt:"PINT", size: "50x50", class:"pint-icons" %>
+      </div>
         <% end %>
         <% end %>
       </div>
-    </div>
+      </div>
   </div>
 </div>
 
