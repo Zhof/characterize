@@ -8,7 +8,7 @@
 .car-card-wrapper{
   display: flex;
   align-items: center;
-  margin-top: 80px;
+  // margin-top: 80px;
   width: 100%;
   margin-left: 20px;
   margin-right: 6%;
@@ -47,6 +47,10 @@
   border-radius: 4px;
   @media screen and (max-width: 900px) {
     width: 100%;
+  }
+  @media screen and (max-width: 900px) {
+    height: initial;
+    margin-bottom: 30px;
   }  
 }
 
