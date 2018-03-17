@@ -143,14 +143,10 @@
       .then((data) => {
         respond = true;
         if(story.value[story.value.length - 1] === "." || story.value === "") {
-          // REMOVED FOR PRESENTATION
-          // story.value += " " + data.sentence.replace(data.sentence[0], data.sentence[0].toUpperCase())
-          story.value += "From an active volcano who was raised by ghosts"
+          story.value += " " + data.sentence.replace(data.sentence[0], data.sentence[0].toUpperCase())
         }
         else {
-          // REMOVED FOR PRESENTATION
-          // story.value += " " + data.sentence
-          story.value += "From an active volcano who was raised by ghosts"
+          story.value += " " + data.sentence
         }
       });
     }
@@ -196,8 +192,6 @@
     event.preventDefault();
     location.reload();
   });
-  // TODO
-  // if story.value.last == "." change wordbuttons.innerText to capitalize
 </script>
 <% end   %>
 
